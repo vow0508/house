@@ -1,0 +1,48 @@
+
+*{box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;margin:0;color:#223;background:#f7f8fb}
+a{text-decoration:none}
+.site-head{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.logo img{height:34px}
+.cta-top{padding:10px 14px;border-radius:999px;background:linear-gradient(45deg,#ff7b00,#ffb347);color:#fff;font-weight:800}
+.slider{position:relative;height:58vh;min-height:360px;overflow:hidden}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.1);transition:opacity 1s ease, transform 1s ease}
+.slide.active{opacity:1;transform:scale(1)}
+.slider::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.15) 40%, rgba(0,0,0,.55));z-index:1}
+.cap{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);z-index:2;color:#fff;text-align:center;text-shadow:0 8px 28px rgba(0,0,0,.38)}
+.cap h1{margin:0 0 8px;font-size:clamp(22px,4.8vw,42px)}
+.cap p{margin:0 0 18px;opacity:.95}
+.cta-hero{display:inline-block;padding:12px 18px;border-radius:999px;background:linear-gradient(45deg,#ff7b00,#ffb347);color:#fff;font-weight:800;box-shadow:0 10px 24px rgba(255,123,0,.28)}
+.search-box{text-align:center;padding:60px 20px;background:linear-gradient(90deg,#ffecd2,#fcb69f)}
+.search-box h2{font-size:28px;margin:0 0 6px}
+.search-box p{margin:0 0 20px;color:#333}
+.search{display:flex;justify-content:center;gap:0}
+.search input{width:min(920px,90vw);padding:18px 20px;font-size:18px;border:2px solid #ddd;border-radius:999px 0 0 999px;background:#fff;box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.search button{padding:18px 26px;font-size:18px;border:0;border-radius:0 999px 999px 0;background:linear-gradient(45deg,#007bff,#00b7ff);color:#fff;cursor:pointer;box-shadow:0 8px 22px rgba(0,123,255,.28)}
+.search button:hover{filter:brightness(1.06);transform:translateY(-1px)}
+@media(max-width:520px){.search{flex-direction:column;gap:10px}.search input,.search button{width:min(560px,92vw);border-radius:999px}}
+.section{padding:36px 20px}
+.inner{max-width:1200px;margin:0 auto}
+.tier-title{margin:8px 0 12px;font-size:16px;color:#555}
+.tier-title.gold{color:#c27d00}.tier-title.silver{color:#778899}.tier-title.bronze{color:#8c6b4a}
+.cards.cards-12{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:18px}
+.card{position:relative;background:#fff;border-radius:16px;padding:18px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.06);transition:transform .18s ease, box-shadow .18s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+.avatar-wrap{width:96px;height:96px;margin:0 auto 12px;border-radius:50%;overflow:hidden;box-shadow:0 6px 14px rgba(0,0,0,.12)}
+.avatar{width:100%;height:100%;object-fit:cover}
+.card h3{margin:6px 0 6px;font-size:16px}
+.card p{margin:0 0 12px;font-size:13px;color:#666}
+.card .btn{color:#0b84ff;font-weight:800}
+.badge{position:absolute;top:10px;left:10px;font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px}
+.card--pro{box-shadow:0 12px 30px rgba(255,136,0,.18)}
+.card--pro .badge{background:linear-gradient(45deg,#ffae00,#ffd27d);color:#5a3a00;border:1px solid rgba(255,190,70,.6)}
+.card--pro .avatar-wrap{box-shadow:0 10px 24px rgba(255,170,0,.25);border:2px solid rgba(255,174,0,.35)}
+.card--silver{box-shadow:0 10px 26px rgba(120,140,180,.12)}
+.card--silver .badge{background:linear-gradient(45deg,#e6eef9,#ccd7e6);color:#2d3a4d;border:1px solid rgba(120,140,180,.35)}
+.card--silver .avatar-wrap{border:2px solid rgba(160,175,200,.28)}
+.card--bronze{box-shadow:0 8px 22px rgba(160,120,80,.10)}
+.card--bronze .badge{background:linear-gradient(45deg,#e9d2bd,#d7b998);color:#4a392a;border:1px solid rgba(160,120,80,.35)}
+.card--bronze .avatar-wrap{border:2px solid rgba(190,150,100,.25)}
+@media(max-width:960px){.cards.cards-12{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.cards.cards-12{grid-template-columns:repeat(2,1fr)}}
+.site-foot{text-align:center;color:#778;padding:18px 0 40px}
