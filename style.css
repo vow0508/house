@@ -254,6 +254,30 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
   .points-3 .point h3 { writing-mode: horizontal-tb; }
 }
 */
+/* === ヒーロー見出しをスマホでも1行に === */
+.overlay {
+  padding: 0 8px;                 /* 横を少し広めに */
+}
+.overlay h1,
+.overlay p {
+  max-width: none;                /* 幅制限を解除 */
+  white-space: nowrap;            /* 強制1行 */
+  overflow: hidden;               /* はみ出し対策 */
+  text-overflow: ellipsis;        /* 入り切らないときは… */
+}
 
+@media (max-width: 640px) {
+  .overlay h1 {
+    font-size: 6.4vw;             /* 画面幅に合わせて縮む（例：iPhoneで約20–24px相当） */
+    line-height: 1.05;
+    letter-spacing: .02em;
+  }
+  .overlay p {
+    font-size: 4.2vw;             /* サブコピーも1行 */
+    line-height: 1.15;
+  }
+  /* 見出しやサブコピーが中心で途切れないように */
+  .overlay > * { max-width: 94vw; }
+}
 
 
