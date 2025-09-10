@@ -111,33 +111,149 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
-/* 3ポイント帯のレスポンシブ */
-.points {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+/* --- 3ポイント帯：スマホで縦1列にする --- */
 
-.point-box {
-  flex: 1;
-  min-width: 250px; /* PC時の幅 */
-  max-width: 300px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-/* スマホ対応：画面幅が768px以下なら縦並び */
-@media (max-width: 768px) {
-  .points {
-    flex-direction: column;
-    align-items: center;
-  }
-  .point-box {
-    width: 90%;
-    max-width: 400px;
+/* まずはタブレットで 2列 */
+@media (max-width: 980px) {
+  .points-3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
   }
 }
+
+/* スマホは 1列（読みやすく余白も調整） */
+@media (max-width: 640px) {
+  .points-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 12px;   /* 帯の内側余白を少し小さく */
+    border-radius: 12px;
+  }
+  .points-3 .point {
+    width: 100%;
+    max-width: 560px;     /* カードの最大幅を制御 */
+    margin: 0 auto;       /* 中央寄せ */
+    padding: 18px;
+  }
+  .points-3 .point h3 { font-size: 18px; }
+  .points-3 .point p,
+  .points-3 .point ul { font-size: 15px; line-height: 1.8; }
+}
+
+/* ※ 見出しなどを縦書きにしている場合は、スマホだけ横書きに戻したいときに有効化
+@media (max-width: 640px) {
+  .points-3 .point h3 { writing-mode: horizontal-tb; }
+}
+/* --- 3ポイント帯：スマホで縦1列にする --- */
+
+/* まずはタブレットで 2列 */
+@media (max-width: 980px) {
+  .points-3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+/* スマホは 1列（読みやすく余白も調整） */
+@media (max-width: 640px) {
+  .points-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 12px;   /* 帯の内側余白を少し小さく */
+    border-radius: 12px;
+  }
+  .points-3 .point {
+    width: 100%;
+    max-width: 560px;     /* カードの最大幅を制御 */
+    margin: 0 auto;       /* 中央寄せ */
+    padding: 18px;
+  }
+  .points-3 .point h3 { font-size: 18px; }
+  .points-3 .point p,
+  .points-3 .point ul { font-size: 15px; line-height: 1.8; }
+}
+
+/* ※ 見出しなどを縦書きにしている場合は、スマホだけ横書きに戻したいときに有効化
+@media (max-width: 640px) {
+  .points-3 .point h3 { writing-mode: horizontal-tb; }
+}
+/* --- 3ポイント帯：スマホで縦1列にする --- */
+
+/* まずはタブレットで 2列 */
+@media (max-width: 980px) {
+  .points-3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+/* スマホは 1列（読みやすく余白も調整） */
+@media (max-width: 640px) {
+  .points-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 12px;   /* 帯の内側余白を少し小さく */
+    border-radius: 12px;
+  }
+  .points-3 .point {
+    width: 100%;
+    max-width: 560px;     /* カードの最大幅を制御 */
+    margin: 0 auto;       /* 中央寄せ */
+    padding: 18px;
+  }
+  .points-3 .point h3 { font-size: 18px; }
+  .points-3 .point p,
+  .points-3 .point ul { font-size: 15px; line-height: 1.8; }
+}
+
+/* ※ 見出しなどを縦書きにしている場合は、スマホだけ横書きに戻したいときに有効化
+@media (max-width: 640px) {
+  .points-3 .point h3 { writing-mode: horizontal-tb; }
+}
+
+
+/* --- 3ポイント帯：スマホで縦1列にする --- */
+
+/* まずはタブレットで 2列 */
+@media (max-width: 980px) {
+  .points-3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+/* スマホは 1列（読みやすく余白も調整） */
+@media (max-width: 640px) {
+  .points-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 12px;   /* 帯の内側余白を少し小さく */
+    border-radius: 12px;
+  }
+  .points-3 .point {
+    width: 100%;
+    max-width: 560px;     /* カードの最大幅を制御 */
+    margin: 0 auto;       /* 中央寄せ */
+    padding: 18px;
+  }
+  .points-3 .point h3 { font-size: 18px; }
+  .points-3 .point p,
+  .points-3 .point ul { font-size: 15px; line-height: 1.8; }
+}
+
+/* ※ 見出しなどを縦書きにしている場合は、スマホだけ横書きに戻したいときに有効化
+@media (max-width: 640px) {
+  .points-3 .point h3 { writing-mode: horizontal-tb; }
+}
+*/
+
+
+
