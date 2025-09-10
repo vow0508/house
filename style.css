@@ -87,7 +87,8 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 .site-foot{text-align:center;color:#778;padding:18px 0 40px}
 }
 
-.points-4 {
+.points-3
+{
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -97,7 +98,7 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
   margin: 40px 0;
   color: #333;
 }
-.points-4 .point {
+.points-3 .point {
   flex: 1;
   background: rgba(255,255,255,0.9);
   padding: 20px;
@@ -106,7 +107,7 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
   text-align: center;
   transition: transform 0.2s;
 }
-.points-4 .point:hover {
+.points-3 .point:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
