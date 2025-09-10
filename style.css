@@ -281,7 +281,7 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
   /* セクション間の余白を小さくする */
   .section {
     margin-top: 10px;   /* 元が40px〜60pxなら半分に */
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 
   .inner {
