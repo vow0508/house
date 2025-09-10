@@ -253,41 +253,17 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 @media (max-width: 640px) {
   .points-3 .point h3 { writing-mode: horizontal-tb; }
 }
-*/
-/* === ヒーロー見出しをスマホでも1行に === */
-.overlay {
-  padding: 0 8px;                 /* 横を少し広めに */
-}
-.overlay h1,
-.overlay p {
-  max-width: none;                /* 幅制限を解除 */
-  white-space: nowrap;            /* 強制1行 */
-  overflow: hidden;               /* はみ出し対策 */
-  text-overflow: ellipsis;        /* 入り切らないときは… */
-}
-
-@media (max-width: 640px) {
-  .overlay h1 {
-    font-size: 6.4vw;             /* 画面幅に合わせて縮む（例：iPhoneで約20–24px相当） */
-    line-height: 1.05;
-    letter-spacing: .02em;
-  }
-  .overlay p {
-    font-size: 4.2vw;             /* サブコピーも1行 */
-    line-height: 1.15;
-  }
-  /* 見出しやサブコピーが中心で途切れないように */
-  .overlay > * { max-width: 94vw; }
+.cap {
+  max-width: 100%;   /* 幅制限を解除 */
+  width: 100%;       /* 親要素いっぱいに広げる */
+  white-space: nowrap; /* 折り返しを禁止して1行表示 */
+  text-align: center; /* 中央寄せにしたい場合 */
 }
 
 .cap h1 {
-  white-space: nowrap;      /* 折り返さない */
-  font-size: 4.8vw;         /* 画面幅に合わせて縮小 */
-  line-height: 1.2;
-  overflow: hidden;
-  text-overflow: ellipsis;  /* 入り切らないとき「…」 */
+  font-size: 2rem;   /* 文字が大きすぎる場合は調整 */
+  white-space: nowrap; /* 念のため個別にも指定可能 */
 }
-
 .cap {
   max-width: 100%;   /* 幅制限を解除 */
   width: 100%;       /* 親要素いっぱいに広げる */
