@@ -24,46 +24,7 @@ a{text-decoration:none}
 .section{padding:36px 20px}
 .inner{max-width:1200px;margin:0 auto}
 .tier-title{margin:8px 0 12px;font-size:16px;color:#555}
-
-.points-3 {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #007bff 0%, #ffffff 100%);
-  border-radius: 12px;
-  margin: 40px 0;
-  color: #333;
-}
-.points-3 .point {
-  flex: 1;
-  background: rgba(255,255,255,0.9);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-}
 .tier-title.gold{color:#c27d00}.tier-title.silver{color:#778899}.tier-title.bronze{color:#8c6b4a}
-
-
-body {font-family: 'Meiryo', sans-serif; margin:0; padding:0;}
-header {background:#fff; padding:10px; text-align:center;}
-.logo {max-height:80px;}
-.hero {background:linear-gradient(to right,#1e90ff,#ffffff); color:#fff; text-align:center; padding:60px 20px;}
-.hero .search-box {margin:20px auto; max-width:400px;}
-.hero input {padding:10px; width:70%; border-radius:8px; border:1px solid #ccc;}
-.hero button {padding:10px 20px; border:none; background:#ff5722; color:#fff; border-radius:8px;}
-.btn-primary {display:inline-block; margin-top:15px; padding:15px 30px; background:#ff5722; color:#fff; border-radius:8px; text-decoration:none;}
-.points {display:flex; justify-content:center; gap:20px; padding:40px; background:#f5f5f5;}
-.point {flex:1; background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,0.1);}
-.agents {padding:40px; text-align:center;}
-.agent-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:20px;}
-.agent-card {background:#fff; border-radius:12px; padding:10px; box-shadow:0 4px 6px rgba(0,0,0,0.1);}
-.agent-card img {width:100%; border-radius:50%; box-shadow:0 4px 6px rgba(0,0,0,0.2);}
-.faq {padding:40px; background:#f5f5f5;}
-.faq details {margin:10px 0; background:#fff; padding:10px; border-radius:8px;}
-.final-cta {text-align:center; padding:40px;}
-footer {text-align:center; padding:20px; background:#222; color:#fff;}
 .cards.cards-12{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:18px}
 .card{position:relative;background:#fff;border-radius:16px;padding:18px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.06);transition:transform .18s ease, box-shadow .18s ease}
 .card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
@@ -85,26 +46,3 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 @media(max-width:960px){.cards.cards-12{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:640px){.cards.cards-12{grid-template-columns:repeat(2,1fr)}}
 .site-foot{text-align:center;color:#778;padding:18px 0 40px}
-.points-3 {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #007bff 0%, #ffffff 100%);
-  border-radius: 12px;
-  margin: 40px 0;
-  color: #333;
-}
-.points-3 .point {
-  flex: 1;
-  background: rgba(255,255,255,0.9);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.2s;
-}
-.points-3 .point:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
