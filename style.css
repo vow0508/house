@@ -280,9 +280,9 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 
 @media (max-width: 768px) {
   .hero {
-    margin-bottom: 20px;   /* デフォルトより小さめ */
+    margin-bottom: 10px;   /* デフォルトより小さめ */
   }
   .points-3 {
-    margin-top: 10px;      /* 必要ならこちらも縮める */
+    margin-top: 5px;      /* 必要ならこちらも縮める */
   }
 }
