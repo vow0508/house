@@ -290,6 +290,6 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 }
 
 .points-3 {
-  margin-top: 10px;    /* デフォルトが 40px, 60px などなら半分に */
+  margin-top: 30px;    /* デフォルトが 40px, 60px などなら半分に */
 }
 }
