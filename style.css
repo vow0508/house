@@ -85,7 +85,9 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 @media(max-width:960px){.cards.cards-12{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:640px){.cards.cards-12{grid-template-columns:repeat(2,1fr)}}
 .site-foot{text-align:center;color:#778;padding:18px 0 40px}
-.points-3 {
+}
+
+.points-4 {
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -95,7 +97,7 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
   margin: 40px 0;
   color: #333;
 }
-.points-3 .point {
+.points-4 .point {
   flex: 1;
   background: rgba(255,255,255,0.9);
   padding: 20px;
@@ -104,7 +106,7 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
   text-align: center;
   transition: transform 0.2s;
 }
-.points-3 .point:hover {
+.points-4 .point:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
