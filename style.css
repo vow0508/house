@@ -285,7 +285,7 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
   }
 
  .section {
-  padding-top: 10px;   /* 必要に応じて小さくする */
+  padding-top: 50px;   /* 必要に応じて小さくする */
   padding-bottom: 50px;
 }
 
