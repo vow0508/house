@@ -277,12 +277,15 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 }
 
 
-
 @media (max-width: 768px) {
-  .hero {
-    margin-bottom: 10px;   /* デフォルトより小さめ */
+  /* セクション間の余白を小さくする */
+  .section {
+    margin-top: 20px;   /* 元が40px〜60pxなら半分に */
+    margin-bottom: 20px;
   }
-  .points-3 {
-    margin-top: 5px;      /* 必要ならこちらも縮める */
+
+  .inner {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
