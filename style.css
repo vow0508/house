@@ -275,3 +275,14 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
   font-size: 2rem;   /* 文字が大きすぎる場合は調整 */
   white-space: nowrap; /* 念のため個別にも指定可能 */
 }
+
+
+
+@media (max-width: 768px) {
+  .hero {
+    margin-bottom: 20px;   /* デフォルトより小さめ */
+  }
+  .points-3 {
+    margin-top: 10px;      /* 必要ならこちらも縮める */
+  }
+}
