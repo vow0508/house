@@ -287,3 +287,15 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
   overflow: hidden;
   text-overflow: ellipsis;  /* 入り切らないとき「…」 */
 }
+
+.cap {
+  max-width: 100%;   /* 幅制限を解除 */
+  width: 100%;       /* 親要素いっぱいに広げる */
+  white-space: nowrap; /* 折り返しを禁止して1行表示 */
+  text-align: center; /* 中央寄せにしたい場合 */
+}
+
+.cap h1 {
+  font-size: 2rem;   /* 文字が大きすぎる場合は調整 */
+  white-space: nowrap; /* 念のため個別にも指定可能 */
+}
