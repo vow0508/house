@@ -298,18 +298,6 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 }
 }
 
-.agent-card {
-  width: 48%;        /* 2列に並べる */
-  display: inline-block;
-  vertical-align: top;
-  margin: 1%;
-}
-
-.agent-card img {
-  width: 100%;       /* 画像をカード幅に合わせる */
-  height: auto;      /* 縦横比は自動調整 */
-}
-
 
 
 
