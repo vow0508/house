@@ -964,23 +964,15 @@ body.nav-open{ overflow:hidden; }
 }
 
 
-.mnav {
-  background: rgba(255,255,255,0.6); /* 白＋透明度80% */
-  backdrop-filter: blur(6px);        /* 背景をぼかす（対応ブラウザのみ） */
-}
-
-
-/* 最終上書き：白の半透明に固定 */
 #mnav.mnav {
-  background: rgba(255,255,255,0.7) !important; /* ← 白70%透明 */
-  backdrop-filter: blur(6px) !important;        /* ガラス風ぼかし */
+  background: rgba(255,255,255,0.5);  /* 白半透明 */
+  backdrop-filter: blur(12px);        /* 背景をぼかす */
+  -webkit-backdrop-filter: blur(12px);/* Safari対応 */
 }
 
 
 
-#mnav.mnav {
-  background: #fff;
-}
+
 
 
 
