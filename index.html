@@ -302,8 +302,63 @@
 
 <!-- ===== /モバイルメニュー：安全版 ===== -->
 
+
+  <script>
+(function () {
+  const btn = document.getElementById('menuButton');
+  const nav = document.getElementById('mnav');
+  const backdrop = document.getElementById('backdrop');
+
+  if (!btn || !nav || !backdrop) return;
+
+  function openNav() {
+    nav.setAttribute('aria-hidden', 'false');
+    btn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open');
+    backdrop.hidden = false;
+    requestAnimationFrame(() => backdrop.classList.add('show'));
+    btn.setAttribute('aria-label', 'メニューを閉じる');
+  }
+
+  function closeNav() {
+    nav.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+    backdrop.classList.remove('show');
+    setTimeout(() => { backdrop.hidden = true; }, 200);
+    btn.setAttribute('aria-label', 'メニューを開く');
+  }
+
+  function toggleNav() {
+    const isOpen = nav.getAttribute('aria-hidden') === 'false';
+    isOpen ? closeNav() : openNav();
+  }
+
+  btn.addEventListener('click', toggleNav);
+  backdrop.addEventListener('click', closeNav);
+
+  // ESCで閉じる
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.getAttribute('aria-hidden') === 'false') {
+      closeNav();
+      btn.focus();
+    }
+  });
+
+  // メニュー内リンクをタップしたら閉じる（SP時）
+  nav.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (a && window.matchMedia('(max-width: 768px)').matches) {
+      closeNav();
+    }
+  });
+})();
+</script>
+
+
 </body>
 </html>
+
 
 
 
