@@ -964,6 +964,11 @@ body.nav-open{ overflow:hidden; }
 }
 
 
+.mnav {
+  background: rgba(255,255,255,0.6); /* 白＋透明度80% */
+  backdrop-filter: blur(6px);        /* 背景をぼかす（対応ブラウザのみ） */
+}
+
 
 
 
