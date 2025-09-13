@@ -25,30 +25,23 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// 新しいモバイルメニュー開閉処理
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".mh-btn");
+  const drawer = document.getElementById("mhDrawer");
+  const close = drawer.querySelector(".mh-close");
 
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.querySelector('.mh-btn');
-  const drawer = document.getElementById('mhDrawer');
-  const closeBtn = document.querySelector('.mh-close');
-  if(!btn || !drawer) return;
-
-  const open = () => {
-    drawer.classList.add('is-open');
-    drawer.setAttribute('aria-hidden','false');
-    btn.setAttribute('aria-expanded','true');
-    document.body.style.overflow = 'hidden';
-  };
-  const close = () => {
-    drawer.classList.remove('is-open');
-    drawer.setAttribute('aria-hidden','true');
-    btn.setAttribute('aria-expanded','false');
-    document.body.style.overflow = '';
-  };
-
-  btn.addEventListener('click', open);
-  closeBtn && closeBtn.addEventListener('click', close);
-  drawer.addEventListener('click', e => { if(e.target === drawer) close(); });
+  if(btn && drawer){
+    btn.addEventListener("click", () => {
+      drawer.setAttribute("aria-hidden", "false");
+      btn.setAttribute("aria-expanded", "true");
+    });
+    close.addEventListener("click", () => {
+      drawer.setAttribute("aria-hidden", "true");
+      btn.setAttribute("aria-expanded", "false");
+    });
+  }
 });
-</script>
+
+
+
