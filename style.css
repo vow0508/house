@@ -978,6 +978,10 @@ body.nav-open{ overflow:hidden; }
 
 
 
+#mnav.mnav {
+  background: #fff;
+}
+
 
 
 
