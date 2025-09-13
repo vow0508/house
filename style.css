@@ -296,4 +296,25 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 .site-foot {
   margin-top: 120px;    /* デフォルトが 40px, 60px などなら半分に */
 }
+
 }
+
+
+
+
+
+.greeting {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+.greeting-inner { max-width: 960px; margin: 0 auto; }
+.greeting h2 { font-size: 1.8rem; margin: 0 0 12px; color: #111827; }
+.greeting p { font-size: 1.06rem; line-height: 1.8; color: #374151; margin: 0 0 12px; }
+.greeting .note { font-size: .95rem; color: #6b7280; }
+.greeting-actions { display: flex; gap: 12px; justify-content: center; margin-top: 12px; }
+.btn-cf { background: #e11d48; color: #fff; padding: 12px 22px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+.btn-cf:hover { background: #be123c; }
+.btn-outline { border: 1px solid #9ca3af; color: #374151; padding: 12px 22px; border-radius: 8px; text-decoration: none; }
+.btn-outline:hover { background: #f3f4f6; }
