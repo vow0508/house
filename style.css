@@ -924,6 +924,30 @@ body.nav-open{ overflow:hidden; }
 
 
 
+/* ===== 半透明オーバーレイ（画面全体を薄暗く） ===== */
+#backdrop.backdrop{
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0,0,0,0.35) !important;  /* ← 半透明 */
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity .2s ease !important;
+  z-index: 2147483646 !important;
+}
+#backdrop.backdrop.show{
+  opacity: 1 !important;                   /* 表示時に効く */
+  pointer-events: auto !important;
+}
+
+/* ===== ドロワーパネル自体も少し透かす（不要なら消してOK） ===== */
+#mnav.mnav{
+  background: rgba(255,255,255,0.92) !important;  /* ← 白を少し透過 */
+  backdrop-filter: blur(3px);                      /* ぼかし（対応ブラウザで有効） */
+}
+
+/* 念のため：どこかで不透明色が当たっていても勝てるように */
+#mnav.mnav, #backdrop.backdrop{ background-clip: padding-box !important; }
+
 
 
 
