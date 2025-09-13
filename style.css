@@ -524,6 +524,52 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 /* 念のため：ヘッダー等より前面に出す／下の要素は z-index を低く */
 .site-header, .hero, .site-foot{ position: relative; z-index: 1; }
 
+/* ===== responsive nav (slide-in) ===== */
+.menu-toggle{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:40px; height:40px; border:1px solid #eee; border-radius:8px; background:#fff;
+  margin-left:8px;
+}
+.menu-toggle svg{ display:block; }
+
+#backdrop.backdrop{
+  position:fixed; inset:0; background:rgba(0,0,0,.35);
+  opacity:0; pointer-events:none; transition:opacity .2s ease; z-index:45;
+}
+#backdrop.backdrop.show{ opacity:1; pointer-events:auto; }
+
+.mnav{
+  /* モバイル：オフキャンバス */
+  position:fixed; top:0; left:0; bottom:0;
+  width:70vw; max-width:360px; background:#fff; z-index:50;
+  transform:translateX(-100%); transition:transform .25s ease;
+  padding:16px; box-shadow:2px 0 12px rgba(0,0,0,.08);
+}
+.mnav[aria-hidden="false"]{ transform:translateX(0); }
+
+.mnav-list{ list-style:none; margin:0; padding:0; }
+.mnav-list li{ border-bottom:1px solid #eee; }
+.mnav-list a{
+  display:block; padding:14px 6px; color:#111; text-decoration:none;
+}
+.mnav-list a:hover{ background:#f8fafc; }
+
+/* PC表示：横並び／ハンバーガー非表示 */
+@media (min-width: 769px) {
+  .menu-toggle{ display:none; }
+  #backdrop{ display:none; }
+  .mnav{
+    position:static; transform:none; box-shadow:none; padding:0; width:auto; background:transparent;
+  }
+  .mnav-list{ display:flex; gap:16px; }
+  .mnav-list li{ border:0; }
+  .mnav-list a{ padding:8px 10px; border-radius:6px; }
+  .mnav-list a:hover{ background:#f1f5f9; }
+}
+
+/* メニュー開時のスクロール固定（SP） */
+body.nav-open{ overflow:hidden; }
+
 
 
 
