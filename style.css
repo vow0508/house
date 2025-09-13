@@ -570,6 +570,75 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 /* メニュー開時のスクロール固定（SP） */
 body.nav-open{ overflow:hidden; }
 
+/* ===== Slider caption: center & responsive ===== */
+.slider{ position: relative; overflow: hidden; }
+
+/* 画像レイヤーの上に文字を載せるための段差 */
+.slider .slide{ z-index: 1; }
+
+/* 文字・ボタンを常に中央に。はみ出し防止 */
+.slider .cap{
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: min(92vw, 820px) !important;   /* 画面幅に合わせて縮む */
+  padding: 0 2vw;
+  text-align: center;
+  z-index: 2;
+}
+
+/* 見やすいサイズに自動調整 */
+.slider .cap h1{
+  margin: 0 0 .5em;
+  line-height: 1.25;
+  font-size: clamp(22px, 6vw, 48px);
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,.35);
+}
+
+.slider .cap p{
+  margin: 0 0 1.2em;
+  font-size: clamp(14px, 2.8vw, 18px);
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,.35);
+}
+
+/* CTAボタンの見た目（必要に応じて調整OK） */
+.slider .cta-hero{
+  display: inline-block;
+  padding: 12px 20px;
+  background: #f90;
+  color: #fff;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 700;
+  white-space: nowrap;         /* 長い文でも折り返さず縮む */
+}
+
+/* 背景を少し暗くして可読性UP（任意） */
+.slider::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.25));
+  z-index: 1;                  /* 画像の上、文字の下 */
+}
+
+/* 大画面では左下寄せにしたい場合（任意。中央のままで良ければ不要） */
+@media (min-width: 1024px){
+  /* コメントアウトを外すと左下寄せになります
+  .slider .cap{
+    top: auto !important;
+    bottom: 10% !important;
+    left: 8% !important;
+    transform: none !important;
+    text-align: left;
+    width: min(60vw, 840px) !important;
+  }
+  */
+}
+
 
 
 
