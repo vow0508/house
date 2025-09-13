@@ -928,7 +928,7 @@ body.nav-open{ overflow:hidden; }
 #backdrop.backdrop{
   position: fixed !important;
   inset: 0 !important;
-  background: rgba(0,0,0,0.35) !important;  /* ← 半透明 */
+  background: rgba(0,0,0,0.5) !important;  /* ← 半透明 */
   opacity: 0 !important;
   pointer-events: none !important;
   transition: opacity .2s ease !important;
@@ -962,6 +962,7 @@ body.nav-open{ overflow:hidden; }
 .mh-drawer, .drawer, .nav-drawer, #backdrop.backdrop[data-legacy="1"]{
   background: transparent !important;
 }
+
 
 
 
