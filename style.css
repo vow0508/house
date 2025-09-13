@@ -970,6 +970,12 @@ body.nav-open{ overflow:hidden; }
 }
 
 
+/* 最終上書き：白の半透明に固定 */
+#mnav.mnav {
+  background: rgba(255,255,255,0.7) !important; /* ← 白70%透明 */
+  backdrop-filter: blur(6px) !important;        /* ガラス風ぼかし */
+}
+
 
 
 
