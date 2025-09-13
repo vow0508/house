@@ -768,6 +768,52 @@ body.nav-open{ overflow:hidden; }
 
 
 
+/* ========== 共通 ========== */
+.pnav { display: none; }                  /* 初期は隠す（モバイル用に） */
+.pnav-list{ list-style:none; margin:0; padding:0; display:flex; gap:16px; }
+.pnav-list a{ display:block; padding:8px 10px; border-radius:6px; color:#111; text-decoration:none; }
+.pnav-list a:hover{ background:#f1f5f9; }
+
+/* モバイル用ドロワー（#mnav）は最前面・左からスライド */
+#mnav.mnav{
+  position: fixed !important;
+  top: 0; left: 0; bottom: 0;
+  width: 70vw; max-width: 360px;
+  background: #fff;
+  transform: translateX(-100%);
+  transition: transform .25s ease;
+  padding: 16px;
+  box-shadow: 2px 0 12px rgba(0,0,0,.12);
+  z-index: 2147483647 !important;
+}
+#mnav[aria-hidden="false"]{ transform: translateX(0); }
+
+#backdrop.backdrop{
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0,0,0,0.35);        /* 半透明 */
+  opacity: 0; pointer-events: none; transition: opacity .2s ease;
+  z-index: 2147483646 !important;
+}
+#backdrop.backdrop.show{ opacity: 1; pointer-events: auto; }
+
+/* ========== ブレークポイントで出し分け ========== */
+@media (min-width: 769px){
+  /* PC：横並びメニューを表示、ドロワーは無効化 */
+  .pnav{ display: block; }
+  .menu-toggle{ display: none !important; }      /* ハンバーガー非表示 */
+  #backdrop{ display: none !important; }
+  #mnav{ display: none !important; }             /* ドロワー非表示（存在はするが出さない） }
+
+  /* ヘッダー内の整列（必要なら調整） */
+  .header-inner{ display:flex; align-items:center; gap: 20px; }
+  .btn-estimate{ margin-left: auto; }            /* 右端へ寄せる */
+}
+
+/* 念のため：スライダーは背面、ヘッダーは前面 */
+.site-header{ position: sticky; top:0; z-index: 1000; background:#fff; }
+.slider, .slider::before, .slider::after, .slider .slide{ z-index: 0 !important; }
+
 
 
 
