@@ -950,8 +950,18 @@ body.nav-open{ overflow:hidden; }
 
 
 
+/* パネル（左から出る白い板）を少し透過 */
+#mnav.mnav{
+  background: rgba(255,255,255,0.92) !important;
+  backdrop-filter: blur(3px); /* 対応ブラウザでぼかし */
+}
 
 
+
+/* もし残っていたら灰色を作っている可能性大。まとめて無効化 */
+.mh-drawer, .drawer, .nav-drawer, #backdrop.backdrop[data-legacy="1"]{
+  background: transparent !important;
+}
 
 
 
