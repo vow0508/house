@@ -409,6 +409,39 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 }
 
 
+/* --- モバイル浮遊メニュー --- */
+.fab-menu{
+  position:fixed; right:16px; bottom:16px; z-index:1000;
+  width:52px; height:52px; border-radius:50%;
+  border:none; font-size:22px; line-height:52px; text-align:center;
+  background:#111827; color:#fff; box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+@media (min-width:768px){ .fab-menu{ display:none; } } /* PCでは非表示 */
+
+/* 全画面ドロワー */
+.nav-drawer{
+  position:fixed; inset:0; z-index:1000;
+  background:rgba(0,0,0,.5);
+  transform:translateY(100%); transition:transform .25s ease;
+}
+.nav-drawer.is-open{ transform:translateY(0); }
+.nav-drawer__panel{
+  position:absolute; left:0; right:0; bottom:0;
+  background:#fff; border-radius:16px 16px 0 0; padding:20px 16px 28px;
+  box-shadow:0 -10px 30px rgba(0,0,0,.15);
+}
+.nav-drawer__close{
+  position:absolute; right:12px; top:10px; border:none; background:transparent;
+  font-size:28px; line-height:1; color:#111827;
+}
+.nav-drawer__list{ list-style:none; margin:28px 0 0; padding:0; }
+.nav-drawer__list li{ border-bottom:1px solid #eee; }
+.nav-drawer__list a{
+  display:block; padding:16px 4px; text-decoration:none; color:#111827; font-weight:700;
+}
+/* PCではドロワーを無効（ヘッダー未使用ならそのまま非表示でOK） */
+@media (min-width:768px){ .nav-drawer{ display:none; } }
+
 
 
 
