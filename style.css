@@ -864,6 +864,44 @@ body.nav-open{ overflow:hidden; }
 
 
 
+/* デフォルトはPCメニューを隠す */
+#pnav { display: none; }
+
+/* スマホ時：mnav（ドロワー）＋ハンバーガーを表示 */
+@media (max-width: 768px) {
+  #mnav { display: block; }
+  .menu-toggle { display: block; }
+  #pnav { display: none !important; }
+}
+
+/* PC時：pnav（横並び）を表示、mnavとハンバーガーを隠す */
+@media (min-width: 769px) {
+  #pnav { display: block !important; }
+  #mnav { display: none !important; }
+  .menu-toggle { display: none !important; }
+
+  #pnav .pnav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  #pnav .pnav-list li {
+    display: inline-flex;
+  }
+  #pnav .pnav-list a {
+    text-decoration: none;
+    padding: 8px 12px;
+    color: #111;
+  }
+  #pnav .pnav-list a:hover {
+    background: #f1f5f9;
+    border-radius: 6px;
+  }
+}
+
 
 
 
