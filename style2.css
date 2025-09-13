@@ -1,0 +1,39 @@
+/* ============================
+   style2.css : 追加カスタマイズ
+   ============================ */
+
+/* 全体背景を薄いグレーに変更（style.cssを上書き） */
+body {
+  background-color: #fafafa;
+  color: #333;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* ボタンを青色に強調 */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #007bff;   /* 鮮やかな青 */
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background: #0056b3;   /* 濃い青に変化 */
+}
+
+/* 「募集中」カードを目立たせる */
+.card h3:contains("募集中") {
+  color: #d9534f; /* 赤系 */
+  font-weight: bold;
+}
+
+/* 見出しの調整 */
+h2, h3 {
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  font-weight: 700;
+}
