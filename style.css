@@ -318,3 +318,63 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 .btn-cf:hover { background: #be123c; }
 .btn-outline { border: 1px solid #9ca3af; color: #374151; padding: 12px 22px; border-radius: 8px; text-decoration: none; }
 .btn-outline:hover { background: #f3f4f6; }
+
+
+
+/* --- ハンバーガーメニュー用 --- */
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1em;
+  z-index: 1000;
+}
+
+.nav-menu li {
+  list-style: none;
+  margin: 0.5em 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* PC表示の時は横並び */
+@media (min-width: 768px) {
+  .nav-menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    gap: 1.5em;
+    border: none;
+    padding: 0;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
