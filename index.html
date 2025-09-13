@@ -50,17 +50,42 @@
 }
 </style>
 
+
+<!-- ===== ヘッダーここまで ===== -->
 <header class="site-header">
   <div class="header-inner">
-    <!-- ロゴ画像 -->
+    <!-- ロゴ画像（そのまま） -->
     <a href="index.html" class="logo">
       <img src="images/logo.png" alt="お家.com">
     </a>
-    <!-- 無料見積りボタン -->
+
+    <!-- PC表示：横並びメニュー -->
+    <nav id="mnav" class="mnav" aria-hidden="true">
+      <ul class="mnav-list">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="vision.html">理念</a></li>
+        <li><a href="legal.html">法令順守</a></li>
+      </ul>
+    </nav>
+
+    <!-- 右側：見積ボタン（そのまま使えます） -->
     <a href="form.html" class="btn-estimate">無料見積り</a>
+
+    <!-- スマホ表示：ハンバーガー -->
+    <button id="menuButton"
+            class="menu-toggle"
+            aria-label="メニューを開く"
+            aria-controls="mnav"
+            aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22">
+        <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
   </div>
 </header>
-<!-- ===== ヘッダーここまで ===== -->
+
+<!-- メニュー開時の半透明背景（必ずheader直後） -->
+<div id="backdrop" class="backdrop" hidden></div>
 
 
 
@@ -274,50 +299,12 @@
 
 
 <!-- ===== モバイルメニュー：安全版（右上・上からスライド） ===== -->
-<button class="mh-btn" aria-label="メニュー" aria-controls="mhDrawer" aria-expanded="false">☰</button>
 
-<nav id="mhDrawer" class="mh-drawer" aria-hidden="true">
-  <div class="mh-panel">
-    <button class="mh-close" aria-label="閉じる">×</button>
-    <ul class="mh-list">
-      <li><a href="index.html">ホーム</a></li>
-      <li><a href="vision.html">理念</a></li>
-      <li><a href="legal.html">法令順守</a></li>
-    </ul>
-  </div>
-</nav>
-
-<script>
-/* ← このスクリプトも必ずこの位置に置いてください */
-document.addEventListener('DOMContentLoaded', () => {
-  const btn    = document.querySelector('.mh-btn');
-  const drawer = document.getElementById('mhDrawer');
-  if(!btn || !drawer) return;
-  const closeB = drawer.querySelector('.mh-close');
-
-  const open = () => {
-    drawer.classList.add('is-open');
-    drawer.setAttribute('aria-hidden','false');
-    btn.setAttribute('aria-expanded','true');
-    document.body.style.overflow='hidden';
-  };
-  const close = () => {
-    drawer.classList.remove('is-open');
-    drawer.setAttribute('aria-hidden','true');
-    btn.setAttribute('aria-expanded','false');
-    document.body.style.overflow='';
-  };
-
-  btn.addEventListener('click', open);
-  closeB && closeB.addEventListener('click', close);
-  // 黒いオーバーレイ部分をタップしたら閉じる
-  drawer.addEventListener('click', e => { if(e.target === drawer) close(); });
-});
-</script>
 <!-- ===== /モバイルメニュー：安全版 ===== -->
 
 </body>
 </html>
+
 
 
 
