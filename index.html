@@ -14,31 +14,27 @@
 <!-- ヘッダーは削除 -->
 
 <!-- メインビジュアル -->
-/* ==== ヘッダー強制レイアウト（最後に追記） ==== */
+<!-- ===== ヘッダーここから ===== -->
+<style>
 .site-header{
   background:#fff;
   padding:10px 40px;
   border-bottom:1px solid #eee;
-  text-align:left !important;          /* 1) 中央寄せを打ち消す */
 }
 .header-inner{
   max-width:1200px;
-  width:100%;
   margin:0 auto;
-  display:flex !important;              /* 2) 必ずflexにする */
-  align-items:center !important;        /* 高さを揃える */
-  justify-content:space-between !important; /* 左右に振り分け */
-  text-align:left !important;           /* 念のため */
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 .logo img{
   height:50px;
   width:auto;
-  display:block;                        /* 画像の下ズレ防止 */
+  display:block;
 }
 .btn-estimate{
-  display:inline-block !important;
-  position:static !important;           /* 絶対配置を無効化 */
-  margin-left:auto !important;          /* 右側へ押し出す */
+  display:inline-block;
   padding:10px 20px;
   background:#f90;
   color:#fff;
@@ -46,12 +42,23 @@
   text-decoration:none;
   font-weight:700;
 }
-/* モバイルでも左右配置維持。必要ならここで高さ/余白だけ調整 */
 @media(max-width:640px){
   .site-header{ padding:8px 16px; }
   .logo img{ height:42px; }
 }
+</style>
 
+<header class="site-header">
+  <div class="header-inner">
+    <!-- ロゴ画像 -->
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="お家.com">
+    </a>
+    <!-- 無料見積りボタン -->
+    <a href="form.html" class="btn-estimate">無料見積り</a>
+  </div>
+</header>
+<!-- ===== ヘッダーここまで ===== -->
 
 
 
@@ -241,6 +248,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
