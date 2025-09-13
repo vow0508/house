@@ -472,6 +472,58 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
   max-height:85vh; overflow:auto;
 }
 
+/* ===== mh- メニュー：最終上書き（他と衝突しません） ===== */
+
+/* 右上の丸ボタン：ロゴや「無料見積り」と重ならない位置に */
+.mh-btn{
+  position: fixed;
+  top: 64px;           /* ← ここで縦位置をロゴの下に逃がします。邪魔なら 56~72 で微調整 */
+  right: 12px;
+  width: 48px; height: 48px;
+  border: none; border-radius: 50%;
+  font-size: 22px; line-height: 48px; text-align: center;
+  background: #111827; color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  z-index: 2147483647;
+}
+@media (min-width: 768px){ .mh-btn{ display:none; } } /* PCでは出さない */
+
+/* オーバーレイ（最初は画面外・上） */
+.mh-drawer{
+  position: fixed; inset: 0; z-index: 2147483646;
+  background: rgba(0,0,0,.48);
+  transform: translateY(-100%);          /* 上から降りる */
+  transition: transform .25s ease;
+  display: block;                         /* ulが露出する事故防止 */
+}
+.mh-drawer.is-open{ transform: translateY(0); }
+@media (min-width: 768px){ .mh-drawer{ display:none; } } /* PCでは非表示 */
+
+/* 白いパネル本体 */
+.mh-panel{
+  position: absolute; left: 0; right: 0; top: 0;
+  background: #fff; border-radius: 0 0 16px 16px;
+  padding: 20px 16px 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  max-height: 85vh; overflow: auto;
+}
+
+/* ×ボタンとリスト */
+.mh-close{
+  position: absolute; right: 12px; top: 10px;
+  border: none; background: transparent;
+  font-size: 28px; line-height: 1; color: #111827;
+}
+.mh-list{ list-style: none; margin: 28px 0 0; padding: 0; }
+.mh-list li{ border-bottom: 1px solid #eee; }
+.mh-list a{
+  display: block; padding: 16px 4px;
+  text-decoration: none; color: #111827; font-weight: 700;
+}
+
+/* 念のため：ヘッダー等より前面に出す／下の要素は z-index を低く */
+.site-header, .hero, .site-foot{ position: relative; z-index: 1; }
+
 
 
 
