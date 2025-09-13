@@ -273,9 +273,52 @@
  
 
 
+<!-- ===== モバイルメニュー：安全版（右上・上からスライド） ===== -->
+<button class="mh-btn" aria-label="メニュー" aria-controls="mhDrawer" aria-expanded="false">☰</button>
+
+<nav id="mhDrawer" class="mh-drawer" aria-hidden="true">
+  <div class="mh-panel">
+    <button class="mh-close" aria-label="閉じる">×</button>
+    <ul class="mh-list">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="vision.html">理念</a></li>
+      <li><a href="legal.html">法令順守</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+/* ← このスクリプトも必ずこの位置に置いてください */
+document.addEventListener('DOMContentLoaded', () => {
+  const btn    = document.querySelector('.mh-btn');
+  const drawer = document.getElementById('mhDrawer');
+  if(!btn || !drawer) return;
+  const closeB = drawer.querySelector('.mh-close');
+
+  const open = () => {
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden','false');
+    btn.setAttribute('aria-expanded','true');
+    document.body.style.overflow='hidden';
+  };
+  const close = () => {
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden','true');
+    btn.setAttribute('aria-expanded','false');
+    document.body.style.overflow='';
+  };
+
+  btn.addEventListener('click', open);
+  closeB && closeB.addEventListener('click', close);
+  // 黒いオーバーレイ部分をタップしたら閉じる
+  drawer.addEventListener('click', e => { if(e.target === drawer) close(); });
+});
+</script>
+<!-- ===== /モバイルメニュー：安全版 ===== -->
 
 </body>
 </html>
+
 
 
 
