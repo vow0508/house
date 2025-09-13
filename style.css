@@ -906,6 +906,21 @@ body.nav-open{ overflow:hidden; }
 
 
 
+/* 画面を覆う半透明オーバーレイ（黒35%） */
+#backdrop.backdrop{
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0,0,0,0.35) !important;  /* ← ここが半透明 */
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity .2s ease !important;
+  z-index: 2147483646 !important;
+}
+#backdrop.backdrop.show{
+  opacity: 1 !important;                   /* ← 表示時に効く */
+  pointer-events: auto !important;
+}
+
 
 
 
