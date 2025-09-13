@@ -45,3 +45,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn    = document.querySelector('.mh-btn');
+  const drawer = document.getElementById('mhDrawer');
+  const closeB = drawer ? drawer.querySelector('.mh-close') : null;
+  if(!btn || !drawer) return;
+
+  const open = () => {
+    drawer.classList.add('is-open');                 // ← これが無かった
+    drawer.setAttribute('aria-hidden','false');
+    btn.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  };
+  const close = () => {
+    drawer.classList.remove('is-open');              // ← これも
+    drawer.setAttribute('aria-hidden','true');
+    btn.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  };
+
+  btn.addEventListener('click', open);
+  closeB && closeB.addEventListener('click', close);
+  drawer.addEventListener('click', e => { if(e.target === drawer) close(); }); // 背景タップで閉じる
+});
+</script>
+
+
+
