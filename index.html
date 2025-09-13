@@ -15,49 +15,22 @@
 
 <!-- メインビジュアル -->
 <!-- ===== ヘッダーここから ===== -->
-<style>
-.site-header{
-  background:#fff;
-  padding:10px 40px;
-  border-bottom:1px solid #eee;
-}
-.header-inner{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.logo img{
-  height:50px;
-  width:auto;
-  display:block;
-}
-.btn-estimate{
-  display:inline-block;
-  padding:10px 20px;
-  background:#f90;
-  color:#fff;
-  border-radius:20px;
-  text-decoration:none;
-  font-weight:700;
-}
-@media(max-width:640px){
-  .site-header{ padding:8px 16px; }
-  .logo img{ height:42px; }
-}
-</style>
 
-<header class="site-header">
-  <div class="header-inner">
-    <!-- ロゴ画像 -->
-    <a href="index.html" class="logo">
-      <img src="images/logo.png" alt="お家.com">
-    </a>
-    <!-- 無料見積りボタン -->
-    <a href="form.html" class="btn-estimate">無料見積り</a>
+<!-- ==== モバイル専用：右下の丸ボタン ==== -->
+<button class="fab-menu" aria-label="メニュー" aria-controls="navDrawer" aria-expanded="false">☰</button>
+
+<!-- ==== 全画面ドロワー ==== -->
+<nav id="navDrawer" class="drawer" aria-hidden="true">
+  <div class="drawer__panel">
+    <button class="drawer__close" aria-label="閉じる">×</button>
+    <ul class="drawer__list">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="vision.html">理念</a></li>
+      <li><a href="legal.html">法令順守</a></li>
+    </ul>
   </div>
-</header>
+</nav>
+
 <!-- ===== ヘッダーここまで ===== -->
 
 
@@ -265,6 +238,7 @@
   
 </body>
 </html>
+
 
 
 
