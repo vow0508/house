@@ -444,5 +444,48 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 
 
 
+/* 右下の丸いハンバーガー（モバイルのみ表示） */
+.fab-menu{
+  position:fixed; right:16px; bottom:16px; z-index:10000;
+  width:54px; height:54px; border-radius:50%;
+  border:none; font-size:22px; line-height:54px; text-align:center;
+  background:#111827; color:#fff; box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+@media (min-width:768px){ .fab-menu{ display:none; } }
+
+/* ドロワー本体：デフォは非表示（下からスライドイン） */
+.drawer{
+  position:fixed; inset:0; z-index:9999;
+  background:rgba(0,0,0,.48);
+  transform:translateY(100%); transition:transform .25s ease;
+  display:block; /* ulが露出しないよう常にblockにしておく */
+}
+.drawer.is-open{ transform:translateY(0); }
+@media (min-width:768px){ .drawer{ display:none; } } /* PCでは出さない */
+
+/* ドロワーの白いパネル */
+.drawer__panel{
+  position:absolute; left:0; right:0; bottom:0;
+  background:#fff; border-radius:16px 16px 0 0;
+  padding:20px 16px 28px;
+  box-shadow:0 -10px 30px rgba(0,0,0,.15);
+  max-height:85vh; overflow:auto;
+}
+
+/* 閉じるボタン */
+.drawer__close{
+  position:absolute; right:12px; top:10px;
+  border:none; background:transparent;
+  font-size:28px; line-height:1; color:#111827;
+}
+
+/* メニューの見た目 */
+.drawer__list{ list-style:none; margin:28px 0 0; padding:0; }
+.drawer__list li{ border-bottom:1px solid #eee; }
+.drawer__list a{
+  display:block; padding:16px 4px;
+  text-decoration:none; color:#111827; font-weight:700;
+}
+
 
 
