@@ -345,81 +345,23 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
   font-weight: bold;
 }
 
-/* PC表示の時は横並び */
-@media (min-width: 768px) {
-  .nav-menu {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    gap: 1.5em;
-    border: none;
-    padding: 0;
-  }
-  .nav-toggle {
-    display: none;
-  }
-}
 
 
 
 
-
-.logo-wrap {
-  display: flex;
-  flex-direction: column; /* スマホは縦並び */
-}
-
-.logo {
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
-.tagline {
-  font-size: 0.85em;
-  color: #666;
-}
-
-/* PCでは横並びに変更 */
-@media (min-width: 768px) {
-  .logo-wrap {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 1em;
-  }
-  .tagline {
-    font-size: 1em;
-    color: #333;
-  }
-}
-
-
-
-
-.hero {
-  background: url('images/hero-bg.jpg') no-repeat center center/cover;
-  text-align: center;
-  padding: 3em 1em;
-}
-
-.hero-logo {
-  height: 60px;
-  margin-bottom: 0.5em;
-}
-
-.hero-tagline {
-  font-size: 1.5em;
-  margin: 0.5em 0 1em;
-  color: #333;
+.logo img {
+  height: 50px;      /* ロゴの高さを調整 */
+  width: auto;       /* アスペクト比を維持 */
+  margin-left: 20px; /* 左に余白を確保 */
 }
 
 .btn-estimate {
-  display: inline-block;
-  padding: 0.6em 1.2em;
-  background: #f39c12;
+  background: #f90;
   color: #fff;
-  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 20px;
   text-decoration: none;
-  border-radius: 6px;
+  font-weight: bold;
 }
 
 
