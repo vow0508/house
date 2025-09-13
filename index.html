@@ -356,8 +356,61 @@
 </script>
 
 
+<script>
+// ===== シンプルスライダー =====
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.slider .slide');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => {
+      s.classList.toggle('active', i === index);
+    });
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  // 5秒ごとに切り替え
+  setInterval(nextSlide, 5000);
+});
+</script>
+
+<style>
+/* スライダー用の最低限のCSS */
+.slider {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+}
+.slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.slide.active {
+  opacity: 1;
+}
+.cap {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: #fff;
+}
+</style>
+
+
+  
+
 </body>
 </html>
+
 
 
 
