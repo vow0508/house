@@ -639,6 +639,30 @@ body.nav-open{ overflow:hidden; }
   */
 }
 
+/* ==== スマホのメニューがスライドの背面に回る問題の修正 ==== */
+
+/* ヘッダー（親）を最前面に */
+.site-header{
+  position: sticky;   /* 固定しないなら relative でもOK */
+  top: 0;
+  z-index: 5000;      /* 大きくして前面へ */
+  background: #fff;
+}
+
+/* ドロワーと半透明背景はさらに前面に */
+.mnav{ z-index: 6000 !important; }        /* メニュー本体 */
+#backdrop.backdrop{ z-index: 5500 !important; }  /* 半透明レイヤー */
+
+/* スライダーの層はヘッダーより背面に */
+.slider{ position: relative; z-index: 0; }
+.slider::before,
+.slider::after,
+.slider .slide{ z-index: 0; }
+.slider .cap{ z-index: 2; }  /* スライド上の文字は画像より前、メニューより後でOK */
+
+/* 既存の「.site-header, .hero, .site-foot{ z-index:1 }」を無効化（安全網） */
+.site-header, .hero, .site-foot{ z-index: auto; }
+
 
 
 
