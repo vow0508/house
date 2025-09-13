@@ -664,6 +664,49 @@ body.nav-open{ overflow:hidden; }
 .site-header, .hero, .site-foot{ z-index: auto; }
 
 
+/* ==== メニューを常に最前面に ==== */
+.mnav {
+  position: fixed !important;
+  top: 0; left: 0; bottom: 0;
+  width: 70vw; max-width: 360px;
+  background: #fff;
+  transform: translateX(-100%);
+  transition: transform .25s ease;
+  padding: 16px;
+  box-shadow: 2px 0 12px rgba(0,0,0,.08);
+  z-index: 99999 !important;   /* ← 強制的に最前面 */
+}
+
+.mnav[aria-hidden="false"] {
+  transform: translateX(0);
+}
+
+#backdrop.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 99998 !important;   /* 背景も前面へ */
+}
+#backdrop.backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* スライダーやヘッダーより後ろに固定 */
+.slider,
+.slider::before,
+.slider::after,
+.slider .slide,
+.slider .cap,
+.site-header,
+.hero,
+.site-foot {
+  z-index: 0 !important;
+}
+
 
 
 
