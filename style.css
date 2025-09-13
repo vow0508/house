@@ -370,6 +370,44 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 
 
 
+/* ==== ヘッダー強制レイアウト（最後に追記） ==== */
+.site-header{
+  background:#fff;
+  padding:10px 40px;
+  border-bottom:1px solid #eee;
+  text-align:left !important;          /* 1) 中央寄せを打ち消す */
+}
+.header-inner{
+  max-width:1200px;
+  width:100%;
+  margin:0 auto;
+  display:flex !important;              /* 2) 必ずflexにする */
+  align-items:center !important;        /* 高さを揃える */
+  justify-content:space-between !important; /* 左右に振り分け */
+  text-align:left !important;           /* 念のため */
+}
+.logo img{
+  height:50px;
+  width:auto;
+  display:block;                        /* 画像の下ズレ防止 */
+}
+.btn-estimate{
+  display:inline-block !important;
+  position:static !important;           /* 絶対配置を無効化 */
+  margin-left:auto !important;          /* 右側へ押し出す */
+  padding:10px 20px;
+  background:#f90;
+  color:#fff;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:700;
+}
+/* モバイルでも左右配置維持。必要ならここで高さ/余白だけ調整 */
+@media(max-width:640px){
+  .site-header{ padding:8px 16px; }
+  .logo img{ height:42px; }
+}
+
 
 
 
