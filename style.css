@@ -821,6 +821,47 @@ body.nav-open{ overflow:hidden; }
 
 
 
+/* === PCメニューを横並びに強制（pnav） === */
+.pnav { display: none; }
+
+@media (min-width: 769px){
+  /* PCではpnavを表示、mnav/ハンバーガーは非表示 */
+  #pnav{ display:block !important; }
+  #mnav{ display:none !important; }
+  .menu-toggle{ display:none !important; }
+
+  /* 横並びを強制 */
+  #pnav .pnav-list{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    gap:16px !important;
+    margin:0 !important;
+    padding:0 !important;
+    list-style:none !important;
+    flex-wrap:nowrap !important;      /* 折り返さない */
+    white-space:nowrap !important;     /* 文字も折り返さない */
+  }
+  #pnav .pnav-list li{
+    display:inline-flex !important;
+  }
+  #pnav .pnav-list a{
+    display:inline-block !important;
+    padding:8px 10px !important;
+    border-radius:6px;
+    color:#111; text-decoration:none;
+  }
+  #pnav .pnav-list a:hover{ background:#f1f5f9; }
+
+  /* ヘッダーの横並びを安定させる */
+  .header-inner{
+    display:flex !important;
+    align-items:center !important;
+    gap:20px;
+  }
+  .btn-estimate{ margin-left:auto; }   /* 右端へ */
+}
+
 
 
 
