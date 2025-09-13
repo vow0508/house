@@ -12,3 +12,14 @@ if(localStorage.getItem('brzKey')!==dayKey){shuffle(bronze); bronze.forEach(el=>
 const silverWrap=document.getElementById('tierSilver'); const silver=Array.from(silverWrap.children);
 const d=new Date(); const weekKey=d.getFullYear()+'-W'+Math.ceil((d.getDate())/7);
 if(localStorage.getItem('slvKey')!==weekKey){shuffle(silver); silver.forEach(el=>silverWrap.appendChild(el)); localStorage.setItem('slvKey',weekKey);}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.querySelector(".nav-menu");
+  if(toggle && menu){
+    toggle.addEventListener("click", () => {
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    });
+  }
+});
