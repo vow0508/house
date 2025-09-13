@@ -395,6 +395,33 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
 
 
 
+.hero {
+  background: url('images/hero-bg.jpg') no-repeat center center/cover;
+  text-align: center;
+  padding: 3em 1em;
+}
+
+.hero-logo {
+  height: 60px;
+  margin-bottom: 0.5em;
+}
+
+.hero-tagline {
+  font-size: 1.5em;
+  margin: 0.5em 0 1em;
+  color: #333;
+}
+
+.btn-estimate {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  background: #f39c12;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
 
 
 
