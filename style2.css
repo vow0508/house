@@ -37,3 +37,58 @@ h2, h3 {
   margin-bottom: 0.6em;
   font-weight: 700;
 }
+
+
+
+/* ===== ページ本文 ===== */
+.page-content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;   /* 本文中央寄せ */
+  line-height: 1.8;
+}
+
+/* ===== ナビゲーションを中央配置 ===== */
+.main-nav {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;   /* 横並びにする */
+  gap: 20px;              /* メニュー間の余白 */
+}
+
+.main-nav li {
+  display: inline;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.main-nav a:hover {
+  color: #0077cc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
