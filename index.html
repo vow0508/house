@@ -510,27 +510,9 @@ nav.addEventListener('click', (e) => {
 </script>
 
 
-<script>
-// ===== シンプルスライダー =====
-document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelectorAll('.slider .slide');
-  let current = 0;
 
-  function showSlide(index) {
-    slides.forEach((s, i) => {
-      s.classList.toggle('active', i === index);
-    });
-  }
 
-  function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }
 
-  // 5秒ごとに切り替え
-  setInterval(nextSlide, 5000);
-});
-</script>
 
 <style>
 /* スライダー用の最低限のCSS */
@@ -1269,6 +1251,7 @@ nav.addEventListener('click', (e) => {
 
 </body>
 </html>
+
 
 
 
