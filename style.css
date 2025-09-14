@@ -617,13 +617,6 @@ body.nav-open{ overflow:hidden; }
 }
 
 /* 背景を少し暗くして可読性UP（任意） */
-.slider::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.25));
-  z-index: 1;                  /* 画像の上、文字の下 */
-}
 
 /* 大画面では左下寄せにしたい場合（任意。中央のままで良ければ不要） */
 @media (min-width: 1024px){
@@ -975,6 +968,7 @@ body.nav-open{ overflow:hidden; }
 .slider::after{
   content: none !important;
 }
+
 
 
 
