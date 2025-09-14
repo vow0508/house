@@ -972,6 +972,10 @@ body.nav-open{ overflow:hidden; }
 
 
 
+.slider::after{
+  content: none !important;
+}
+
 
 
 
