@@ -1,342 +1,5 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>お家.com｜仲介手数料 無料見積り</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="style.css?v=20250914a">
-
-<style>
-/* ヘッダー */
-.site-header {
-  background:#fff;
-  padding:10px 40px;
-  border-bottom:1px solid #eee;
-}
-.header-inner {
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.logo img {
-  height:60px;
-  width:auto;
-  display:block;
-}
-.btn-estimate {
-  display:inline-block;
-  padding:10px 20px;
-  background:#f90;
-  color:#fff;
-  border-radius:20px;
-  text-decoration:none;
-  font-weight:700;
-}
-@media(max-width:640px){
-  .site-header { padding:8px 16px; }
-  .logo img { height:42px; }
-}
-</style>
-
-</head>
-<body>
-
-<!-- ===== ヘッダーここから ===== -->
-<header class="site-header">
-  <div class="header-inner">
-    <!-- ロゴ -->
-    <a href="index.html" class="logo">
-      <img src="images/logo.png" alt="お家.com">
-    </a>
-
-    <!-- PC用ナビ -->
-    <nav id="pnav" class="pnav" aria-label="グローバル">
-      <ul class="pnav-list">
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="vision.html">理念</a></li>
-        <li><a href="legal.html">法令順守</a></li>
-      </ul>
-    </nav>
-
-    <!-- スマホ用ナビ -->
-    <nav id="mnav" class="mnav" aria-hidden="true">
-      <ul class="mnav-list">
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="vision.html">理念</a></li>
-        <li><a href="legal.html">法令順守</a></li>
-      </ul>
-    </nav>
-
-    <!-- 見積りボタン -->
-    <a href="https://forms.gle/JFEfwf4pY9JbTSKDA" class="btn-estimate">無料見積り</a>
-
-    <!-- ハンバーガーボタン -->
-    <button id="menuButton"
-            class="menu-toggle"
-            aria-label="メニューを開く"
-            aria-controls="mnav"
-            aria-expanded="false">
-      <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22">
-        <path d="M3 6h18M3 12h18M3 18h18"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"/>
-      </svg>
-    </button>
-  </div>
-</header>
-
-<!-- backdrop は 1つだけ -->
-<div id="backdrop" class="backdrop" hidden></div>
-
-<!-- ===== ヘッダーここまで ===== -->
-
-
-<!-- ===== スライダー ===== -->
-<section class="slider" aria-label="注目スライド">
-  <div class="slide active" style="background-image:url('slide1.jpg');"></div>
-  <div class="slide" style="background-image:url('slide2.jpg');"></div>
-  <div class="slide" style="background-image:url('slide3.jpg');"></div>
-  <div class="cap">
-    <h1>仲介手数料無料のその先へ</h1>
-    <p>新しい時代の不動産エージェント</p>
-    <a class="cta-hero" href="https://forms.gle/JFEfwf4pY9JbTSKDA">無料見積りを依頼する</a>
-  </div>
-</section>
-
-
-<!-- 他のセクション（省略せずそのまま残す） -->
-<section class="search-box">
-  <h2>あなたに、ピッタリの宅建士をみつけよう！</h2>
-  <p>相性重視のマッチング。もし合わなくても、変更はいつでも無料。</p>
-  <div class="search">
-    <input placeholder="『港区』『相続に強い』で検索">
-    <button>宅建士を探す</button>
-  </div>
-</section>
-
-<!-- ... 以下コンテンツはそのまま ... -->
-
-<footer class="site-foot"><small>c お家.com | デモサイト</small></footer>
-
-<!-- ===== スクリプト ===== -->
-<script>
-(function () {
-  const btn = document.getElementById('menuButton');
-  const nav = document.getElementById('mnav');
-  const backdrop = document.getElementById('backdrop');
-
-  if (!btn || !nav || !backdrop) return;
-
-  function openNav() {
-    nav.setAttribute('aria-hidden', 'false');
-    btn.setAttribute('aria-expanded', 'true');
-    document.body.classList.add('nav-open');
-    backdrop.hidden = false;
-    requestAnimationFrame(() => backdrop.classList.add('show'));
-    btn.setAttribute('aria-label', 'メニューを閉じる');
-  }
-
-  function closeNav() {
-    nav.setAttribute('aria-hidden', 'true');
-    btn.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('nav-open');
-    backdrop.classList.remove('show');
-    setTimeout(() => { backdrop.hidden = true; }, 200);
-    btn.setAttribute('aria-label', 'メニューを開く');
-  }
-
-  function toggleNav() {
-    const isOpen = nav.getAttribute('aria-hidden') === 'false';
-    isOpen ? closeNav() : openNav();
-  }
-
-  btn.addEventListener('click', toggleNav);
-  backdrop.addEventListener('click', closeNav);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav.getAttribute('aria-hidden') === 'false') {
-      closeNav();
-      btn.focus();
-    }
-  });
-})();
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  if (window._sliderInitialized) return;
-  window._sliderInitialized = true;
-  if (window._sliderTimer) clearInterval(window._sliderTimer);
-
-  const slides = Array.from(document.querySelectorAll('.slider .slide'));
-  if (!slides.length) return;
-
-  let current = slides.findIndex(s => s.classList.contains('active'));
-  if (current === -1) current = 0;
-
-  function show(index){
-    slides.forEach((s,i) => s.classList.toggle('active', i === index));
-  }
-
-  function ensureOneActive(){
-    if (!document.querySelector('.slider .slide.active')) {
-      current = 0;
-      show(current);
-    }
-  }
-
-  show(current);
-
-  function next(){
-    current = (current + 1) % slides.length;
-    show(current);
-    ensureOneActive();
-  }
-
-  document.addEventListener('visibilitychange', () => {
-    if (!document.hidden) ensureOneActive();
-  });
-
-  window._sliderTimer = setInterval(next, 5000);
-});
-</script>
-
-<!-- ===== CSS ===== -->
-<style>
-/* backdrop 調整済み */
-.backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .2s;
-  z-index: 900;
-}
-.backdrop.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-#mnav {
-  position: fixed;
-  top: 0; right: 0; left: 0;
-  background: #fff;
-  z-index: 1000; /* backdrop より前 */
-}
-
-/* スライダー */
-.slider { position: relative; overflow: hidden; height: 70vh; }
-.slider .slide{
-  position: absolute; inset: 0;
-  background-size: cover; background-position: center;
-  opacity: 0; transition: opacity 1s; z-index: 1;
-}
-.slider .slide.active{ opacity: 1; }
-.slider .cap{
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; color: #fff; z-index: 2;
-}
-.slider::after{
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.25));
-  z-index: 1;
-}
-</style>
-
-/* ===== 注目の宅建士：レイアウトを元に戻す ===== */
-
-/* 行間・コンテナ */
-.section { padding: 40px 16px; }
-.inner { max-width: 1200px; margin: 0 auto; }
-
-/* タイトル色（ゴールド／シルバー／ブロンズ） */
-.tier-title { margin: 24px 0 12px; font-size: 1.1rem; }
-.tier-title.gold { color: #b8860b; }
-.tier-title.silver { color: #6b7280; }
-.tier-title.bronze { color: #b45309; }
-
-/* ★ 列数指定：スマホ2列、PC4列（各tierとも同じレイアウト） */
-.cards,
-.cards.cards-12 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2列（SP） */
-  gap: 16px;
-}
-@media (min-width: 960px) {
-  .cards,
-  .cards.cards-12 {
-    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4列（PC） */
-  }
-}
-
-/* カード（ドロップシャドウを元の雰囲気に） */
-.card {
-  position: relative;
-  background: #fff;
-  border-radius: 14px;
-  padding: 16px;
-  text-align: center;
-  overflow: hidden;
-  /* シャドウ強めに（上品めの二重影） */
-  box-shadow:
-    0 10px 24px rgba(17, 24, 39, 0.12),
-    0 2px 6px rgba(17, 24, 39, 0.06);
-}
-
-/* アバターの見た目（円形＆影） */
-.avatar-wrap { display: flex; justify-content: center; }
-.card .avatar {
-  width: 120px; height: 120px; object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,.12);
-  margin: 0 auto 10px;
-}
-
-/* ラベル（PR／おすすめ／掲載枠）を画像の上に重ねる */
-.badge {
-  position: absolute; top: 10px; left: 10px;
-  background: #111827; color: #fff;
-  padding: 4px 10px; border-radius: 9999px; font-size: .75rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,.18);
-}
-
-/* ボタン（元の淡い色味をキープ） */
-.card .btn {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 8px 12px;
-  border-radius: 9999px;
-  background: #f3f4f6;      /* ベース */
-  color: #111827;
-  text-decoration: none;
-}
-.card--pro .btn    { background: #ffedd5; } /* ゴールド */
-.card--silver .btn { background: #e5e7eb; } /* シルバー */
-.card--bronze .btn { background: #fef3c7; } /* ブロンズ */
-
-/* ポイント3（元の淡いカード調） */
-.points-3 {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:16px; margin:16px 0;
-}
-.point {
-  background:#f9fafb; border-radius:12px; padding:16px;
-  box-shadow: 0 1px 3px rgba(0,0,0,.08);
-}
-
-
-
-
-
 /* ========== Theme (classic) ========== */
-:root{
+:root {
   --brand1:#ff8a00;  /* オレンジ（左） */
   --brand2:#ffb200;  /* オレンジ（右） */
   --ink:#1f2937;
@@ -349,134 +12,166 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 /* Reset */
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-img{max-width:100%;height:auto;display:block}
-a{text-decoration:none;color:inherit}
-body{
+* { box-sizing:border-box; }
+html, body { margin:0; padding:0; }
+img { max-width:100%; height:auto; display:block; }
+a { text-decoration:none; color:inherit; }
+body {
   font-family:"Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   color:var(--ink); background:#fff; line-height:1.75;
 }
 
 /* ========== Header ========== */
-.site-header{
+.site-header {
   position:sticky; top:0; z-index:100;
   background:#fff; border-bottom:1px solid #eef2f7;
   box-shadow:0 2px 12px rgba(0,0,0,.05);
 }
-.header-inner{max-width:1200px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px;justify-content:space-between}
-.logo img{height:44px}
-.btn-estimate{
+.header-inner {
+  max-width:1200px; margin:0 auto; padding:12px 16px;
+  display:flex; align-items:center; gap:12px; justify-content:space-between;
+}
+.logo img { height:44px; }
+.btn-estimate {
   display:inline-block; padding:10px 18px; border-radius:9999px; color:#fff; font-weight:700;
   background:linear-gradient(90deg,var(--brand1),var(--brand2));
   box-shadow:0 10px 24px rgba(255,138,0,.28);
 }
-.pnav{display:none}
-@media (min-width:960px){
-  .pnav{display:block}
-  .pnav-list{list-style:none;display:flex;gap:22px;margin:0;padding:0}
-  .pnav a{color:#111}
+.pnav { display:none; }
+@media (min-width:960px) {
+  .pnav { display:block; }
+  .pnav-list { list-style:none; display:flex; gap:22px; margin:0; padding:0; }
+  .pnav a { color:#111; }
 }
 
+/* ========== Mobile Nav & Backdrop ========== */
+.backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0; pointer-events: none;
+  transition: opacity .2s;
+  z-index: 900;
+}
+.backdrop.show { opacity: 1; pointer-events: auto; }
+#mnav {
+  position: fixed; top:0; right:0; bottom:0; width:min(86vw,360px);
+  background:#fff; z-index:1000;
+  transform:translateX(100%);
+  transition:transform .25s ease;
+  padding:20px;
+}
+#mnav[aria-hidden="false"] { transform:translateX(0); }
+.mnav-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; }
+.mnav a { display:block; padding:12px 10px; border-radius:10px; background:#f8fafc; }
+
 /* ========== Slider ========== */
-.slider{position:relative; height:56vh; min-height:320px; overflow:hidden; background:#eee}
-.slide{position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition:opacity 1s}
-.slide.active{opacity:1}
-.slider::after{content:""; position:absolute; inset:0;
+.slider { position:relative; height:56vh; min-height:320px; overflow:hidden; background:#eee; }
+.slide { position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition:opacity 1s; }
+.slide.active { opacity:1; }
+.slider::after {
+  content:""; position:absolute; inset:0;
   background:linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.15));
 }
-.cap{
+.cap {
   position:absolute; inset:auto 6% 12% 6%; z-index:2; color:#fff; text-shadow:0 6px 24px rgba(0,0,0,.45);
   display:flex; flex-direction:column; align-items:flex-start; gap:10px;
 }
-.cap h1{margin:0; font-size:clamp(22px,5.2vw,44px); line-height:1.25}
-.cap p{margin:0; opacity:.95}
-.cta-hero{
+.cap h1 { margin:0; font-size:clamp(22px,5.2vw,44px); line-height:1.25; }
+.cap p { margin:0; opacity:.95; }
+.cta-hero {
   display:inline-block; margin-top:6px; padding:12px 22px; border-radius:9999px; font-weight:700; color:#fff;
-  background:linear-gradient(90deg,var(--brand1),var(--brand2)); box-shadow:0 12px 28px rgba(255,138,0,.35);
+  background:linear-gradient(90deg,var(--brand1),var(--brand2));
+  box-shadow:0 12px 28px rgba(255,138,0,.35);
 }
 
 /* ========== Search ========== */
-.search-box{
+.search-box {
   padding:28px 16px; text-align:center;
   background:linear-gradient(180deg,#ffe6cf 0%, #fff 45%);
 }
-.search-box h2{margin:0 0 6px; font-size:22px}
-.search-box p{margin:0 0 14px; color:var(--muted)}
-.search{display:flex; gap:10px; max-width:760px; margin:0 auto}
-.search input{
+.search-box h2 { margin:0 0 6px; font-size:22px; }
+.search-box p { margin:0 0 14px; color:var(--muted); }
+.search { display:flex; gap:10px; max-width:760px; margin:0 auto; }
+.search input {
   flex:1; padding:14px 18px; border-radius:9999px; border:1px solid #e5e9f0; background:#fff;
   box-shadow:inset 0 2px 6px rgba(0,0,0,.03);
 }
-.search input:focus{outline:none; border-color:#ffc56a; box-shadow:0 0 0 4px rgba(255,178,0,.22)}
-.search button{
+.search input:focus {
+  outline:none; border-color:#ffc56a;
+  box-shadow:0 0 0 4px rgba(255,178,0,.22);
+}
+.search button {
   padding:14px 18px; border:none; border-radius:9999px; font-weight:700; color:#fff;
-  background:linear-gradient(90deg,var(--brand1),var(--brand2)); box-shadow:0 10px 26px rgba(255,138,0,.28);
+  background:linear-gradient(90deg,var(--brand1),var(--brand2));
+  box-shadow:0 10px 26px rgba(255,138,0,.28);
 }
 
 /* ========== Sections & Blocks ========== */
-.section{padding:36px 16px}
-.inner{max-width:1200px; margin:0 auto}
+.section { padding:36px 16px; }
+.inner { max-width:1200px; margin:0 auto; }
 
 /* 3 points */
-.points-3{display:grid; gap:16px; margin:8px 0}
-.point{
+.points-3 { display:grid; gap:16px; margin:8px 0; }
+.point {
   background:#fff; border-radius:16px; padding:18px; box-shadow:var(--shadow);
 }
-.point h3{margin:0 0 6px; font-size:18px}
-.point p{margin:0; color:var(--muted)}
+.point h3 { margin:0 0 6px; font-size:18px; }
+.point p { margin:0; color:var(--muted); }
 
 /* ========== Agent Cards (Classic) ========== */
-.tier-title{margin:22px 0 10px; font-size:1.05rem; color:#9aa4b2}
-.tier-title.gold{color:#e09a00}
-.tier-title.silver{color:#8092a5}
-.tier-title.bronze{color:#b07a38}
+.tier-title { margin:22px 0 10px; font-size:1.05rem; color:#9aa4b2; }
+.tier-title.gold { color:#e09a00; }
+.tier-title.silver { color:#8092a5; }
+.tier-title.bronze { color:#b07a38; }
 
-.cards{display:grid; gap:16px}
-.cards-12{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.cards { display:grid; gap:16px; }
+.cards-12 { grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
 
-.card{
-  position:relative; text-align:center; background:#fff; border-radius:var(--radius); padding:16px;
+.card {
+  position:relative; text-align:center; background:#fff;
+  border-radius:var(--radius); padding:16px;
   box-shadow:var(--shadow); overflow:hidden;
 }
-.avatar-wrap{display:flex; justify-content:center; margin-bottom:10px}
-.avatar{
+.avatar-wrap { display:flex; justify-content:center; margin-bottom:10px; }
+.avatar {
   width:120px; height:120px; object-fit:cover; border-radius:20px;
   box-shadow:0 10px 24px rgba(0,0,0,.12);
 }
-.badge{
+.badge {
   position:absolute; top:12px; left:12px; padding:6px 10px; border-radius:9999px;
   background:linear-gradient(90deg,#ffd54a,#ffb300); color:#4b3b00; font-weight:700; font-size:12px;
   box-shadow:0 8px 20px rgba(255,179,0,.35);
 }
-.card h3{margin:6px 0 4px; font-size:18px}
-.card p{margin:0 0 12px; color:var(--muted)}
-.btn{
+.card h3 { margin:6px 0 4px; font-size:18px; }
+.card p { margin:0 0 12px; color:var(--muted); }
+.btn {
   display:inline-block; padding:10px 14px; border-radius:9999px; font-weight:700; color:#fff;
   background:linear-gradient(90deg,var(--brand1),var(--brand2));
   box-shadow:0 10px 24px rgba(255,138,0,.28);
 }
 
-/* Silver/Bronze の地色ニュアンス */
-.card--pro{background:linear-gradient(180deg,#fff 0%, #fff 100%)}
-.card--silver{background:linear-gradient(180deg,#f8fbff 0%, #ffffff 100%)}
-.card--bronze{background:linear-gradient(180deg,#fffaf2 0%, #ffffff 100%)}
+/* Silver/Bronze nuance */
+.card--pro { background:linear-gradient(180deg,#fff 0%, #fff 100%); }
+.card--silver { background:linear-gradient(180deg,#f8fbff 0%, #ffffff 100%); }
+.card--bronze { background:linear-gradient(180deg,#fffaf2 0%, #ffffff 100%); }
 
 /* ========== Footer ========== */
-.site-foot{
-  margin-top:20px; padding:22px 16px; text-align:center; color:#7a8699; background:#fff;
+.site-foot {
+  margin-top:20px; padding:22px 16px; text-align:center;
+  color:#7a8699; background:#fff;
   border-top:1px solid #eef2f7;
 }
 
 /* ========== Desktop tweaks ========== */
-@media (min-width: 960px){
-  .slider{height:64vh; min-height:400px}
-  .cap{left:8%; right:auto}
-  .points-3{grid-template-columns:repeat(3,1fr)}
-  .cards-12{grid-template-columns:repeat(4,1fr)}
-  .card{text-align:left}
-  .avatar-wrap{justify-content:flex-start}
+@media (min-width: 960px) {
+  .slider { height:64vh; min-height:400px; }
+  .cap { left:8%; right:auto; align-items:flex-start; }
+  .points-3 { grid-template-columns:repeat(3,1fr); }
+  .cards-12 { grid-template-columns:repeat(4,1fr); }
+  .card { text-align:left; }
+  .avatar-wrap { justify-content:flex-start; }
 }
+
 
 
 
@@ -500,5 +195,6 @@ body{
 
 
                       
+
 
 
