@@ -403,6 +403,15 @@ body {
   box-shadow: 0 12px 24px rgba(255, 138, 0, 0.45);
 }
 
+.tier-title.gold {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
 
 
 
@@ -414,6 +423,7 @@ body {
 
 
                       
+
 
 
 
