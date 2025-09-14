@@ -384,6 +384,24 @@ body {
 }
 
 
+/* === 注目の宅建士：画像スタイル === */
+.avatar {
+  width: 140px;              /* サイズ調整（お好みで変更可） */
+  height: 140px;
+  object-fit: cover;          /* 画像をはみ出さずに丸く切り抜き */
+  border-radius: 50%;         /* ←丸くする */
+  display: block;
+  margin: 0 auto 10px;        /* 中央寄せ＋下に余白 */
+  box-shadow: 0 8px 18px rgba(255, 138, 0, 0.35); /* オレンジの影 */
+  border: 3px solid #fff;     /* 白枠（高級感UP） */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ホバーした時に少し浮かせる */
+.card:hover .avatar {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(255, 138, 0, 0.45);
+}
 
 
 
@@ -396,6 +414,7 @@ body {
 
 
                       
+
 
 
 
