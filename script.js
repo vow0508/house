@@ -45,13 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-nav.addEventListener('click', (e) => {
-  const a = e.target.closest('a');
-  if (a && window.matchMedia('(max-width: 768px)').matches) {
-    setTimeout(closeNav, 300); // ← ページ遷移が走った後に閉じる
-  }
-});
-
 // メニュー内リンクをタップしたら閉じる（SP時）
 // メニュー内リンクをタップしたら閉じる（SP時）
 nav.addEventListener('click', (e) => {
