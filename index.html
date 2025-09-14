@@ -1110,62 +1110,7 @@ nav.addEventListener('click', (e) => {
 
 
 
-  ...
-  <!-- 他のスクリプト群 -->
-
-  <!-- スライダー制御（新しいコード） -->
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const slides = Array.from(document.querySelectorAll('.slider .slide'));
-    if (!slides.length) return;
-
-    let current = Math.max(0, slides.findIndex(s => s.classList.contains('active')));
-    if (current === -1) current = 0;
-
-    function show(index){
-      slides.forEach((s,i) => s.classList.toggle('active', i === index));
-    }
-
-    function ensureOneActive(){
-      if (!document.querySelector('.slider .slide.active')) {
-        current = 0;
-        show(current);
-      }
-    }
-
-    show(current);
-
-    function next(){
-      current = (current + 1) % slides.length;
-      show(current);
-      ensureOneActive();
-    }
-
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) {
-        ensureOneActive();
-      }
-    });
-
-    setInterval(next, 5000);
-  });
-  </script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
+   
 
 <style>
 /* スライダー用の最低限のCSS */
@@ -1247,10 +1192,50 @@ nav.addEventListener('click', (e) => {
 
 </style>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // --- 多重起動対策（旧コードが残っても安全に） ---
+  if (window._sliderInitialized) return;
+  window._sliderInitialized = true;
+  if (window._sliderTimer) clearInterval(window._sliderTimer);
+
+  const slides = Array.from(document.querySelectorAll('.slider .slide'));
+  if (!slides.length) return;
+
+  let current = Math.max(0, slides.findIndex(s => s.classList.contains('active')));
+  if (current === -1) current = 0;
+
+  function show(index){
+    slides.forEach((s,i) => s.classList.toggle('active', i === index));
+  }
+
+  function ensureOneActive(){
+    if (!document.querySelector('.slider .slide.active')) {
+      current = 0;
+      show(current);
+    }
+  }
+
+  show(current); // 初期表示
+
+  function next(){
+    current = (current + 1) % slides.length;
+    show(current);
+    ensureOneActive();
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) ensureOneActive();
+  });
+
+  window._sliderTimer = setInterval(next, 5000);
+});
+</script>
 
 
 </body>
 </html>
+
 
 
 
