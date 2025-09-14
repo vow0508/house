@@ -86,7 +86,30 @@
   </ul>
 </nav>
 
+  <!-- スマホ表示：ドロワーメニュー -->
+    <nav id="mnav" class="mnav" aria-hidden="true">
+      <ul class="mnav-list">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="vision.html">理念</a></li>
+        <li><a href="legal.html">法令順守</a></li>
+      </ul>
+    </nav>
 
+    <!-- メニュー開閉ボタン -->
+    <button id="menuButton"
+            class="menu-toggle"
+            aria-label="メニューを開く"
+            aria-controls="mnav"
+            aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22">
+        <path d="M3 6h18M3 12h18M3 18h18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
 
 
 
@@ -572,6 +595,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 
 
 
