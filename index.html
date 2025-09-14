@@ -117,6 +117,58 @@
     
   </div>
 </header>
+<script>
+(function () {
+  const btn = document.getElementById('menuButton');
+  const nav = document.getElementById('mnav');
+  const backdrop = document.getElementById('backdrop');
+  if (!btn || !nav || !backdrop) return;
+
+  const open = () => {
+    nav.setAttribute('aria-hidden', 'false');
+    btn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open');
+    backdrop.hidden = false;
+    requestAnimationFrame(() => backdrop.classList.add('show'));
+    btn.setAttribute('aria-label', 'メニューを閉じる');
+  };
+  const close = () => {
+    nav.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+    backdrop.classList.remove('show');
+    setTimeout(() => { backdrop.hidden = true; }, 200);
+    btn.setAttribute('aria-label', 'メニューを開く');
+  };
+
+  const toggle = () => {
+    const isOpen = nav.getAttribute('aria-hidden') === 'false';
+    isOpen ? close() : open();
+  };
+
+  btn.addEventListener('click', toggle);
+  backdrop.addEventListener('click', close);
+
+  // ★リンクのクリックは“妨げない”。遷移が起きなかった場合だけ後から閉じる。
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        // 遷移が発生すればこのページはアンロードされるので何もしない。
+        // 700ms後もこのドキュメントが表示中（=遷移していない）なら閉じる。
+        setTimeout(() => { if (!document.hidden) close(); }, 700);
+      }
+    });
+  });
+
+  // ESCで閉じる
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.getAttribute('aria-hidden') === 'false') {
+      close();
+      btn.focus();
+    }
+  });
+})();
+</script>
 
 <!-- 背景（クリックで閉じる用） -->
 <div id="backdrop" class="backdrop" hidden></div>
@@ -575,6 +627,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 
 
 
