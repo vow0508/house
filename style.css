@@ -414,15 +414,15 @@ body {
   margin: 0 auto 20px auto;
   text-align: center;
 }
-
-.tier-title.gold {
-  display: inline-block !important;
-  background: linear-gradient(90deg, #0070f3, #3399ff) !important; /* 青グラデーション */
-  color: #fff !important;  /* 白文字 */
-  padding: 8px 16px !important;
-  border-radius: 10px !important;
-  line-height: 1 !important;
-  text-align: center; /* 中央寄せ */
+h2.tier-title.gold {
+  display: inline-block;
+  width: 100%;
+  background: linear-gradient(90deg, #0070f3, #3399ff) !important; /* 青帯 */
+  color: #fff !important;   /* 白文字 */
+  padding: 10px 0 !important;
+  border-radius: 0 !important;
+  text-align: center !important;
+  font-size: 1.4rem;
 }
 
 
@@ -433,7 +433,10 @@ body {
 
 
 
+
+
                       
+
 
 
 
