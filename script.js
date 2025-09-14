@@ -53,21 +53,14 @@ nav.addEventListener('click', (e) => {
 });
 
 // メニュー内リンクをタップしたら閉じる（SP時）
+// メニュー内リンクをタップしたら閉じる（SP時）
 nav.addEventListener('click', (e) => {
   const a = e.target.closest('a');
   if (a && window.matchMedia('(max-width: 768px)').matches) {
-    setTimeout(() => {
-      closeNav();
-    }, 400); // ← 0.4秒遅らせて閉じる（リンク遷移が優先される）
+    // 遷移はブラウザに任せ、閉じるだけ遅らせる
+    setTimeout(closeNav, 500);
   }
 });
-
-
-
-
-
-
-
 
 
 
