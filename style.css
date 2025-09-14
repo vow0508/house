@@ -118,14 +118,23 @@ body {
 .point h3 { margin:0 0 6px; font-size:18px; }
 .point p { margin:0; color:var(--muted); }
 
-/* ========== Agent Cards (Classic) ========== */
+/* ========== Agent Cards (Responsive) ========== */
 .tier-title { margin:22px 0 10px; font-size:1.05rem; color:#9aa4b2; }
 .tier-title.gold { color:#e09a00; }
 .tier-title.silver { color:#8092a5; }
 .tier-title.bronze { color:#b07a38; }
 
-.cards { display:grid; gap:16px; }
-.cards-12 { grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+.cards-12 {
+  display:grid;
+  grid-template-columns:repeat(2, 1fr); /* スマホ：2列固定 */
+  gap:16px;
+}
+@media (min-width:640px) {
+  .cards-12 { grid-template-columns:repeat(3, 1fr); }
+}
+@media (min-width:960px) {
+  .cards-12 { grid-template-columns:repeat(4, 1fr); }
+}
 
 .card {
   position:relative; text-align:center; background:#fff;
@@ -167,7 +176,6 @@ body {
   .slider { height:64vh; min-height:400px; }
   .cap { left:8%; right:auto; align-items:flex-start; }
   .points-3 { grid-template-columns:repeat(3,1fr); }
-  .cards-12 { grid-template-columns:repeat(4,1fr); }
   .card { text-align:left; }
   .avatar-wrap { justify-content:flex-start; }
 }
@@ -194,7 +202,9 @@ body {
 
 
 
+
                       
+
 
 
 
