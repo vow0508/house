@@ -72,21 +72,21 @@
 <!-- ===== ヘッダーここまで ===== -->
 <header class="site-header">
   <div class="header-inner">
-    <!-- ロゴ画像（そのまま） -->
+    <!-- ロゴ -->
     <a href="index.html" class="logo">
       <img src="images/logo.png" alt="お家.com">
     </a>
 
-    <!-- PC表示：横並びメニュー -->
-<nav id="pnav" class="pnav" aria-label="グローバル">
-  <ul class="pnav-list">
-    <li><a href="index.html">ホーム</a></li>
-    <li><a href="vision.html">理念</a></li>
-    <li><a href="legal.html">法令順守</a></li>
-  </ul>
-</nav>
+    <!-- PC用ナビ -->
+    <nav id="pnav" class="pnav" aria-label="グローバル">
+      <ul class="pnav-list">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="vision.html">理念</a></li>
+        <li><a href="legal.html">法令順守</a></li>
+      </ul>
+    </nav>
 
-  <!-- スマホ表示：ドロワーメニュー -->
+    <!-- スマホ用ナビ -->
     <nav id="mnav" class="mnav" aria-hidden="true">
       <ul class="mnav-list">
         <li><a href="index.html">ホーム</a></li>
@@ -95,7 +95,10 @@
       </ul>
     </nav>
 
-    <!-- メニュー開閉ボタン -->
+    <!-- 見積りボタン -->
+    <a href="https://forms.gle/JFEfwf4pY9JbTSKDA" class="btn-estimate">無料見積り</a>
+
+    <!-- ハンバーガーボタン -->
     <button id="menuButton"
             class="menu-toggle"
             aria-label="メニューを開く"
@@ -110,37 +113,11 @@
       </svg>
     </button>
   </div>
-
-
-
-
-
-
-
-    
-    <nav id="mnav" class="mnav" aria-hidden="true">
-      <ul class="mnav-list">
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="vision.html">理念</a></li>
-        <li><a href="legal.html">法令順守</a></li>
-      </ul>
-    </nav>
-
-    <!-- 右側：見積ボタン（そのまま使えます） -->
-    <a href="https://forms.gle/JFEfwf4pY9JbTSKDA" class="btn-estimate">無料見積り</a>
-
-    <!-- スマホ表示：ハンバーガー -->
-    <button id="menuButton"
-            class="menu-toggle"
-            aria-label="メニューを開く"
-            aria-controls="mnav"
-            aria-expanded="false">
-      <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22">
-        <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
-  </div>
 </header>
+
+<!-- 背景（クリックで閉じる用） -->
+<div id="backdrop" class="backdrop" hidden></div>
+
 
 <!-- メニュー開時の半透明背景（必ずheader直後） -->
 <div id="backdrop"
@@ -595,6 +572,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 
 
 
