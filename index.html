@@ -442,12 +442,15 @@
   });
 
   // メニュー内リンクをタップしたら閉じる（SP時）
-  nav.addEventListener('click', (e) => {
-    const a = e.target.closest('a');
-    if (a && window.matchMedia('(max-width: 768px)').matches) {
+// メニュー内リンクをタップしたら閉じる（SP時）
+nav.addEventListener('click', (e) => {
+  const a = e.target.closest('a');
+  if (a && window.matchMedia('(max-width: 768px)').matches) {
+    setTimeout(() => {
       closeNav();
-    }
-  });
+    }, 300); // ← 0.3秒遅らせることでリンク遷移が優先される
+  }
+});
 })();
 </script>
 
@@ -569,6 +572,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 
 
 
