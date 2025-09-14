@@ -1127,27 +1127,63 @@ nav.addEventListener('click', (e) => {
 </script>
 
 
-<script>
-// ===== シンプルスライダー =====
-document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelectorAll('.slider .slide');
-  let current = 0;
 
-  function showSlide(index) {
-    slides.forEach((s, i) => {
-      s.classList.toggle('active', i === index);
+  ...
+  <!-- 他のスクリプト群 -->
+
+  <!-- スライダー制御（新しいコード） -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = Array.from(document.querySelectorAll('.slider .slide'));
+    if (!slides.length) return;
+
+    let current = Math.max(0, slides.findIndex(s => s.classList.contains('active')));
+    if (current === -1) current = 0;
+
+    function show(index){
+      slides.forEach((s,i) => s.classList.toggle('active', i === index));
+    }
+
+    function ensureOneActive(){
+      if (!document.querySelector('.slider .slide.active')) {
+        current = 0;
+        show(current);
+      }
+    }
+
+    show(current);
+
+    function next(){
+      current = (current + 1) % slides.length;
+      show(current);
+      ensureOneActive();
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        ensureOneActive();
+      }
     });
-  }
 
-  function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }
+    setInterval(next, 5000);
+  });
+  </script>
 
-  // 5秒ごとに切り替え
-  setInterval(nextSlide, 5000);
-});
-</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 <style>
 /* スライダー用の最低限のCSS */
@@ -1233,6 +1269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 
 
 
