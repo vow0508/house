@@ -175,6 +175,11 @@
 
 
 <!-- メニュー開時の半透明背景（必ずheader直後） -->
+<div id="backdrop"
+     class="backdrop"
+     hidden
+     style="position:fixed;inset:0;background:rgba(0,0,0,0.35);opacity:0;pointer-events:none;transition:opacity .2s;z-index:2147483646;">
+</div>
 
 
 
@@ -1218,6 +1223,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 
 
 
