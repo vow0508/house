@@ -415,6 +415,14 @@ body {
   text-align: center;
 }
 
+.tier-title {
+  margin: 20px 0;          /* 上下の外側余白 */
+  padding: 12px 20px;      /* 上下12px / 左右20px の内側余白 */
+  text-align: left;        /* 左寄せ（中央じゃなく少し内側で止まる） */
+  background: #1976d2;     /* 青い帯 */
+  color: #fff;             /* 白文字 */
+  border-radius: 6px;      /* 帯を少し丸める（好みで） */
+}
 
 
 
@@ -427,6 +435,7 @@ body {
 
 
                       
+
 
 
 
