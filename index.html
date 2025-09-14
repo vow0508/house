@@ -13,6 +13,21 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+
+/* ✅ backdrop の正しいCSS */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+  z-index: 2147483646;
+}
+.backdrop.show {
+  opacity: 1;
+  pointer-events: auto; /* ← これでクリックできるようになる */
+}
 </style>
 </head>
 <body>
@@ -62,17 +77,8 @@
   </div>
 </header>
 
-<!-- ✅ backropはこれ1つだけ残す -->
-<div id="backdrop"
-     class="backdrop"
-     hidden
-     style="position:fixed;inset:0;
-            background:rgba(0,0,0,0.35);
-            opacity:0;
-            pointer-events:none;
-            transition:opacity .2s;
-            z-index:2147483646;">
-</div>
+<!-- ✅ backdropはこれ1つだけ -->
+<div id="backdrop" class="backdrop" hidden></div>
 
 <section class="slider" aria-label="注目スライド">
   <div class="slide active" style="background-image:url('slide1.jpg');"></div>
@@ -84,8 +90,6 @@
     <a class="cta-hero" href="https://forms.gle/JFEfwf4pY9JbTSKDA">無料見積りを依頼する</a>
   </div>
 </section>
-
-<!-- 他のコンテンツ（省略：あなたの元コードそのまま） -->
 
 <footer class="site-foot"><small>c お家.com | デモサイト</small></footer>
 
@@ -120,7 +124,6 @@
   btn.addEventListener('click', toggleNav);
   backdrop.addEventListener('click', closeNav);
 
-  // ESCキーで閉じる
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && nav.getAttribute('aria-hidden') === 'false') {
       closeNav();
@@ -128,7 +131,6 @@
     }
   });
 
-  // メニュー内リンクをタップしたら閉じる
   nav.addEventListener('click', (e) => {
     const a = e.target.closest('a');
     if (a && window.matchMedia('(max-width: 768px)').matches) {
@@ -157,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(current);
   }
 
-  // 5秒ごとに切り替え
   setInterval(nextSlide, 5000);
 });
 </script>
@@ -191,11 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
-
-
-
-
-
 
 
 
