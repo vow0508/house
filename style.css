@@ -288,6 +288,48 @@ body {
 }
 
 
+/* === PCのズレ修正・整列強化 ===================== */
+.inner{max-width:1200px;margin:0 auto;padding:0 16px;}            /* 中央寄せを強制 */
+.cards-12{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));                   /* SP 2列 */
+  gap:24px;
+  align-items:stretch;                                             /* 各カードの高さを揃える */
+  justify-items:stretch;
+}
+@media(min-width:960px){
+  .cards-12{ grid-template-columns:repeat(4,minmax(0,1fr)); }      /* PC 4列固定 */
+}
+
+.card{
+  height:100%;
+  display:flex; flex-direction:column; align-items:center;         /* 内容を中央に */
+  text-align:center;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 10px 24px rgba(255,138,0,.20),0 4px 10px rgba(255,138,0,.10);
+  padding:20px 16px;
+}
+
+/* ボタンは下に揃う（高さ差を吸収） */
+.card .btn{ margin-top:auto; }
+
+/* タイトルの位置ズレ解消＆見栄え */
+.tier-title{
+  margin:28px 0 14px;
+  display:inline-block;
+  padding:6px 10px;
+  background:linear-gradient(90deg,#3b82f6,#60a5fa);
+  color:#fff; border-radius:8px; font-weight:700;
+}
+
+/* 画像を“真ん丸＋オレンジ影”で中央に */
+.avatar-wrap{display:flex; justify-content:center; align-items:center; margin-bottom:12px;}
+.avatar{
+  width:120px; height:120px; object-fit:cover; border-radius:50%;
+  border:3px solid #fff; box-shadow:0 8px 22px rgba(255,138,0,.35);
+  display:block; margin:0 auto;
+}
 
 
 
@@ -303,6 +345,7 @@ body {
 
 
                       
+
 
 
 
