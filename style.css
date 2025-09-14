@@ -971,6 +971,18 @@ body.nav-open{ overflow:hidden; }
 
 
 
+.mnav {
+  position: fixed;
+  top: 0; right: 0;
+  width: 80%;
+  max-width: 300px;
+  height: 100%;
+  background: rgba(255,255,255,0.8); /* 白の半透明 */
+  backdrop-filter: blur(12px);        /* ガラス風 */
+  -webkit-backdrop-filter: blur(12px); /* Safari対応 */
+  z-index: 2147483647; /* ← 最前面に */
+}
+
 
 
 
