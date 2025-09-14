@@ -1,400 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お家.com｜仲介手数料 無料見積り</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20250914a">
 
-*{box-sizing:border-box}
-body{font-family:'Noto Sans JP',sans-serif;margin:0;color:#223;background:#f7f8fb}
-a{text-decoration:none}
-.site-head{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.05)}
-.logo img{height:50px}
-.cta-top{padding:10px 14px;border-radius:999px;background:linear-gradient(45deg,#ff7b00,#ffb347);color:#fff;font-weight:800}
-.slider{position:relative;height:58vh;min-height:360px;overflow:hidden}
-.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.1);transition:opacity 1s ease, transform 1s ease}
-.slide.active{opacity:1;transform:scale(1)}
-.slider::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.15) 40%, rgba(0,0,0,.55));z-index:1}
-.cap{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);z-index:2;color:#fff;text-align:center;text-shadow:0 8px 28px rgba(0,0,0,.38)}
-.cap h1{margin:0 0 8px;font-size:clamp(22px,4.8vw,42px)}
-.cap p{margin:0 0 18px;opacity:.95}
-.cta-hero{display:inline-block;padding:12px 18px;border-radius:999px;background:linear-gradient(45deg,#ff7b00,#ffb347);color:#fff;font-weight:800;box-shadow:0 10px 24px rgba(255,123,0,.28)}
-.search-box{text-align:center;padding:60px 20px;background:linear-gradient(90deg,#ffecd2,#fcb69f)}
-.search-box h2{font-size:28px;margin:0 0 6px}
-.search-box p{margin:0 0 20px;color:#333}
-.search{display:flex;justify-content:center;gap:0}
-.search input{width:min(920px,90vw);padding:18px 20px;font-size:18px;border:2px solid #ddd;border-radius:999px 0 0 999px;background:#fff;box-shadow:0 8px 22px rgba(0,0,0,.08)}
-.search button{padding:18px 26px;font-size:18px;border:0;border-radius:0 999px 999px 0;background:linear-gradient(45deg,#007bff,#00b7ff);color:#fff;cursor:pointer;box-shadow:0 8px 22px rgba(0,123,255,.28)}
-.search button:hover{filter:brightness(1.06);transform:translateY(-1px)}
-@media(max-width:520px){.search{flex-direction:column;gap:10px}.search input,.search button{width:min(560px,92vw);border-radius:999px}}
-.section{padding:36px 20px}
-.inner{max-width:1200px;margin:0 auto}
-.tier-title{margin:8px 0 12px;font-size:16px;color:#555}
-
-.points-3 {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #007bff 0%, #ffffff 100%);
-  border-radius: 12px;
-  margin: 40px 0;
-  color: #333;
-}
-.points-3 .point {
-  flex: 1;
-  background: rgba(255,255,255,0.9);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-}
-.tier-title.gold{color:#c27d00}.tier-title.silver{color:#778899}.tier-title.bronze{color:#8c6b4a}
-
-
-body {font-family: 'Meiryo', sans-serif; margin:0; padding:0;}
-header {background:#fff; padding:10px; text-align:center;}
-.logo {max-height:80px;}
-.hero {background:linear-gradient(to right,#1e90ff,#ffffff); color:#fff; text-align:center; padding:60px 20px;}
-.hero .search-box {margin:20px auto; max-width:400px;}
-.hero input {padding:10px; width:70%; border-radius:8px; border:1px solid #ccc;}
-.hero button {padding:10px 20px; border:none; background:#ff5722; color:#fff; border-radius:8px;}
-.btn-primary {display:inline-block; margin-top:15px; padding:15px 30px; background:#ff5722; color:#fff; border-radius:8px; text-decoration:none;}
-.points {display:flex; justify-content:center; gap:20px; padding:40px; background:#f5f5f5;}
-.point {flex:1; background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,0.1);}
-.agents {padding:40px; text-align:center;}
-.agent-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:20px;}
-.agent-card {background:#fff; border-radius:12px; padding:10px; box-shadow:0 4px 6px rgba(0,0,0,0.1);}
-.agent-card img {width:100%; border-radius:50%; box-shadow:0 4px 6px rgba(0,0,0,0.2);}
-.faq {padding:40px; background:#f5f5f5;}
-.faq details {margin:10px 0; background:#fff; padding:10px; border-radius:8px;}
-.final-cta {text-align:center; padding:40px;}
-footer {text-align:center; padding:20px; background:#222; color:#fff;}
-.cards.cards-12{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:18px}
-.card{position:relative;background:#fff;border-radius:16px;padding:18px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.06);transition:transform .18s ease, box-shadow .18s ease}
-.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
-.avatar-wrap{width:96px;height:96px;margin:0 auto 12px;border-radius:50%;overflow:hidden;box-shadow:0 6px 14px rgba(0,0,0,.12)}
-.avatar{width:100%;height:100%;object-fit:cover}
-.card h3{margin:6px 0 6px;font-size:16px}
-.card p{margin:0 0 12px;font-size:13px;color:#666}
-.card .btn{color:#0b84ff;font-weight:800}
-.badge{position:absolute;top:10px;left:10px;font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px}
-.card--pro{box-shadow:0 12px 30px rgba(255,136,0,.18)}
-.card--pro .badge{background:linear-gradient(45deg,#ffae00,#ffd27d);color:#5a3a00;border:1px solid rgba(255,190,70,.6)}
-.card--pro .avatar-wrap{box-shadow:0 10px 24px rgba(255,170,0,.25);border:2px solid rgba(255,174,0,.35)}
-.card--silver{box-shadow:0 10px 26px rgba(120,140,180,.12)}
-.card--silver .badge{background:linear-gradient(45deg,#e6eef9,#ccd7e6);color:#2d3a4d;border:1px solid rgba(120,140,180,.35)}
-.card--silver .avatar-wrap{border:2px solid rgba(160,175,200,.28)}
-.card--bronze{box-shadow:0 8px 22px rgba(160,120,80,.10)}
-.card--bronze .badge{background:linear-gradient(45deg,#e9d2bd,#d7b998);color:#4a392a;border:1px solid rgba(160,120,80,.35)}
-.card--bronze .avatar-wrap{border:2px solid rgba(190,150,100,.25)}
-@media(max-width:960px){.cards.cards-12{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:640px){.cards.cards-12{grid-template-columns:repeat(2,1fr)}}
-.site-foot{text-align:center;color:#778;padding:18px 0 40px}
-}
-
-.points-3
-{
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #007bff 0%, #ffffff 100%);
-  border-radius: 12px;
-  margin: 40px 0;
-  color: #333;
-}
-.points-3 .point {
-  flex: 1;
-  background: rgba(255,255,255,0.9);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.2s;
-}
-.points-3 .point:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-/* --- 3ポイント帯：スマホで縦1列にする --- */
-
-/* まずはタブレットで 2列 */
-@media (max-width: 980px) {
-  .points-3 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-}
-
-/* スマホは 1列（読みやすく余白も調整） */
-@media (max-width: 640px) {
-  .points-3 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 24px 12px;   /* 帯の内側余白を少し小さく */
-    border-radius: 12px;
-  }
-  .points-3 .point {
-    width: 100%;
-    max-width: 560px;     /* カードの最大幅を制御 */
-    margin: 0 auto;       /* 中央寄せ */
-    padding: 18px;
-  }
-  .points-3 .point h3 { font-size: 18px; }
-  .points-3 .point p,
-  .points-3 .point ul { font-size: 15px; line-height: 1.8; }
-}
-
-/* ※ 見出しなどを縦書きにしている場合は、スマホだけ横書きに戻したいときに有効化
-@media (max-width: 640px) {
-  .points-3 .point h3 { writing-mode: horizontal-tb; }
-}
-/* --- 3ポイント帯：スマホで縦1列にする --- */
-
-/* まずはタブレットで 2列 */
-@media (max-width: 980px) {
-  .points-3 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-}
-
-/* スマホは 1列（読みやすく余白も調整） */
-@media (max-width: 640px) {
-  .points-3 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 24px 12px;   /* 帯の内側余白を少し小さく */
-    border-radius: 12px;
-  }
-  .points-3 .point {
-    width: 100%;
-    max-width: 560px;     /* カードの最大幅を制御 */
-    margin: 0 auto;       /* 中央寄せ */
-    padding: 18px;
-  }
-  .points-3 .point h3 { font-size: 18px; }
-  .points-3 .point p,
-  .points-3 .point ul { font-size: 15px; line-height: 1.8; }
-}
-
-/* ※ 見出しなどを縦書きにしている場合は、スマホだけ横書きに戻したいときに有効化
-@media (max-width: 640px) {
-  .points-3 .point h3 { writing-mode: horizontal-tb; }
-}
-/* --- 3ポイント帯：スマホで縦1列にする --- */
-
-/* まずはタブレットで 2列 */
-@media (max-width: 980px) {
-  .points-3 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-}
-
-/* スマホは 1列（読みやすく余白も調整） */
-@media (max-width: 640px) {
-  .points-3 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 24px 12px;   /* 帯の内側余白を少し小さく */
-    border-radius: 12px;
-  }
-  .points-3 .point {
-    width: 100%;
-    max-width: 560px;     /* カードの最大幅を制御 */
-    margin: 0 auto;       /* 中央寄せ */
-    padding: 18px;
-  }
-  .points-3 .point h3 { font-size: 18px; }
-  .points-3 .point p,
-  .points-3 .point ul { font-size: 15px; line-height: 1.8; }
-}
-
-/* ※ 見出しなどを縦書きにしている場合は、スマホだけ横書きに戻したいときに有効化
-@media (max-width: 640px) {
-  .points-3 .point h3 { writing-mode: horizontal-tb; }
-}
-
-
-/* --- 3ポイント帯：スマホで縦1列にする --- */
-
-/* まずはタブレットで 2列 */
-@media (max-width: 980px) {
-  .points-3 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-}
-
-/* スマホは 1列（読みやすく余白も調整） */
-@media (max-width: 640px) {
-  .points-3 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 24px 12px;   /* 帯の内側余白を少し小さく */
-    border-radius: 12px;
-  }
-  .points-3 .point {
-    width: 100%;
-    max-width: 560px;     /* カードの最大幅を制御 */
-    margin: 0 auto;       /* 中央寄せ */
-    padding: 18px;
-  }
-  .points-3 .point h3 { font-size: 18px; }
-  .points-3 .point p,
-  .points-3 .point ul { font-size: 15px; line-height: 1.8; }
-}
-
-/* ※ 見出しなどを縦書きにしている場合は、スマホだけ横書きに戻したいときに有効化
-@media (max-width: 640px) {
-  .points-3 .point h3 { writing-mode: horizontal-tb; }
-}
-.cap {
-  max-width: 100%;   /* 幅制限を解除 */
-  width: 100%;       /* 親要素いっぱいに広げる */
-  white-space: nowrap; /* 折り返しを禁止して1行表示 */
-  text-align: center; /* 中央寄せにしたい場合 */
-}
-
-.cap h1 {
-  font-size: 2rem;   /* 文字が大きすぎる場合は調整 */
-  white-space: nowrap; /* 念のため個別にも指定可能 */
-}
-.cap {
-  max-width: 100%;   /* 幅制限を解除 */
-  width: 100%;       /* 親要素いっぱいに広げる */
-  white-space: nowrap; /* 折り返しを禁止して1行表示 */
-  text-align: center; /* 中央寄せにしたい場合 */
-}
-
-.cap h1 {
-  font-size: 2rem;   /* 文字が大きすぎる場合は調整 */
-  white-space: nowrap; /* 念のため個別にも指定可能 */
-}
-
-
-@media (max-width: 768px) {
-  /* セクション間の余白を小さくする */
-  .section {
-    margin-top: -100px;   /* 元が40px〜60pxなら半分に */
-    margin-bottom: -100px;
-  }
-
- .section {
-  padding-top: 50px;   /* 必要に応じて小さくする */
-  padding-bottom: 50px;
-}
-
-.points-3 {
-  margin-top: 120px;    /* デフォルトが 40px, 60px などなら半分に */
-}
-
-.site-foot {
-  margin-top: 120px;    /* デフォルトが 40px, 60px などなら半分に */
-}
-
-}
-
-
-
-
-
-.greeting {
-  text-align: center;
-  padding: 40px 20px;
-  background: #f9fafb;
-  border-bottom: 1px solid #e5e7eb;
-}
-.greeting-inner { max-width: 960px; margin: 0 auto; }
-.greeting h2 { font-size: 1.8rem; margin: 0 0 12px; color: #111827; }
-.greeting p { font-size: 1.06rem; line-height: 1.8; color: #374151; margin: 0 0 12px; }
-.greeting .note { font-size: .95rem; color: #6b7280; }
-.greeting-actions { display: flex; gap: 12px; justify-content: center; margin-top: 12px; }
-.btn-cf { background: #e11d48; color: #fff; padding: 12px 22px; border-radius: 8px; text-decoration: none; font-weight: 700; }
-.btn-cf:hover { background: #be123c; }
-.btn-outline { border: 1px solid #9ca3af; color: #374151; padding: 12px 22px; border-radius: 8px; text-decoration: none; }
-.btn-outline:hover { background: #f3f4f6; }
-
-
-
-/* --- ハンバーガーメニュー用 --- */
-.nav-menu {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 50px;
-  right: 10px;
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 1em;
-  z-index: 1000;
-}
-
-.nav-menu li {
-  list-style: none;
-  margin: 0.5em 0;
-}
-
-.nav-menu a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-
-
-
-
-.logo img {
-  height: 50px;      /* ロゴの高さを調整 */
-  width: auto;       /* アスペクト比を維持 */
-  margin-left: 20px; /* 左に余白を確保 */
-}
-
-.btn-estimate {
-  background: #f90;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-
-
-
-
-
-
-/* ==== ヘッダー強制レイアウト（最後に追記） ==== */
-.site-header{
+<style>
+/* ヘッダー */
+.site-header {
   background:#fff;
   padding:10px 40px;
   border-bottom:1px solid #eee;
-  text-align:left !important;          /* 1) 中央寄せを打ち消す */
 }
-.header-inner{
+.header-inner {
   max-width:1200px;
-  width:100%;
   margin:0 auto;
-  display:flex !important;              /* 2) 必ずflexにする */
-  align-items:center !important;        /* 高さを揃える */
-  justify-content:space-between !important; /* 左右に振り分け */
-  text-align:left !important;           /* 念のため */
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
-.logo img{
-  height:50px;
+.logo img {
+  height:60px;
   width:auto;
-  display:block;                        /* 画像の下ズレ防止 */
+  display:block;
 }
-.btn-estimate{
-  display:inline-block !important;
-  position:static !important;           /* 絶対配置を無効化 */
-  margin-left:auto !important;          /* 右側へ押し出す */
+.btn-estimate {
+  display:inline-block;
   padding:10px 20px;
   background:#f90;
   color:#fff;
@@ -402,599 +36,180 @@ footer {text-align:center; padding:20px; background:#222; color:#fff;}
   text-decoration:none;
   font-weight:700;
 }
-/* モバイルでも左右配置維持。必要ならここで高さ/余白だけ調整 */
 @media(max-width:640px){
-  .site-header{ padding:8px 16px; }
-  .logo img{ height:42px; }
+  .site-header { padding:8px 16px; }
+  .logo img { height:42px; }
 }
+</style>
+
+</head>
+<body>
+
+<!-- ===== ヘッダーここから ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <!-- ロゴ -->
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="お家.com">
+    </a>
+
+    <!-- PC用ナビ -->
+    <nav id="pnav" class="pnav" aria-label="グローバル">
+      <ul class="pnav-list">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="vision.html">理念</a></li>
+        <li><a href="legal.html">法令順守</a></li>
+      </ul>
+    </nav>
+
+    <!-- スマホ用ナビ -->
+    <nav id="mnav" class="mnav" aria-hidden="true">
+      <ul class="mnav-list">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="vision.html">理念</a></li>
+        <li><a href="legal.html">法令順守</a></li>
+      </ul>
+    </nav>
+
+    <!-- 見積りボタン -->
+    <a href="https://forms.gle/JFEfwf4pY9JbTSKDA" class="btn-estimate">無料見積り</a>
+
+    <!-- ハンバーガーボタン -->
+    <button id="menuButton"
+            class="menu-toggle"
+            aria-label="メニューを開く"
+            aria-controls="mnav"
+            aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22">
+        <path d="M3 6h18M3 12h18M3 18h18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- backdrop は 1つだけ -->
+<div id="backdrop" class="backdrop" hidden></div>
+
+<!-- ===== ヘッダーここまで ===== -->
 
 
-/* --- モバイル浮遊メニュー --- */
-.fab-menu{
-  position:fixed; right:16px; bottom:16px; z-index:1000;
-  width:52px; height:52px; border-radius:50%;
-  border:none; font-size:22px; line-height:52px; text-align:center;
-  background:#111827; color:#fff; box-shadow:0 8px 20px rgba(0,0,0,.18);
-}
-@media (min-width:768px){ .fab-menu{ display:none; } } /* PCでは非表示 */
-
-/* 全画面ドロワー */
-.nav-drawer{
-  position:fixed; inset:0; z-index:1000;
-  background:rgba(0,0,0,.5);
-  transform:translateY(100%); transition:transform .25s ease;
-}
-.nav-drawer.is-open{ transform:translateY(0); }
-.nav-drawer__panel{
-  position:absolute; left:0; right:0; bottom:0;
-  background:#fff; border-radius:16px 16px 0 0; padding:20px 16px 28px;
-  box-shadow:0 -10px 30px rgba(0,0,0,.15);
-}
-.nav-drawer__close{
-  position:absolute; right:12px; top:10px; border:none; background:transparent;
-  font-size:28px; line-height:1; color:#111827;
-}
-.nav-drawer__list{ list-style:none; margin:28px 0 0; padding:0; }
-.nav-drawer__list li{ border-bottom:1px solid #eee; }
-.nav-drawer__list a{
-  display:block; padding:16px 4px; text-decoration:none; color:#111827; font-weight:700;
-}
-/* PCではドロワーを無効（ヘッダー未使用ならそのまま非表示でOK） */
-@media (min-width:768px){ .nav-drawer{ display:none; } }
+<!-- ===== スライダー ===== -->
+<section class="slider" aria-label="注目スライド">
+  <div class="slide active" style="background-image:url('slide1.jpg');"></div>
+  <div class="slide" style="background-image:url('slide2.jpg');"></div>
+  <div class="slide" style="background-image:url('slide3.jpg');"></div>
+  <div class="cap">
+    <h1>仲介手数料無料のその先へ</h1>
+    <p>新しい時代の不動産エージェント</p>
+    <a class="cta-hero" href="https://forms.gle/JFEfwf4pY9JbTSKDA">無料見積りを依頼する</a>
+  </div>
+</section>
 
 
+<!-- 他のセクション（省略せずそのまま残す） -->
+<section class="search-box">
+  <h2>あなたに、ピッタリの宅建士をみつけよう！</h2>
+  <p>相性重視のマッチング。もし合わなくても、変更はいつでも無料。</p>
+  <div class="search">
+    <input placeholder="『港区』『相続に強い』で検索">
+    <button>宅建士を探す</button>
+  </div>
+</section>
 
-/* 右下の丸いハンバーガー（モバイルのみ表示） */
-.fab-menu{
-  position:fixed; right:16px; bottom:16px; z-index:10000;
-  width:54px; height:54px; border-radius:50%;
-  border:none; font-size:22px; line-height:54px; text-align:center;
-  background:#111827; color:#fff; box-shadow:0 8px 20px rgba(0,0,0,.18);
-}
-@media (min-width:768px){ .fab-menu{ display:none; } }
+<!-- ... 以下コンテンツはそのまま ... -->
 
-/* ドロワー本体：デフォは非表示（下からスライドイン） */
-.drawer{
-  position:fixed; inset:0; z-index:9999;
-  background:rgba(0,0,0,.48);
-  transform:translateY(100%); transition:transform .25s ease;
-  display:block; /* ulが露出しないよう常にblockにしておく */
-}
-.drawer.is-open{ transform:translateY(0); }
-@media (min-width:768px){ .drawer{ display:none; } } /* PCでは出さない */
+<footer class="site-foot"><small>c お家.com | デモサイト</small></footer>
 
-/* ドロワーの白いパネル */
-.drawer__panel{
-  position:absolute; left:0; right:0; bottom:0;
-  background:#fff; border-radius:16px 16px 0 0;
-  padding:20px 16px 28px;
-  box-shadow:0 -10px 30px rgba(0,0,0,.15);
-  max-height:85vh; overflow:auto;
-}
+<!-- ===== スクリプト ===== -->
+<script>
+(function () {
+  const btn = document.getElementById('menuButton');
+  const nav = document.getElementById('mnav');
+  const backdrop = document.getElementById('backdrop');
 
-/* ===== mh- メニュー：最終上書き（他と衝突しません） ===== */
+  if (!btn || !nav || !backdrop) return;
 
-/* 右上の丸ボタン：ロゴや「無料見積り」と重ならない位置に */
-.mh-btn{
-  position: fixed;
-  top: 64px;           /* ← ここで縦位置をロゴの下に逃がします。邪魔なら 56~72 で微調整 */
-  right: 12px;
-  width: 48px; height: 48px;
-  border: none; border-radius: 50%;
-  font-size: 22px; line-height: 48px; text-align: center;
-  background: #111827; color: #fff;
-  box-shadow: 0 6px 18px rgba(0,0,0,.18);
-  z-index: 2147483647;
-}
-@media (min-width: 768px){ .mh-btn{ display:none; } } /* PCでは出さない */
-
-/* オーバーレイ（最初は画面外・上） */
-.mh-drawer{
-  position: fixed; inset: 0; z-index: 2147483646;
-  background: rgba(0,0,0,.48);
-  transform: translateY(-100%);          /* 上から降りる */
-  transition: transform .25s ease;
-  display: block;                         /* ulが露出する事故防止 */
-}
-.mh-drawer.is-open{ transform: translateY(0); }
-@media (min-width: 768px){ .mh-drawer{ display:none; } } /* PCでは非表示 */
-
-/* 白いパネル本体 */
-.mh-panel{
-  position: absolute; left: 0; right: 0; top: 0;
-  background: #fff; border-radius: 0 0 16px 16px;
-  padding: 20px 16px 28px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.15);
-  max-height: 85vh; overflow: auto;
-}
-
-/* ×ボタンとリスト */
-.mh-close{
-  position: absolute; right: 12px; top: 10px;
-  border: none; background: transparent;
-  font-size: 28px; line-height: 1; color: #111827;
-}
-.mh-list{ list-style: none; margin: 28px 0 0; padding: 0; }
-.mh-list li{ border-bottom: 1px solid #eee; }
-.mh-list a{
-  display: block; padding: 16px 4px;
-  text-decoration: none; color: #111827; font-weight: 700;
-}
-
-/* 念のため：ヘッダー等より前面に出す／下の要素は z-index を低く */
-.site-header, .hero, .site-foot{ position: relative; z-index: 1; }
-
-/* ===== responsive nav (slide-in) ===== */
-.menu-toggle{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:40px; height:40px; border:1px solid #eee; border-radius:8px; background:#fff;
-  margin-left:8px;
-}
-.menu-toggle svg{ display:block; }
-
-#backdrop.backdrop{
-  position:fixed; inset:0; background:rgba(0,0,0,.35);
-  opacity:0; pointer-events:none; transition:opacity .2s ease; z-index:45;
-}
-#backdrop.backdrop.show{ opacity:1; pointer-events:auto; }
-
-.mnav{
-  /* モバイル：オフキャンバス */
-  position:fixed; top:0; left:0; bottom:0;
-  width:70vw; max-width:360px; background:#fff; z-index:50;
-  transform:translateX(-100%); transition:transform .25s ease;
-  padding:16px; box-shadow:2px 0 12px rgba(0,0,0,.08);
-}
-.mnav[aria-hidden="false"]{ transform:translateX(0); }
-
-.mnav-list{ list-style:none; margin:0; padding:0; }
-.mnav-list li{ border-bottom:1px solid #eee; }
-.mnav-list a{
-  display:block; padding:14px 6px; color:#111; text-decoration:none;
-}
-.mnav-list a:hover{ background:#f8fafc; }
-
-/* PC表示：横並び／ハンバーガー非表示 */
-@media (min-width: 769px) {
-  .menu-toggle{ display:none; }
-  #backdrop{ display:none; }
-  .mnav{
-    position:static; transform:none; box-shadow:none; padding:0; width:auto; background:transparent;
+  function openNav() {
+    nav.setAttribute('aria-hidden', 'false');
+    btn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open');
+    backdrop.hidden = false;
+    requestAnimationFrame(() => backdrop.classList.add('show'));
+    btn.setAttribute('aria-label', 'メニューを閉じる');
   }
-  .mnav-list{ display:flex; gap:16px; }
-  .mnav-list li{ border:0; }
-  .mnav-list a{ padding:8px 10px; border-radius:6px; }
-  .mnav-list a:hover{ background:#f1f5f9; }
-}
 
-/* メニュー開時のスクロール固定（SP） */
-body.nav-open{ overflow:hidden; }
-
-/* ===== Slider caption: center & responsive ===== */
-.slider{ position: relative; overflow: hidden; }
-
-/* 画像レイヤーの上に文字を載せるための段差 */
-.slider .slide{ z-index: 1; }
-
-/* 文字・ボタンを常に中央に。はみ出し防止 */
-.slider .cap{
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  width: min(92vw, 820px) !important;   /* 画面幅に合わせて縮む */
-  padding: 0 2vw;
-  text-align: center;
-  z-index: 2;
-}
-
-/* 見やすいサイズに自動調整 */
-.slider .cap h1{
-  margin: 0 0 .5em;
-  line-height: 1.25;
-  font-size: clamp(22px, 6vw, 48px);
-  color: #fff;
-  text-shadow: 0 2px 6px rgba(0,0,0,.35);
-}
-
-.slider .cap p{
-  margin: 0 0 1.2em;
-  font-size: clamp(14px, 2.8vw, 18px);
-  color: #fff;
-  text-shadow: 0 1px 4px rgba(0,0,0,.35);
-}
-
-/* CTAボタンの見た目（必要に応じて調整OK） */
-.slider .cta-hero{
-  display: inline-block;
-  padding: 12px 20px;
-  background: #f90;
-  color: #fff;
-  border-radius: 9999px;
-  text-decoration: none;
-  font-weight: 700;
-  white-space: nowrap;         /* 長い文でも折り返さず縮む */
-}
-
-/* 背景を少し暗くして可読性UP（任意） */
-
-/* 大画面では左下寄せにしたい場合（任意。中央のままで良ければ不要） */
-@media (min-width: 1024px){
-  /* コメントアウトを外すと左下寄せになります
-  .slider .cap{
-    top: auto !important;
-    bottom: 10% !important;
-    left: 8% !important;
-    transform: none !important;
-    text-align: left;
-    width: min(60vw, 840px) !important;
+  function closeNav() {
+    nav.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+    backdrop.classList.remove('show');
+    setTimeout(() => { backdrop.hidden = true; }, 200);
+    btn.setAttribute('aria-label', 'メニューを開く');
   }
-  */
-}
 
-/* ==== スマホのメニューがスライドの背面に回る問題の修正 ==== */
-
-/* ヘッダー（親）を最前面に */
-.site-header{
-  position: sticky;   /* 固定しないなら relative でもOK */
-  top: 0;
-  z-index: 5000;      /* 大きくして前面へ */
-  background: #fff;
-}
-
-/* ドロワーと半透明背景はさらに前面に */
-.mnav{ z-index: 6000 !important; }        /* メニュー本体 */
-#backdrop.backdrop{ z-index: 5500 !important; }  /* 半透明レイヤー */
-
-/* スライダーの層はヘッダーより背面に */
-.slider{ position: relative; z-index: 0; }
-.slider::before,
-.slider::after,
-.slider .slide{ z-index: 0; }
-.slider .cap{ z-index: 2; }  /* スライド上の文字は画像より前、メニューより後でOK */
-
-/* 既存の「.site-header, .hero, .site-foot{ z-index:1 }」を無効化（安全網） */
-.site-header, .hero, .site-foot{ z-index: auto; }
-
-
-/* ==== メニューを常に最前面に ==== */
-.mnav {
-  position: fixed !important;
-  top: 0; left: 0; bottom: 0;
-  width: 70vw; max-width: 360px;
-  background: #fff;
-  transform: translateX(-100%);
-  transition: transform .25s ease;
-  padding: 16px;
-  box-shadow: 2px 0 12px rgba(0,0,0,.08);
-  z-index: 99999 !important;   /* ← 強制的に最前面 */
-}
-
-.mnav[aria-hidden="false"] {
-  transform: translateX(0);
-}
-
-#backdrop.backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.35);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .2s ease;
-  z-index: 99998 !important;   /* 背景も前面へ */
-}
-#backdrop.backdrop.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* スライダーやヘッダーより後ろに固定 */
-.slider,
-.slider::before,
-.slider::after,
-.slider .slide,
-.slider .cap,
-.site-header,
-.hero,
-.site-foot {
-  z-index: 0 !important;
-}
-
-
-
-
-/* ==== オフキャンバスを最前面に固定 ==== */
-#backdrop.backdrop{
-  position: fixed !important;
-  inset: 0 !important;
-  background: rgba(0,0,0,.35);
-  opacity: 0; pointer-events: none; transition: opacity .2s ease;
-  z-index: 2147483646 !important; /* 背景 */
-}
-#backdrop.backdrop.show{ opacity:1; pointer-events:auto; }
-
-#mnav.mnav{
-  position: fixed !important;
-  top: 0; left: 0; bottom: 0;
-  width: 70vw; max-width: 360px;
-  background: #fff;
-  transform: translateX(-100%);
-  transition: transform .25s ease;
-  padding: 16px;
-  box-shadow: 2px 0 12px rgba(0,0,0,.12);
-  z-index: 2147483647 !important;       /* ドロワー本体＝最前面 */
-}
-#mnav[aria-hidden="false"]{ transform: translateX(0); }
-
-/* ヘッダーは普通の前面、でもドロワーより下に */
-.site-header{
-  position: sticky; top: 0;
-  z-index: 1000 !important;
-  background:#fff;
-}
-
-/* ハンバーガーのタップ抜け防止（iOS） */
-.menu-toggle{ position: relative; z-index: 2147483647; }
-
-/* スライダーは背面。疑似要素も背面へ */
-.slider, .slider::before, .slider::after, .slider .slide{ z-index: 0 !important; }
-
-/* “強すぎるz-index” を持つ不要なUIがあれば下げる */
-.mh-btn, .mh-drawer, .drawer{ z-index: 0 !important; } /* 使ってなければ */
-
-
-
-
-#backdrop.backdrop {
-  position: fixed !important;
-  inset: 0 !important;
-  background: rgba(0, 0, 0, 0.35); /* ← 黒35%透過 */
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .2s ease;
-  z-index: 2147483646 !important;
-}
-#backdrop.backdrop.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-
-
-/* ========== 共通 ========== */
-.pnav { display: none; }                  /* 初期は隠す（モバイル用に） */
-.pnav-list{ list-style:none; margin:0; padding:0; display:flex; gap:16px; }
-.pnav-list a{ display:block; padding:8px 10px; border-radius:6px; color:#111; text-decoration:none; }
-.pnav-list a:hover{ background:#f1f5f9; }
-
-/* モバイル用ドロワー（#mnav）は最前面・左からスライド */
-#mnav.mnav{
-  position: fixed !important;
-  top: 0; left: 0; bottom: 0;
-  width: 70vw; max-width: 360px;
-  background: #fff;
-  transform: translateX(-100%);
-  transition: transform .25s ease;
-  padding: 16px;
-  box-shadow: 2px 0 12px rgba(0,0,0,.12);
-  z-index: 2147483647 !important;
-}
-#mnav[aria-hidden="false"]{ transform: translateX(0); }
-
-#backdrop.backdrop{
-  position: fixed !important;
-  inset: 0 !important;
-  background: rgba(0,0,0,0.35);        /* 半透明 */
-  opacity: 0; pointer-events: none; transition: opacity .2s ease;
-  z-index: 2147483646 !important;
-}
-#backdrop.backdrop.show{ opacity: 1; pointer-events: auto; }
-
-/* ========== ブレークポイントで出し分け ========== */
-@media (min-width: 769px){
-  /* PC：横並びメニューを表示、ドロワーは無効化 */
-  .pnav{ display: block; }
-  .menu-toggle{ display: none !important; }      /* ハンバーガー非表示 */
-  #backdrop{ display: none !important; }
-  #mnav{ display: none !important; }             /* ドロワー非表示（存在はするが出さない） }
-
-  /* ヘッダー内の整列（必要なら調整） */
-  .header-inner{ display:flex; align-items:center; gap: 20px; }
-  .btn-estimate{ margin-left: auto; }            /* 右端へ寄せる */
-}
-
-/* 念のため：スライダーは背面、ヘッダーは前面 */
-.site-header{ position: sticky; top:0; z-index: 1000; background:#fff; }
-.slider, .slider::before, .slider::after, .slider .slide{ z-index: 0 !important; }
-
-
-
-
-
-
-
-
-/* === PCメニューを横並びに強制（pnav） === */
-.pnav { display: none; }
-
-@media (min-width: 769px){
-  /* PCではpnavを表示、mnav/ハンバーガーは非表示 */
-  #pnav{ display:block !important; }
-  #mnav{ display:none !important; }
-  .menu-toggle{ display:none !important; }
-
-  /* 横並びを強制 */
-  #pnav .pnav-list{
-    display:flex !important;
-    flex-direction:row !important;
-    align-items:center !important;
-    gap:16px !important;
-    margin:0 !important;
-    padding:0 !important;
-    list-style:none !important;
-    flex-wrap:nowrap !important;      /* 折り返さない */
-    white-space:nowrap !important;     /* 文字も折り返さない */
+  function toggleNav() {
+    const isOpen = nav.getAttribute('aria-hidden') === 'false';
+    isOpen ? closeNav() : openNav();
   }
-  #pnav .pnav-list li{
-    display:inline-flex !important;
+
+  btn.addEventListener('click', toggleNav);
+  backdrop.addEventListener('click', closeNav);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.getAttribute('aria-hidden') === 'false') {
+      closeNav();
+      btn.focus();
+    }
+  });
+})();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (window._sliderInitialized) return;
+  window._sliderInitialized = true;
+  if (window._sliderTimer) clearInterval(window._sliderTimer);
+
+  const slides = Array.from(document.querySelectorAll('.slider .slide'));
+  if (!slides.length) return;
+
+  let current = slides.findIndex(s => s.classList.contains('active'));
+  if (current === -1) current = 0;
+
+  function show(index){
+    slides.forEach((s,i) => s.classList.toggle('active', i === index));
   }
-  #pnav .pnav-list a{
-    display:inline-block !important;
-    padding:8px 10px !important;
-    border-radius:6px;
-    color:#111; text-decoration:none;
+
+  function ensureOneActive(){
+    if (!document.querySelector('.slider .slide.active')) {
+      current = 0;
+      show(current);
+    }
   }
-  #pnav .pnav-list a:hover{ background:#f1f5f9; }
 
-  /* ヘッダーの横並びを安定させる */
-  .header-inner{
-    display:flex !important;
-    align-items:center !important;
-    gap:20px;
+  show(current);
+
+  function next(){
+    current = (current + 1) % slides.length;
+    show(current);
+    ensureOneActive();
   }
-  .btn-estimate{ margin-left:auto; }   /* 右端へ */
-}
 
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) ensureOneActive();
+  });
 
+  window._sliderTimer = setInterval(next, 5000);
+});
+</script>
 
-/* デフォルトはPCメニューを隠す */
-#pnav { display: none; }
-
-/* スマホ時：mnav（ドロワー）＋ハンバーガーを表示 */
-@media (max-width: 768px) {
-  #mnav { display: block; }
-  .menu-toggle { display: block; }
-  #pnav { display: none !important; }
-}
-
-/* PC時：pnav（横並び）を表示、mnavとハンバーガーを隠す */
-@media (min-width: 769px) {
-  #pnav { display: block !important; }
-  #mnav { display: none !important; }
-  .menu-toggle { display: none !important; }
-
-  #pnav .pnav-list {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  #pnav .pnav-list li {
-    display: inline-flex;
-  }
-  #pnav .pnav-list a {
-    text-decoration: none;
-    padding: 8px 12px;
-    color: #111;
-  }
-  #pnav .pnav-list a:hover {
-    background: #f1f5f9;
-    border-radius: 6px;
-  }
-}
-
-
-
-
-
-/* 画面を覆う半透明オーバーレイ（黒35%） */
-#backdrop.backdrop{
-  position: fixed !important;
-  inset: 0 !important;
-  background: rgba(0,0,0,0.35) !important;  /* ← ここが半透明 */
-  opacity: 0 !important;
-  pointer-events: none !important;
-  transition: opacity .2s ease !important;
-  z-index: 2147483646 !important;
-}
-#backdrop.backdrop.show{
-  opacity: 1 !important;                   /* ← 表示時に効く */
-  pointer-events: auto !important;
-}
-
-
-
-
-/* ===== 半透明オーバーレイ（画面全体を薄暗く） ===== */
-#backdrop.backdrop{
-  position: fixed !important;
-  inset: 0 !important;
-  background: rgba(0,0,0,0.60) !important;  /* ← 半透明 */
-  opacity: 0 !important;
-  pointer-events: none !important;
-  transition: opacity .2s ease !important;
-  z-index: 2147483646 !important;
-}
-#backdrop.backdrop.show{
-  opacity: 1 !important;                   /* 表示時に効く */
-  pointer-events: auto !important;
-}
-
-/* ===== ドロワーパネル自体も少し透かす（不要なら消してOK） ===== */
-#mnav.mnav{
-  background: rgba(255,255,255,0.92) !important;  /* ← 白を少し透過 */
-  backdrop-filter: blur(3px);                      /* ぼかし（対応ブラウザで有効） */
-}
-
-/* 念のため：どこかで不透明色が当たっていても勝てるように */
-#mnav.mnav, #backdrop.backdrop{ background-clip: padding-box !important; }
-
-
-
-/* パネル（左から出る白い板）を少し透過 */
-#mnav.mnav{
-  background: rgba(255,255,255,0.92) !important;
-  backdrop-filter: blur(3px); /* 対応ブラウザでぼかし */
-}
-
-
-
-/* もし残っていたら灰色を作っている可能性大。まとめて無効化 */
-.mh-drawer, .drawer, .nav-drawer, #backdrop.backdrop[data-legacy="1"]{
-  background: transparent !important;
-}
-
-
-#mnav.mnav {
-  background: rgba(255,255,255,0.5);  /* 白半透明 */
-  backdrop-filter: blur(12px);        /* 背景をぼかす */
-  -webkit-backdrop-filter: blur(12px);/* Safari対応 */
-}
-
-
-
-.slider::after{
-  content: none !important;
-}
-
-
-
-.mnav {
-  position: fixed;
-  top: 0; right: 0;
-  width: 80%;
-  max-width: 300px;
-  height: 100%;
-  background: rgba(255,255,255,0.8); /* 白の半透明 */
-  backdrop-filter: blur(12px);        /* ガラス風 */
-  -webkit-backdrop-filter: blur(12px); /* Safari対応 */
-  z-index: 2147483647; /* ← 最前面に */
-}
-
-
-.mnav {
-  position: fixed;
-  top: 0; right: 0;
-  width: 80%;
-  max-width: 300px;
-  height: 100%;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(12px);
-  z-index: 2147483647; /* ← これが大事 */
-}
-
+<!-- ===== CSS ===== -->
+<style>
+/* backdrop 調整済み */
 .backdrop {
   position: fixed;
   inset: 0;
@@ -1002,26 +217,38 @@ body.nav-open{ overflow:hidden; }
   opacity: 0;
   pointer-events: none;
   transition: opacity .2s;
-  z-index: 999;  /* ← 2147483646 をやめてこれくらいに */
+  z-index: 900;
 }
-
 .backdrop.show {
   opacity: 1;
   pointer-events: auto;
 }
-
-/* スマホメニューは backdrop の上にくるように */
 #mnav {
   position: fixed;
   top: 0; right: 0; left: 0;
   background: #fff;
-  z-index: 1000; /* backdropより大きくする */
+  z-index: 1000; /* backdrop より前 */
 }
 
+/* スライダー */
+.slider { position: relative; overflow: hidden; height: 70vh; }
+.slider .slide{
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: 0; transition: opacity 1s; z-index: 1;
+}
+.slider .slide.active{ opacity: 1; }
+.slider .cap{
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; color: #fff; z-index: 2;
+}
+.slider::after{
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.25));
+  z-index: 1;
+}
+</style>
 
-
-
-
-
-
-
+</body>
+</html>
