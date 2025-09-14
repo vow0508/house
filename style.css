@@ -333,3 +333,172 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+/* ========== Theme (classic) ========== */
+:root{
+  --brand1:#ff8a00;  /* オレンジ（左） */
+  --brand2:#ffb200;  /* オレンジ（右） */
+  --ink:#1f2937;
+  --muted:#6b7280;
+  --bg:#fff;
+  --surface:#ffffff;
+  --soft:#f5f7fb;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(0,0,0,.10);
+}
+
+/* Reset */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+body{
+  font-family:"Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color:var(--ink); background:#fff; line-height:1.75;
+}
+
+/* ========== Header ========== */
+.site-header{
+  position:sticky; top:0; z-index:100;
+  background:#fff; border-bottom:1px solid #eef2f7;
+  box-shadow:0 2px 12px rgba(0,0,0,.05);
+}
+.header-inner{max-width:1200px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px;justify-content:space-between}
+.logo img{height:44px}
+.btn-estimate{
+  display:inline-block; padding:10px 18px; border-radius:9999px; color:#fff; font-weight:700;
+  background:linear-gradient(90deg,var(--brand1),var(--brand2));
+  box-shadow:0 10px 24px rgba(255,138,0,.28);
+}
+.pnav{display:none}
+@media (min-width:960px){
+  .pnav{display:block}
+  .pnav-list{list-style:none;display:flex;gap:22px;margin:0;padding:0}
+  .pnav a{color:#111}
+}
+
+/* ========== Slider ========== */
+.slider{position:relative; height:56vh; min-height:320px; overflow:hidden; background:#eee}
+.slide{position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition:opacity 1s}
+.slide.active{opacity:1}
+.slider::after{content:""; position:absolute; inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.15));
+}
+.cap{
+  position:absolute; inset:auto 6% 12% 6%; z-index:2; color:#fff; text-shadow:0 6px 24px rgba(0,0,0,.45);
+  display:flex; flex-direction:column; align-items:flex-start; gap:10px;
+}
+.cap h1{margin:0; font-size:clamp(22px,5.2vw,44px); line-height:1.25}
+.cap p{margin:0; opacity:.95}
+.cta-hero{
+  display:inline-block; margin-top:6px; padding:12px 22px; border-radius:9999px; font-weight:700; color:#fff;
+  background:linear-gradient(90deg,var(--brand1),var(--brand2)); box-shadow:0 12px 28px rgba(255,138,0,.35);
+}
+
+/* ========== Search ========== */
+.search-box{
+  padding:28px 16px; text-align:center;
+  background:linear-gradient(180deg,#ffe6cf 0%, #fff 45%);
+}
+.search-box h2{margin:0 0 6px; font-size:22px}
+.search-box p{margin:0 0 14px; color:var(--muted)}
+.search{display:flex; gap:10px; max-width:760px; margin:0 auto}
+.search input{
+  flex:1; padding:14px 18px; border-radius:9999px; border:1px solid #e5e9f0; background:#fff;
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.03);
+}
+.search input:focus{outline:none; border-color:#ffc56a; box-shadow:0 0 0 4px rgba(255,178,0,.22)}
+.search button{
+  padding:14px 18px; border:none; border-radius:9999px; font-weight:700; color:#fff;
+  background:linear-gradient(90deg,var(--brand1),var(--brand2)); box-shadow:0 10px 26px rgba(255,138,0,.28);
+}
+
+/* ========== Sections & Blocks ========== */
+.section{padding:36px 16px}
+.inner{max-width:1200px; margin:0 auto}
+
+/* 3 points */
+.points-3{display:grid; gap:16px; margin:8px 0}
+.point{
+  background:#fff; border-radius:16px; padding:18px; box-shadow:var(--shadow);
+}
+.point h3{margin:0 0 6px; font-size:18px}
+.point p{margin:0; color:var(--muted)}
+
+/* ========== Agent Cards (Classic) ========== */
+.tier-title{margin:22px 0 10px; font-size:1.05rem; color:#9aa4b2}
+.tier-title.gold{color:#e09a00}
+.tier-title.silver{color:#8092a5}
+.tier-title.bronze{color:#b07a38}
+
+.cards{display:grid; gap:16px}
+.cards-12{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+.card{
+  position:relative; text-align:center; background:#fff; border-radius:var(--radius); padding:16px;
+  box-shadow:var(--shadow); overflow:hidden;
+}
+.avatar-wrap{display:flex; justify-content:center; margin-bottom:10px}
+.avatar{
+  width:120px; height:120px; object-fit:cover; border-radius:20px;
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+}
+.badge{
+  position:absolute; top:12px; left:12px; padding:6px 10px; border-radius:9999px;
+  background:linear-gradient(90deg,#ffd54a,#ffb300); color:#4b3b00; font-weight:700; font-size:12px;
+  box-shadow:0 8px 20px rgba(255,179,0,.35);
+}
+.card h3{margin:6px 0 4px; font-size:18px}
+.card p{margin:0 0 12px; color:var(--muted)}
+.btn{
+  display:inline-block; padding:10px 14px; border-radius:9999px; font-weight:700; color:#fff;
+  background:linear-gradient(90deg,var(--brand1),var(--brand2));
+  box-shadow:0 10px 24px rgba(255,138,0,.28);
+}
+
+/* Silver/Bronze の地色ニュアンス */
+.card--pro{background:linear-gradient(180deg,#fff 0%, #fff 100%)}
+.card--silver{background:linear-gradient(180deg,#f8fbff 0%, #ffffff 100%)}
+.card--bronze{background:linear-gradient(180deg,#fffaf2 0%, #ffffff 100%)}
+
+/* ========== Footer ========== */
+.site-foot{
+  margin-top:20px; padding:22px 16px; text-align:center; color:#7a8699; background:#fff;
+  border-top:1px solid #eef2f7;
+}
+
+/* ========== Desktop tweaks ========== */
+@media (min-width: 960px){
+  .slider{height:64vh; min-height:400px}
+  .cap{left:8%; right:auto}
+  .points-3{grid-template-columns:repeat(3,1fr)}
+  .cards-12{grid-template-columns:repeat(4,1fr)}
+  .card{text-align:left}
+  .avatar-wrap{justify-content:flex-start}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      
+
+
