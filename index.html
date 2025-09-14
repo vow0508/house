@@ -2,670 +2,131 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="GENERATOR" content="JustSystems Homepage Builder Version 17.0.1.0 for Windows">
 <title>お家.com｜仲介手数料 無料見積り</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
- <link rel="stylesheet" href="style.css?v=20250914a">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20250914a">
 
-
-  <style>
-#mnav.mnav {
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-</style>
-
-</head>
-<body>
-
-<!-- ヘッダーは削除 -->
-
-<!-- メインビジュアル -->
-<!-- ===== ヘッダーここから ===== -->
-
-<!-- ===== ヘッダーここから ===== -->
-
-
-
-
-
-
-  
 <style>
+:root{
+  --z-header:1100;
+  --z-mnav:1001;
+  --z-backdrop:1000;
+  --brand:#ff9900;
+  --ink:#111827;
+}
+
+/* ベース */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:"Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;color:var(--ink)}
+a{color:inherit;text-decoration:none}
+a:visited{color:inherit}
+img{max-width:100%;height:auto;display:block}
+
+/* ヘッダー */
 .site-header{
-  background:#fff;
-  padding:10px 40px;
-  border-bottom:1px solid #eee;
+  position:sticky;top:0;z-index:var(--z-header);
+  background:#fff;border-bottom:1px solid #eee;
 }
 .header-inner{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  max-width:1200px;margin:0 auto;padding:10px 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px
 }
-.logo img{
-  height:70px;
-  width:auto;
-  display:block;
-}
+.logo img{height:48px;width:auto}
 .btn-estimate{
-  display:inline-block;
-  padding:10px 20px;
-  background:#f90;
-  color:#fff;
-  border-radius:20px;
-  text-decoration:none;
-  font-weight:700;
+  display:inline-block;padding:10px 16px;border-radius:9999px;
+  background:var(--brand);color:#fff;font-weight:700;white-space:nowrap
 }
-@media(max-width:640px){
-  .site-header{ padding:8px 16px; }
-  .logo img{ height:42px; }
-}
-</style>
-
-
-<!-- ===== ヘッダーここまで ===== -->
-<header class="site-header">
-  <div class="header-inner">
-    <!-- ロゴ -->
-    <a href="index.html" class="logo">
-      <img src="images/logo.png" alt="お家.com">
-    </a>
-
-    <!-- PC用ナビ -->
-    <nav id="pnav" class="pnav" aria-label="グローバル">
-      <ul class="pnav-list">
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="vision.html">理念</a></li>
-        <li><a href="legal.html">法令順守</a></li>
-      </ul>
-    </nav>
-
-    <!-- スマホ用ナビ -->
-    <nav id="mnav" class="mnav" aria-hidden="true">
-      <ul class="mnav-list">
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="vision.html">理念</a></li>
-        <li><a href="legal.html">法令順守</a></li>
-      </ul>
-    </nav>
-
-    <!-- 見積りボタン -->
-    <a href="https://forms.gle/JFEfwf4pY9JbTSKDA" class="btn-estimate">無料見積り</a>
-
-    <!-- ハンバーガーボタン -->
-    <!-- ハンバーガーボタン -->
-<button id="menuButton"
-        class="menu-toggle"
-        aria-label="メニューを開く"
-        aria-controls="mnav"
-        aria-expanded="false">
-  <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22">
-    <path d="M3 6h18M3 12h18M3 18h18"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"/>
-  </svg>
-</button>
-
-    
-  </div>
-</header>
-<script>
-(function () {
-  const btn = document.getElementById('menuButton');
-  const nav = document.getElementById('mnav');
-  const backdrop = document.getElementById('backdrop');
-  if (!btn || !nav || !backdrop) return;
-
-  const open = () => {
-    nav.setAttribute('aria-hidden', 'false');
-    btn.setAttribute('aria-expanded', 'true');
-    document.body.classList.add('nav-open');
-    backdrop.hidden = false;
-    requestAnimationFrame(() => backdrop.classList.add('show'));
-    btn.setAttribute('aria-label', 'メニューを閉じる');
-  };
-  const close = () => {
-    nav.setAttribute('aria-hidden', 'true');
-    btn.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('nav-open');
-    backdrop.classList.remove('show');
-    setTimeout(() => { backdrop.hidden = true; }, 200);
-    btn.setAttribute('aria-label', 'メニューを開く');
-  };
-
-  const toggle = () => {
-    const isOpen = nav.getAttribute('aria-hidden') === 'false';
-    isOpen ? close() : open();
-  };
-
-  btn.addEventListener('click', toggle);
-  backdrop.addEventListener('click', close);
-
-  // ★リンクのクリックは“妨げない”。遷移が起きなかった場合だけ後から閉じる。
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      if (window.matchMedia('(max-width: 768px)').matches) {
-        // 遷移が発生すればこのページはアンロードされるので何もしない。
-        // 700ms後もこのドキュメントが表示中（=遷移していない）なら閉じる。
-        setTimeout(() => { if (!document.hidden) close(); }, 700);
-      }
-    });
-  });
-
-  // ESCで閉じる
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav.getAttribute('aria-hidden') === 'false') {
-      close();
-      btn.focus();
-    }
-  });
-})();
-</script>
-
-<!-- 背景（クリックで閉じる用） -->
-
-
-
-<!-- メニュー開時の半透明背景（必ずheader直後） -->
-<div id="backdrop"
-     class="backdrop"
-     hidden
-     style="position:fixed;inset:0;background:rgba(0,0,0,0.35);opacity:0;pointer-events:none;transition:opacity .2s;z-index:2147483646;">
-</div>
-
-
-
-  <!-- ↓↓↓ ここに “headerの外” として置く ↓↓↓ -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-<!-- ===== ヘッダーここまで ===== -->
-
-<!-- ==== モバイル専用：右下の丸ボタン ==== -->
-
-
-<!-- ==== 全画面ドロワー ==== -->
-
-<!-- ===== ヘッダーここまで ===== -->
-
-
-
-  
-
-  <section class="slider" aria-label="注目スライド">
-<div class="slide active" style="background-image:url('slide1.jpg');"></div>
-<div class="slide" style="background-image:url('slide2.jpg');"></div>
-<div class="slide" style="background-image:url('slide3.jpg');"></div>
-<div class="cap">
-      <h1>仲介手数料無料のその先へ</h1>
-      <p>新しい時代の不動産エージェント</p>
-      <a class="cta-hero" href="https://forms.gle/JFEfwf4pY9JbTSKDA">無料見積りを依頼する</a>
-    </div>
-  </section>
-
-  <section class="search-box">
-    <h2>あなたに、ピッタリの宅建士をみつけよう！</h2>
-    <p>相性重視のマッチング。もし合わなくても、変更はいつでも無料。</p>
-    <div class="search">
-      <input placeholder="『港区』『相続に強い』で検索">
-
-
-
-
-
-
-      <button>宅建士を探す</button>
-    </div>
-  </section>
-
-<section class="register-section">
- <h2>会員登録（無料・<strong>匿名OK</strong>）</h2>
-  <p>メールアドレスだけで登録できます。住まい探しの最新情報をお届けします。</p>
-  <a href="https://forms.gle/GzpGjMXFzih1hAiD7" target="_blank" class="register-btn">
-    無料で会員登録する
-  </a>
-</section>
-
-<style>
-.register-section {
-  text-align: center;
-  padding: 36px 16px;
-  background: #f9fafb;
-}
-.register-section h2 {
-  font-size: 1.4rem;
-  margin: 0 0 8px;
-  color: #111827;
-}
-.register-section p {
-  font-size: .95rem;
-  margin: 0 0 20px;
-  color: #4b5563;
-}
-.register-btn {
-  display: inline-block;
-  width: 100%;
-  max-width: 420px;
-  padding: 14px 20px;
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-decoration: none;
-  text-align: center;
-  color: #fff;
-  background: #007acc;
-  border-radius: 10px;
-}
-.register-btn:hover {
-  background: #0063b0;
-}
-@media(min-width:768px){
-  .register-section {
-    padding: 48px 20px;
-  }
-}
-</style>
-
-
-
-
-
-
-  
-<!-- 👇 cardsセクションの直前に挿入（38行目の</section>のすぐ下など） -->
-<section class="greeting" aria-labelledby="greet-title">
-  <div class="greeting-inner">
-    <h2 id="greet-title">運営からのお知らせ</h2>
-    <p class="note">
-      ※現在は体制構築中です。提供開始に向け、クラウドファンディングでのご支援を募っています。
-    </p>
-    <div class="greeting-actions">
-      <a href="https://camp-fire.jp/projects/xxxxxx" target="_blank" class="btn btn-cf">クラファンをみる</a>
-      <a href="フォーム.html" class="btn btn-outline">お問い合わせ</a>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-  
-  <section class="section">
-    <div class="inner">
-
-<section class="section">
-  <div class="inner">
-
-    <div class="points-3">
-      <div class="point">
-        <h3>仲介手数料は最大無料</h3>
-        <p>売買価格×3%＋6万円＋税が上限。当社は条件次第で最大無料に！</p>
-      </div>
-      <div class="point">
-        <h3>価格も条件も“コスト最適化”</h3>
-        <p>指値・諸費用見直し・条件調整。総コストを下げる提案をします。</p>
-      </div>
-      <div class="point">
-        <h3>担当はいつでも変更OK</h3>
-        <p>相性重視。もし合わなくても担当はいつでも無料で変更できます。</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-      <h2>注目の宅建士</h2>
-
-      <h3 class="tier-title gold">PR枠（3万円 / 月）</h3>
-      <div class="cards cards-12" id="tierGold"><div class="card card--pro">
-      <div class="avatar-wrap"><img class="avatar" src="images/agent_1.jpg" alt="井上 広樹"></div>
-      <div class="badge">PR</div>
-      <h3>井上 広樹</h3>
-      <p>東京都23区 / 宅建士・建築士</p>
-      <a class="btn" href="profile_inoue.html">プロフィールを見る</a>
-    </div>
-<div class="card card--pro">
-      <div class="avatar-wrap"><img class="avatar" src="images/6822.jpg" alt="山田 太郎"></div>
-      <div class="badge">PR</div>
-      <h3>山田 太郎</h3>
-      <p>神奈川県全域 / 宅建士</p>
-      <a class="btn" href="profile_yamada.html">プロフィールを見る</a>
-    </div>
-<div class="card card--pro">
-      <div class="avatar-wrap"><img class="avatar" src="images/ph_6.jpg" alt="佐藤 花子"></div>
-      <div class="badge">PR</div>
-      <h3>佐藤 花子</h3>
-      <p>東京都全域 / 宅建士</p>
-      <a class="btn" href="profile_sato.html">プロフィールを見る</a>
-    </div>
-<div class="card card--pro">
-  <div class="avatar-wrap">
-    <img class="avatar" src="images/no_image2.gif" alt="募集中">
-  </div>
-  <div class="badge">PR</div>
-  <h3>募集中</h3>
-  <p>ただいま準備中です</p>
-  <a class="btn" href="#">プロフィールを見る</a>
-</div>
-  
-       </div>
-
-        
-
-     
-      <h3 class="tier-title silver">おすすめ枠（2万円 / 月）</h3>
-      <div class="cards cards-12" id="tierSilver"><div class="card card--silver">
-      <div class="avatar-wrap"><img class="avatar" src="images/33346308_s.jpg
-" alt="田中 美咲"></div>
-      <div class="badge">おすすめ</div>
-      <h3>田中 美咲</h3>
-      <p>東京都多摩 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div>
-<div class="card card--silver">
-      <div class="avatar-wrap"><img class="avatar" src="images/3373.jpg" alt="高橋 健"></div>
-      <div class="badge">おすすめ</div>
-      <h3>高橋 健</h3>
-      <p>東京西部 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div>
-<div class="card card--silver">
-      <div class="avatar-wrap"><img class="avatar" src="images/ph_2.jpg" alt="中村 彩"></div>
-      <div class="badge">おすすめ</div>
-      <h3>中村 彩</h3>
-      <p>神奈川 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div>
-<div class="card card--silver">
-      <div class="avatar-wrap"><img class="avatar" src="images/17116.jpg" alt="小林 智"></div>
-      <div class="badge">おすすめ</div>
-      <h3>小林 智</h3>
-      <p>千葉 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div></div>
-
-      <h3 class="tier-title bronze">掲載枠（1万円 / 月）</h3>
-      <div class="cards cards-12" id="tierBronze"><div class="card card--bronze">
-      <div class="avatar-wrap"><img class="avatar" src="images/0508.jpg" alt="加藤 花"></div>
-      <div class="badge">掲載枠</div>
-      <h3>加藤 花</h3>
-      <p>埼玉 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div>
-<div class="card card--bronze">
-      <div class="avatar-wrap"><img class="avatar" src="images/8905.jpg" alt="斎藤 陸"></div>
-      <div class="badge">掲載枠</div>
-      <h3>斎藤 陸</h3>
-      <p>東京23区 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div>
-<div class="card card--bronze">
-      <div class="avatar-wrap"><img class="avatar" src="images/33448526.jpg" alt="森田 舞"></div>
-      <div class="badge">掲載枠</div>
-      <h3>森田 舞</h3>
-      <p>東京東部 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div>
-<div class="card card--bronze">
-      <div class="avatar-wrap"><img class="avatar" src="images/6691.jpg" alt="石井 圭"></div>
-      <div class="badge">掲載枠</div>
-      <h3>石井 圭</h3>
-      <p>神奈川北部 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div></div>
-    </div>
-  </section>
-
-  <footer class="site-foot"><small>c お家.com | デモサイト</small></footer>
- 
-
-
-<!-- ===== モバイルメニュー：安全版（右上・上からスライド） ===== -->
-
-<!-- ===== /モバイルメニュー：安全版 ===== -->
-
-
-  <script>
-(function () {
-  const btn = document.getElementById('menuButton');
-  const nav = document.getElementById('mnav');
-  const backdrop = document.getElementById('backdrop');
-
-  if (!btn || !nav || !backdrop) return;
-
-  function openNav() {
-    nav.setAttribute('aria-hidden', 'false');
-    btn.setAttribute('aria-expanded', 'true');
-    document.body.classList.add('nav-open');
-    backdrop.hidden = false;
-    requestAnimationFrame(() => backdrop.classList.add('show'));
-    btn.setAttribute('aria-label', 'メニューを閉じる');
-  }
-
-  function closeNav() {
-    nav.setAttribute('aria-hidden', 'true');
-    btn.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('nav-open');
-    backdrop.classList.remove('show');
-    setTimeout(() => { backdrop.hidden = true; }, 200);
-    btn.setAttribute('aria-label', 'メニューを開く');
-  }
-
-  function toggleNav() {
-    const isOpen = nav.getAttribute('aria-hidden') === 'false';
-    isOpen ? closeNav() : openNav();
-  }
-
-  btn.addEventListener('click', toggleNav);
-  backdrop.addEventListener('click', closeNav);
-
-  // ESCで閉じる
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav.getAttribute('aria-hidden') === 'false') {
-      closeNav();
-      btn.focus();
-    }
-  });
-
-  // メニュー内リンクをタップしたら閉じる（SP時）
-// メニュー内リンクをタップしたら閉じる（SP時）
-nav.addEventListener('click', (e) => {
-  const a = e.target.closest('a');
-  if (a && window.matchMedia('(max-width: 768px)').matches) {
-    setTimeout(() => {
-      closeNav();
-    }, 300); // ← 0.3秒遅らせることでリンク遷移が優先される
-  }
-});
-})();
-</script>
-
-
-
-
-
-
-<style>
-/* スライダー用の最低限のCSS */
-.slider {
-  position: relative;
-  height: 70vh;
-  overflow: hidden;
-}
-.slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1s;
-}
-.slide.active {
-  opacity: 1;
-}
-.cap {
-  position: absolute;
-  bottom: 20%;
-  left: 10%;
-  color: #fff;
-}
-</style>
-
-<style id="hotfix-cap">
-/* --- スライダー基礎（念のため再定義） --- */
-.slider { position: relative !important; overflow: hidden !important; height: 70vh !important; }
-.slider .slide{
-  position: absolute !important; inset: 0 !important;
-  background-size: cover !important; background-position: center !important;
-  opacity: 0 !important; transition: opacity 1s !important; z-index: 1 !important;
-}
-.slider .slide.active{ opacity: 1 !important; }
-
-/* --- キャプションを画面ド真ん中に固定＆はみ出し防止 --- */
-.slider .cap{
-  position: absolute !important;
-  top: 50% !important; left: 50% !important; right: auto !important; bottom: auto !important;
-  transform: translate(-50%, -50%) !important;
-  width: min(92vw, 820px) !important;
-  padding: 0 2vw !important;
-  text-align: center !important;
-  z-index: 2 !important;
-  box-sizing: border-box !important;
+.menu-toggle{background:transparent;border:0;padding:8px;line-height:0}
+
+/* PCナビはモバイルで非表示 */
+.pnav{display:none}
+@media(min-width:960px){
+  .menu-toggle{display:none}
+  .pnav{display:block}
+  .pnav-list{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+  .pnav a{color:#111}
 }
 
-/* 見やすさ（サイズは端末に応じて縮む） */
-.slider .cap h1{
-  margin: 0 0 .5em !important;
-  line-height: 1.25 !important;
-  font-size: clamp(22px, 6vw, 48px) !important;
-  color: #fff !important;
-  text-shadow: 0 2px 6px rgba(0,0,0,.35) !important;
+/* モバイルメニュー（右から出る） */
+#mnav{
+  position:fixed;inset:0 0 0 auto;width:min(86vw,360px);height:100vh;
+  background:#fff;transform:translateX(100%);transition:transform .25s ease;
+  z-index:var(--z-mnav);box-shadow:-12px 0 24px rgba(0,0,0,.08);
+  padding:20px
 }
-.slider .cap p{
-  margin: 0 0 1.2em !important;
-  font-size: clamp(14px, 2.8vw, 18px) !important;
-  color: #fff !important;
-  text-shadow: 0 1px 4px rgba(0,0,0,.35) !important;
-}
-.slider .cta-hero{
-  display: inline-block !important;
-  padding: 12px 20px !important;
-  background: #f90 !important; color: #fff !important;
-  border-radius: 9999px !important; text-decoration: none !important; font-weight: 700 !important;
-  white-space: nowrap !important;  /* はみ出し防止 */
-}
+#mnav[aria-hidden="false"]{transform:translateX(0)}
+.mnav-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.mnav a{display:block;padding:12px 10px;border-radius:10px;background:#f8fafc}
 
-/* 背景の薄暗化（文字の可読性アップ） */
+/* バックドロップ */
+.backdrop{
+  position:fixed;inset:0;background:rgba(0,0,0,.35);
+  opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:var(--z-backdrop)
+}
+.backdrop.show{opacity:1;pointer-events:auto}
+
+/* スライダー */
+.slider{position:relative;height:70vh;overflow:hidden}
+.slide{
+  position:absolute;inset:0;background-size:cover;background-position:center;
+  opacity:0;transition:opacity 1s;z-index:1
+}
+.slide.active{opacity:1}
+.cap{
+  position:absolute;inset:auto auto 12% 8%;color:#fff;z-index:2;
+  text-shadow:0 2px 6px rgba(0,0,0,.35)
+}
+.cap h1{margin:0 0 .5em;font-size:clamp(22px,6vw,44px);line-height:1.25}
+.cap p{margin:0 0 1.2em;font-size:clamp(14px,3.2vw,18px)}
+.cta-hero{display:inline-block;padding:12px 20px;border-radius:9999px;font-weight:700;background:var(--brand);color:#fff}
+
+/* 文字の視認性UP */
 .slider::after{
-  content: "" !important; position: absolute !important; inset: 0 !important;
-  background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.25)) !important;
-  z-index: 1 !important;
+  content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.25),rgba(0,0,0,.15));z-index:1
 }
 
-</style>
+/* 検索/登録など軽いセクション */
+.search-box{padding:24px 16px}
 
-
- 
-  
-  <style>
-#mnav.mnav {
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+/* ===== 注目の宅建士（元のカードを復元） ===== */
+.section{padding:40px 16px}
+.inner{max-width:1200px;margin:0 auto}
+.tier-title{margin:24px 0 12px;font-size:1.1rem}
+.tier-title.gold{color:#b8860b}
+.tier-title.silver{color:#6b7280}
+.tier-title.bronze{color:#b45309}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{
+  background:#fff;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.08);
+  padding:16px;text-align:center;position:relative;overflow:hidden
 }
-</style>
+.card .avatar{width:120px;height:120px;object-fit:cover;border-radius:50%;margin:0 auto 10px;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+.card .btn{display:inline-block;margin-top:8px;padding:8px 12px;border-radius:9999px;background:#f3f4f6}
+.card--pro .btn{background:#ffedd5}
+.card--silver .btn{background:#e5e7eb}
+.card--bronze .btn{background:#fef3c7}
+.badge{
+  position:absolute;top:10px;left:10px;background:#111827;color:#fff;
+  padding:3px 8px;border-radius:9999px;font-size:.75rem
+}
+.cards-12{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.points-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:16px 0}
+.point{background:#f9fafb;border-radius:12px;padding:16px}
 
+/* フッター */
+.site-foot{padding:24px 16px;border-top:1px solid #eee;color:#6b7280}
+</style>
 </head>
 <body>
 
-<!-- ヘッダーは削除 -->
-
-<!-- メインビジュアル -->
-<!-- ===== ヘッダーここから ===== -->
-
-<!-- ===== ヘッダーここから ===== -->
-
-
-
-
-
-
-  
-<style>
-.site-header{
-  background:#fff;
-  padding:10px 40px;
-  border-bottom:1px solid #eee;
-}
-.header-inner{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.logo img{
-  height:60px;
-  width:auto;
-  display:block;
-}
-.btn-estimate{
-  display:inline-block;
-  padding:10px 20px;
-  background:#f90;
-  color:#fff;
-  border-radius:20px;
-  text-decoration:none;
-  font-weight:700;
-}
-@media(max-width:640px){
-  .site-header{ padding:8px 16px; }
-  .logo img{ height:42px; }
-}
-</style>
-
-
-<!-- ===== ヘッダーここまで ===== -->
+<!-- ===== ヘッダー ===== -->
 <header class="site-header">
   <div class="header-inner">
-    <!-- ロゴ -->
-    <a href="index.html" class="logo">
-      <img src="images/logo.png" alt="お家.com">
-    </a>
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="お家.com"></a>
 
-    <!-- PC用ナビ -->
     <nav id="pnav" class="pnav" aria-label="グローバル">
       <ul class="pnav-list">
         <li><a href="index.html">ホーム</a></li>
@@ -674,242 +135,57 @@ nav.addEventListener('click', (e) => {
       </ul>
     </nav>
 
-    <!-- スマホ用ナビ -->
-    <nav id="mnav" class="mnav" aria-hidden="true">
-      <ul class="mnav-list">
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="vision.html">理念</a></li>
-        <li><a href="legal.html">法令順守</a></li>
-      </ul>
-    </nav>
-
-    <!-- 見積りボタン -->
     <a href="https://forms.gle/JFEfwf4pY9JbTSKDA" class="btn-estimate">無料見積り</a>
 
-    <!-- ハンバーガーボタン -->
-    <!-- ハンバーガーボタン -->
-<button id="menuButton"
-        class="menu-toggle"
-        aria-label="メニューを開く"
-        aria-controls="mnav"
-        aria-expanded="false">
-  <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22">
-    <path d="M3 6h18M3 12h18M3 18h18"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"/>
-  </svg>
-</button>
-
-    
+    <button id="menuButton" class="menu-toggle" aria-label="メニューを開く" aria-controls="mnav" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24">
+        <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
   </div>
 </header>
-<script>
-(function () {
-  const btn = document.getElementById('menuButton');
-  const nav = document.getElementById('mnav');
-  const backdrop = document.getElementById('backdrop');
-  if (!btn || !nav || !backdrop) return;
 
-  const open = () => {
-    nav.setAttribute('aria-hidden', 'false');
-    btn.setAttribute('aria-expanded', 'true');
-    document.body.classList.add('nav-open');
-    backdrop.hidden = false;
-    requestAnimationFrame(() => backdrop.classList.add('show'));
-    btn.setAttribute('aria-label', 'メニューを閉じる');
-  };
-  const close = () => {
-    nav.setAttribute('aria-hidden', 'true');
-    btn.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('nav-open');
-    backdrop.classList.remove('show');
-    setTimeout(() => { backdrop.hidden = true; }, 200);
-    btn.setAttribute('aria-label', 'メニューを開く');
-  };
+<!-- モバイルメニュー -->
+<nav id="mnav" class="mnav" aria-hidden="true" aria-label="モバイルメニュー">
+  <ul class="mnav-list">
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="vision.html">理念</a></li>
+    <li><a href="legal.html">法令順守</a></li>
+  </ul>
+</nav>
 
-  const toggle = () => {
-    const isOpen = nav.getAttribute('aria-hidden') === 'false';
-    isOpen ? close() : open();
-  };
-
-  btn.addEventListener('click', toggle);
-  backdrop.addEventListener('click', close);
-
-  // ★リンクのクリックは“妨げない”。遷移が起きなかった場合だけ後から閉じる。
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      if (window.matchMedia('(max-width: 768px)').matches) {
-        // 遷移が発生すればこのページはアンロードされるので何もしない。
-        // 700ms後もこのドキュメントが表示中（=遷移していない）なら閉じる。
-        setTimeout(() => { if (!document.hidden) close(); }, 700);
-      }
-    });
-  });
-
-  // ESCで閉じる
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav.getAttribute('aria-hidden') === 'false') {
-      close();
-      btn.focus();
-    }
-  });
-})();
-</script>
-
-<!-- 背景（クリックで閉じる用） -->
+<!-- バックドロップ（1つだけ） -->
 <div id="backdrop" class="backdrop" hidden></div>
 
-
-<!-- メニュー開時の半透明背景（必ずheader直後） -->
-<div id="backdrop"
-     class="backdrop"
-     hidden
-     style="position:fixed;inset:0;background:rgba(0,0,0,0.35);opacity:0;pointer-events:none;transition:opacity .2s;z-index:2147483646;">
-</div>
-
-
-  <!-- ↓↓↓ ここに “headerの外” として置く ↓↓↓ -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-<!-- ===== ヘッダーここまで ===== -->
-
-<!-- ==== モバイル専用：右下の丸ボタン ==== -->
-
-
-<!-- ==== 全画面ドロワー ==== -->
-
-<!-- ===== ヘッダーここまで ===== -->
-
-
-
-  
-
-  <section class="slider" aria-label="注目スライド">
-<div class="slide active" style="background-image:url('slide1.jpg');"></div>
-<div class="slide" style="background-image:url('slide2.jpg');"></div>
-<div class="slide" style="background-image:url('slide3.jpg');"></div>
-<div class="cap">
-      <h1>仲介手数料無料のその先へ</h1>
-      <p>新しい時代の不動産エージェント</p>
-      <a class="cta-hero" href="https://forms.gle/JFEfwf4pY9JbTSKDA">無料見積りを依頼する</a>
-    </div>
-  </section>
-
-  <section class="search-box">
-    <h2>あなたに、ピッタリの宅建士をみつけよう！</h2>
-    <p>相性重視のマッチング。もし合わなくても、変更はいつでも無料。</p>
-    <div class="search">
-      <input placeholder="『港区』『相続に強い』で検索">
-
-
-
-
-
-
-      <button>宅建士を探す</button>
-    </div>
-  </section>
-
-<section class="register-section">
- <h2>会員登録（無料・<strong>匿名OK</strong>）</h2>
-  <p>メールアドレスだけで登録できます。住まい探しの最新情報をお届けします。</p>
-  <a href="https://forms.gle/GzpGjMXFzih1hAiD7" target="_blank" class="register-btn">
-    無料で会員登録する
-  </a>
+<!-- ===== スライダー ===== -->
+<section class="slider" aria-label="注目スライド">
+  <div class="slide active" style="background-image:url('slide1.jpg');"></div>
+  <div class="slide" style="background-image:url('slide2.jpg');"></div>
+  <div class="slide" style="background-image:url('slide3.jpg');"></div>
+  <div class="cap">
+    <h1>仲介手数料無料のその先へ</h1>
+    <p>新しい時代の不動産エージェント</p>
+    <a class="cta-hero" href="https://forms.gle/JFEfwf4pY9JbTSKDA">無料見積りを依頼する</a>
+  </div>
 </section>
 
-<style>
-.register-section {
-  text-align: center;
-  padding: 36px 16px;
-  background: #f9fafb;
-}
-.register-section h2 {
-  font-size: 1.4rem;
-  margin: 0 0 8px;
-  color: #111827;
-}
-.register-section p {
-  font-size: .95rem;
-  margin: 0 0 20px;
-  color: #4b5563;
-}
-.register-btn {
-  display: inline-block;
-  width: 100%;
-  max-width: 420px;
-  padding: 14px 20px;
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-decoration: none;
-  text-align: center;
-  color: #fff;
-  background: #007acc;
-  border-radius: 10px;
-}
-.register-btn:hover {
-  background: #0063b0;
-}
-@media(min-width:768px){
-  .register-section {
-    padding: 48px 20px;
-  }
-}
-</style>
-
-
-
-
-
-
-  
-<!-- 👇 cardsセクションの直前に挿入（38行目の</section>のすぐ下など） -->
-<section class="greeting" aria-labelledby="greet-title">
-  <div class="greeting-inner">
-    <h2 id="greet-title">運営からのお知らせ</h2>
-    <p class="note">
+<!-- ===== 運営からのお知らせ（元の文言） ===== -->
+<section class="greeting" aria-labelledby="greet-title" style="padding:28px 16px;background:#f9fafb">
+  <div class="greeting-inner" style="max-width:1200px;margin:0 auto">
+    <h2 id="greet-title" style="margin:0 0 6px">運営からのお知らせ</h2>
+    <p class="note" style="margin:0 0 12px;color:#6b7280">
       ※現在は体制構築中です。提供開始に向け、クラウドファンディングでのご支援を募っています。
     </p>
-    <div class="greeting-actions">
-      <a href="https://camp-fire.jp/projects/xxxxxx" target="_blank" class="btn btn-cf">クラファンをみる</a>
-      <a href="フォーム.html" class="btn btn-outline">お問い合わせ</a>
+    <div class="greeting-actions" style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="https://camp-fire.jp/projects/xxxxxx" target="_blank" class="btn btn-cf" style="padding:10px 14px;border-radius:10px;background:#ef4444;color:#fff">クラファンをみる</a>
+      <a href="フォーム.html" class="btn btn-outline" style="padding:10px 14px;border-radius:10px;border:1px solid #d1d5db">お問い合わせ</a>
     </div>
   </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-  
-  <section class="section">
-    <div class="inner">
-
+<!-- ===== ポイント3 ===== -->
 <section class="section">
   <div class="inner">
-
     <div class="points-3">
       <div class="point">
         <h3>仲介手数料は最大無料</h3>
@@ -924,362 +200,177 @@ nav.addEventListener('click', (e) => {
         <p>相性重視。もし合わなくても担当はいつでも無料で変更できます。</p>
       </div>
     </div>
-
   </div>
 </section>
 
+<!-- ===== 注目の宅建士（復元） ===== -->
+<section class="section">
+  <div class="inner">
+    <h2>注目の宅建士</h2>
 
-
-
-      <h2>注目の宅建士</h2>
-
-      <h3 class="tier-title gold">PR枠（3万円 / 月）</h3>
-      <div class="cards cards-12" id="tierGold"><div class="card card--pro">
-      <div class="avatar-wrap"><img class="avatar" src="images/agent_1.jpg" alt="井上 広樹"></div>
-      <div class="badge">PR</div>
-      <h3>井上 広樹</h3>
-      <p>東京都23区 / 宅建士・建築士</p>
-      <a class="btn" href="profile_inoue.html">プロフィールを見る</a>
+    <h3 class="tier-title gold">PR枠（3万円 / 月）</h3>
+    <div class="cards cards-12" id="tierGold">
+      <div class="card card--pro">
+        <div class="avatar-wrap"><img class="avatar" src="images/agent_1.jpg" alt="井上 広樹"></div>
+        <div class="badge">PR</div>
+        <h3>井上 広樹</h3>
+        <p>東京都23区 / 宅建士・建築士</p>
+        <a class="btn" href="profile_inoue.html">プロフィールを見る</a>
+      </div>
+      <div class="card card--pro">
+        <div class="avatar-wrap"><img class="avatar" src="images/6822.jpg" alt="山田 太郎"></div>
+        <div class="badge">PR</div>
+        <h3>山田 太郎</h3>
+        <p>神奈川県全域 / 宅建士</p>
+        <a class="btn" href="profile_yamada.html">プロフィールを見る</a>
+      </div>
+      <div class="card card--pro">
+        <div class="avatar-wrap"><img class="avatar" src="images/ph_6.jpg" alt="佐藤 花子"></div>
+        <div class="badge">PR</div>
+        <h3>佐藤 花子</h3>
+        <p>東京都全域 / 宅建士</p>
+        <a class="btn" href="profile_sato.html">プロフィールを見る</a>
+      </div>
+      <div class="card card--pro">
+        <div class="avatar-wrap"><img class="avatar" src="images/no_image2.gif" alt="募集中"></div>
+        <div class="badge">PR</div>
+        <h3>募集中</h3>
+        <p>ただいま準備中です</p>
+        <a class="btn" href="#">プロフィールを見る</a>
+      </div>
     </div>
-<div class="card card--pro">
-      <div class="avatar-wrap"><img class="avatar" src="images/6822.jpg" alt="山田 太郎"></div>
-      <div class="badge">PR</div>
-      <h3>山田 太郎</h3>
-      <p>神奈川県全域 / 宅建士</p>
-      <a class="btn" href="profile_yamada.html">プロフィールを見る</a>
+
+    <h3 class="tier-title silver">おすすめ枠（2万円 / 月）</h3>
+    <div class="cards cards-12" id="tierSilver">
+      <div class="card card--silver">
+        <div class="avatar-wrap"><img class="avatar" src="images/33346308_s.jpg" alt="田中 美咲"></div>
+        <div class="badge">おすすめ</div>
+        <h3>田中 美咲</h3>
+        <p>東京都多摩 / 宅建士</p>
+        <a href="#" class="btn">プロフィール</a>
+      </div>
+      <div class="card card--silver">
+        <div class="avatar-wrap"><img class="avatar" src="images/3373.jpg" alt="高橋 健"></div>
+        <div class="badge">おすすめ</div>
+        <h3>高橋 健</h3>
+        <p>東京西部 / 宅建士</p>
+        <a href="#" class="btn">プロフィール</a>
+      </div>
+      <div class="card card--silver">
+        <div class="avatar-wrap"><img class="avatar" src="images/ph_2.jpg" alt="中村 彩"></div>
+        <div class="badge">おすすめ</div>
+        <h3>中村 彩</h3>
+        <p>神奈川 / 宅建士</p>
+        <a href="#" class="btn">プロフィール</a>
+      </div>
+      <div class="card card--silver">
+        <div class="avatar-wrap"><img class="avatar" src="images/17116.jpg" alt="小林 智"></div>
+        <div class="badge">おすすめ</div>
+        <h3>小林 智</h3>
+        <p>千葉 / 宅建士</p>
+        <a href="#" class="btn">プロフィール</a>
+      </div>
     </div>
-<div class="card card--pro">
-      <div class="avatar-wrap"><img class="avatar" src="images/ph_6.jpg" alt="佐藤 花子"></div>
-      <div class="badge">PR</div>
-      <h3>佐藤 花子</h3>
-      <p>東京都全域 / 宅建士</p>
-      <a class="btn" href="profile_sato.html">プロフィールを見る</a>
+
+    <h3 class="tier-title bronze">掲載枠（1万円 / 月）</h3>
+    <div class="cards cards-12" id="tierBronze">
+      <div class="card card--bronze">
+        <div class="avatar-wrap"><img class="avatar" src="images/0508.jpg" alt="加藤 花"></div>
+        <div class="badge">掲載枠</div>
+        <h3>加藤 花</h3>
+        <p>埼玉 / 宅建士</p>
+        <a href="#" class="btn">プロフィール</a>
+      </div>
+      <div class="card card--bronze">
+        <div class="avatar-wrap"><img class="avatar" src="images/8905.jpg" alt="斎藤 陸"></div>
+        <div class="badge">掲載枠</div>
+        <h3>斎藤 陸</h3>
+        <p>東京23区 / 宅建士</p>
+        <a href="#" class="btn">プロフィール</a>
+      </div>
+      <div class="card card--bronze">
+        <div class="avatar-wrap"><img class="avatar" src="images/33448526.jpg" alt="森田 舞"></div>
+        <div class="badge">掲載枠</div>
+        <h3>森田 舞</h3>
+        <p>東京東部 / 宅建士</p>
+        <a href="#" class="btn">プロフィール</a>
+      </div>
+      <div class="card card--bronze">
+        <div class="avatar-wrap"><img class="avatar" src="images/6691.jpg" alt="石井 圭"></div>
+        <div class="badge">掲載枠</div>
+        <h3>石井 圭</h3>
+        <p>神奈川北部 / 宅建士</p>
+        <a href="#" class="btn">プロフィール</a>
+      </div>
     </div>
-<div class="card card--pro">
-  <div class="avatar-wrap">
-    <img class="avatar" src="images/no_image2.gif" alt="募集中">
   </div>
-  <div class="badge">PR</div>
-  <h3>募集中</h3>
-  <p>ただいま準備中です</p>
-  <a class="btn" href="#">プロフィールを見る</a>
-</div>
-  
-       </div>
+</section>
 
-        
+<footer class="site-foot"><small>c お家.com | デモサイト</small></footer>
 
-     
-      <h3 class="tier-title silver">おすすめ枠（2万円 / 月）</h3>
-      <div class="cards cards-12" id="tierSilver"><div class="card card--silver">
-      <div class="avatar-wrap"><img class="avatar" src="images/33346308_s.jpg
-" alt="田中 美咲"></div>
-      <div class="badge">おすすめ</div>
-      <h3>田中 美咲</h3>
-      <p>東京都多摩 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div>
-<div class="card card--silver">
-      <div class="avatar-wrap"><img class="avatar" src="images/3373.jpg" alt="高橋 健"></div>
-      <div class="badge">おすすめ</div>
-      <h3>高橋 健</h3>
-      <p>東京西部 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div>
-<div class="card card--silver">
-      <div class="avatar-wrap"><img class="avatar" src="images/ph_2.jpg" alt="中村 彩"></div>
-      <div class="badge">おすすめ</div>
-      <h3>中村 彩</h3>
-      <p>神奈川 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div>
-<div class="card card--silver">
-      <div class="avatar-wrap"><img class="avatar" src="images/17116.jpg" alt="小林 智"></div>
-      <div class="badge">おすすめ</div>
-      <h3>小林 智</h3>
-      <p>千葉 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div></div>
-
-      <h3 class="tier-title bronze">掲載枠（1万円 / 月）</h3>
-      <div class="cards cards-12" id="tierBronze"><div class="card card--bronze">
-      <div class="avatar-wrap"><img class="avatar" src="images/0508.jpg" alt="加藤 花"></div>
-      <div class="badge">掲載枠</div>
-      <h3>加藤 花</h3>
-      <p>埼玉 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div>
-<div class="card card--bronze">
-      <div class="avatar-wrap"><img class="avatar" src="images/8905.jpg" alt="斎藤 陸"></div>
-      <div class="badge">掲載枠</div>
-      <h3>斎藤 陸</h3>
-      <p>東京23区 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div>
-<div class="card card--bronze">
-      <div class="avatar-wrap"><img class="avatar" src="images/33448526.jpg" alt="森田 舞"></div>
-      <div class="badge">掲載枠</div>
-      <h3>森田 舞</h3>
-      <p>東京東部 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div>
-<div class="card card--bronze">
-      <div class="avatar-wrap"><img class="avatar" src="images/6691.jpg" alt="石井 圭"></div>
-      <div class="badge">掲載枠</div>
-      <h3>石井 圭</h3>
-      <p>神奈川北部 / 宅建士</p>
-      <a href="#" class="btn">プロフィール</a>
-    </div></div>
-    </div>
-  </section>
-
-  <footer class="site-foot"><small>c お家.com | デモサイト</small></footer>
- 
-
-
-<!-- ===== モバイルメニュー：安全版（右上・上からスライド） ===== -->
-
-<!-- ===== /モバイルメニュー：安全版 ===== -->
-
-
-  <script>
-(function () {
+<!-- ===== JS ===== -->
+<script>
+// モバイルメニュー
+(() => {
   const btn = document.getElementById('menuButton');
   const nav = document.getElementById('mnav');
   const backdrop = document.getElementById('backdrop');
-
   if (!btn || !nav || !backdrop) return;
 
-  function openNav() {
-    nav.setAttribute('aria-hidden', 'false');
-    btn.setAttribute('aria-expanded', 'true');
-    document.body.classList.add('nav-open');
+  const open = () => {
+    nav.setAttribute('aria-hidden','false');
+    btn.setAttribute('aria-expanded','true');
     backdrop.hidden = false;
-    requestAnimationFrame(() => backdrop.classList.add('show'));
-    btn.setAttribute('aria-label', 'メニューを閉じる');
-  }
-
-  function closeNav() {
-    nav.setAttribute('aria-hidden', 'true');
-    btn.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('nav-open');
+    requestAnimationFrame(()=>backdrop.classList.add('show'));
+    btn.setAttribute('aria-label','メニューを閉じる');
+    document.documentElement.style.overflow = 'hidden';
+  };
+  const close = () => {
+    nav.setAttribute('aria-hidden','true');
+    btn.setAttribute('aria-expanded','false');
     backdrop.classList.remove('show');
-    setTimeout(() => { backdrop.hidden = true; }, 200);
-    btn.setAttribute('aria-label', 'メニューを開く');
-  }
+    setTimeout(()=>{ backdrop.hidden = true; }, 200);
+    btn.setAttribute('aria-label','メニューを開く');
+    document.documentElement.style.overflow = '';
+  };
+  const toggle = () => (nav.getAttribute('aria-hidden') === 'false' ? close() : open());
 
-  function toggleNav() {
-    const isOpen = nav.getAttribute('aria-hidden') === 'false';
-    isOpen ? closeNav() : openNav();
-  }
+  btn.addEventListener('click', toggle);
+  backdrop.addEventListener('click', close);
 
-  btn.addEventListener('click', toggleNav);
-  backdrop.addEventListener('click', closeNav);
-
-  // ESCで閉じる
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav.getAttribute('aria-hidden') === 'false') {
-      closeNav();
-      btn.focus();
+  // メニュー内リンクをタップ → 遷移が起きなければ閉じる
+  nav.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (a && window.matchMedia('(max-width: 960px)').matches) {
+      setTimeout(()=>{ if(!document.hidden) close(); }, 500);
     }
   });
 
-  // メニュー内リンクをタップしたら閉じる（SP時）
-// メニュー内リンクをタップしたら閉じる（SP時）
-nav.addEventListener('click', (e) => {
-  const a = e.target.closest('a');
-  if (a && window.matchMedia('(max-width: 768px)').matches) {
-    setTimeout(() => {
-      closeNav();
-    }, 300); // ← 0.3秒遅らせることでリンク遷移が優先される
-  }
-});
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.getAttribute('aria-hidden') === 'false') {
+      close(); btn.focus();
+    }
+  });
 })();
-</script>
 
-
-
-   
-
-<style>
-/* スライダー用の最低限のCSS */
-.slider {
-  position: relative;
-  height: 70vh;
-  overflow: hidden;
-}
-.slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1s;
-}
-.slide.active {
-  opacity: 1;
-}
-.cap {
-  position: absolute;
-  bottom: 20%;
-  left: 10%;
-  color: #fff;
-}
-</style>
-
-<style id="hotfix-cap">
-/* --- スライダー基礎（念のため再定義） --- */
-.slider { position: relative !important; overflow: hidden !important; height: 70vh !important; }
-.slider .slide{
-  position: absolute !important; inset: 0 !important;
-  background-size: cover !important; background-position: center !important;
-  opacity: 0 !important; transition: opacity 1s !important; z-index: 1 !important;
-}
-.slider .slide.active{ opacity: 1 !important; }
-
-/* --- キャプションを画面ド真ん中に固定＆はみ出し防止 --- */
-.slider .cap{
-  position: absolute !important;
-  top: 50% !important; left: 50% !important; right: auto !important; bottom: auto !important;
-  transform: translate(-50%, -50%) !important;
-  width: min(92vw, 820px) !important;
-  padding: 0 2vw !important;
-  text-align: center !important;
-  z-index: 2 !important;
-  box-sizing: border-box !important;
-}
-
-/* 見やすさ（サイズは端末に応じて縮む） */
-.slider .cap h1{
-  margin: 0 0 .5em !important;
-  line-height: 1.25 !important;
-  font-size: clamp(22px, 6vw, 48px) !important;
-  color: #fff !important;
-  text-shadow: 0 2px 6px rgba(0,0,0,.35) !important;
-}
-.slider .cap p{
-  margin: 0 0 1.2em !important;
-  font-size: clamp(14px, 2.8vw, 18px) !important;
-  color: #fff !important;
-  text-shadow: 0 1px 4px rgba(0,0,0,.35) !important;
-}
-.slider .cta-hero{
-  display: inline-block !important;
-  padding: 12px 20px !important;
-  background: #f90 !important; color: #fff !important;
-  border-radius: 9999px !important; text-decoration: none !important; font-weight: 700 !important;
-  white-space: nowrap !important;  /* はみ出し防止 */
-}
-
-/* 背景の薄暗化（文字の可読性アップ） */
-.slider::after{
-  content: "" !important; position: absolute !important; inset: 0 !important;
-  background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.25)) !important;
-  z-index: 1 !important;
-}
-
-</style>
-
-<script>
+// スライダー
 document.addEventListener('DOMContentLoaded', () => {
-  // --- 多重起動対策（旧コードが残っても安全に） ---
   if (window._sliderInitialized) return;
   window._sliderInitialized = true;
-  if (window._sliderTimer) clearInterval(window._sliderTimer);
 
   const slides = Array.from(document.querySelectorAll('.slider .slide'));
   if (!slides.length) return;
 
   let current = Math.max(0, slides.findIndex(s => s.classList.contains('active')));
-  if (current === -1) current = 0;
+  function show(i){ slides.forEach((s,idx)=>s.classList.toggle('active', idx===i)); }
+  function ensure(){ if(!document.querySelector('.slider .slide.active')){ current=0; show(current); } }
 
-  function show(index){
-    slides.forEach((s,i) => s.classList.toggle('active', i === index));
-  }
+  show(current);
+  function next(){ current = (current + 1) % slides.length; show(current); ensure(); }
 
-  function ensureOneActive(){
-    if (!document.querySelector('.slider .slide.active')) {
-      current = 0;
-      show(current);
-    }
-  }
-
-  show(current); // 初期表示
-
-  function next(){
-    current = (current + 1) % slides.length;
-    show(current);
-    ensureOneActive();
-  }
-
-  document.addEventListener('visibilitychange', () => {
-    if (!document.hidden) ensureOneActive();
-  });
-
+  document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) ensure(); });
   window._sliderTimer = setInterval(next, 5000);
 });
 </script>
-
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
