@@ -995,6 +995,29 @@ body.nav-open{ overflow:hidden; }
   z-index: 2147483647; /* ← これが大事 */
 }
 
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+  z-index: 999;  /* ← 2147483646 をやめてこれくらいに */
+}
+
+.backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* スマホメニューは backdrop の上にくるように */
+#mnav {
+  position: fixed;
+  top: 0; right: 0; left: 0;
+  background: #fff;
+  z-index: 1000; /* backdropより大きくする */
+}
+
 
 
 
