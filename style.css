@@ -210,6 +210,16 @@ body {
 
 
 
+/* ==== 注目の宅建士のプロフィール画像を丸にする ==== */
+.avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;  /* ← 完全な円形に */
+  box-shadow: 0 6px 18px rgba(255,138,0,.35); /* ← オレンジ系の柔らかい影 */
+  margin: 0 auto 10px;
+  display: block;
+}
 
 
 
@@ -229,6 +239,7 @@ body {
 
 
                       
+
 
 
 
