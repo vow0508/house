@@ -331,6 +331,57 @@ body {
   display:block; margin:0 auto;
 }
 
+/* ====== PCズレ取り・タイトル位置合わせ・丸写真強制 ====== */
+
+/* コンテナは常に中央＆左右パディング統一 */
+.inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+/* 「注目の宅建士」見出しはブロック表示にして左基準をグリッドと揃える */
+.tier-title{
+  position:static !important;   /* 念のため強制 */
+  display:block !important;
+  margin:28px 0 14px !important;
+  padding:0 !important;         /* 左に謎の余白が入っていた場合をリセット */
+  transform:none !important;    /* translate などを無効化 */
+}
+
+/* グリッド：SP 2列／PC 4列。高さも揃える */
+.cards-12{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  align-items:stretch;
+  justify-items:stretch;
+}
+@media (min-width:960px){
+  .cards-12{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+}
+
+/* カードの高さ揃え＆中央寄せ */
+.card{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  background:#fff;
+  border-radius:18px;
+  padding:20px 16px;
+  box-shadow:0 10px 24px rgba(255,138,0,.20),0 4px 10px rgba(255,138,0,.10);
+}
+.card .btn{ margin-top:auto; }  /* ボタンを最下部に揃える */
+
+/* 丸写真（念のため強制） */
+.avatar-wrap{display:flex;justify-content:center;align-items:center;margin-bottom:12px;}
+.avatar{
+  width:120px;height:120px;object-fit:cover;border-radius:50% !important;
+  border:3px solid #fff;box-shadow:0 8px 22px rgba(255,138,0,.35);
+  display:block;margin:0 auto;
+}
 
 
 
@@ -345,6 +396,7 @@ body {
 
 
                       
+
 
 
 
