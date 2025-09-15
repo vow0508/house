@@ -192,17 +192,42 @@
 
 
 
+<!-- ▼フル幅・青い“画像バナー”（クリックでフォームへ） -->
+<a href="https://forms.gle/jhAnvxqweLpzrKHD9"
+   class="blue-banner"
+   aria-label="完全匿名の無料会員登録（Googleフォームへ）">
+  <svg viewBox="0 0 1200 180" role="img" aria-hidden="true" focusable="false" class="blue-banner-svg">
+    <defs>
+      <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#0ea5e9"/>
+        <stop offset="100%" stop-color="#2563eb"/>
+      </linearGradient>
+      <filter id="shadow" x="-20%" y="-50%" width="140%" height="200%">
+        <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="rgba(14,165,233,.35)"/>
+        <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(14,165,233,.25)"/>
+      </filter>
+    </defs>
 
-<!-- フル幅・青バナー：完全匿名の無料会員登録 -->
-<section id="regBlue" aria-label="無料会員登録">
-  <div class="regblue-inner">
-    <p class="regblue-lead">完全匿名の無料会員登録</p>
-    <p class="regblue-sub">メールだけで登録・最短30秒。宅建士に匿名で相談できます。</p>
-    <a class="regblue-btn"
-       href="https://forms.gle/GzpGjMXFzih1hAiD7"
-       target="_blank" rel="noopener">無料会員登録</a>
-  </div>
-</section>
+    <!-- 角丸の青グラデ矩形＋ドロップシャドウ（画像として描画されます） -->
+    <rect x="8" y="8" width="1184" height="164" rx="22" fill="url(#g)" filter="url(#shadow)"/>
+
+    <!-- メインコピー -->
+    <g font-family="Noto Sans JP, system-ui, -apple-system, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif" font-weight="800">
+      <text x="60" y="108" font-size="52" fill="#ffffff">完全匿名の無料会員登録</text>
+    </g>
+
+    <!-- 白いピルボタン（画像内） -->
+    <g>
+      <rect x="940" y="58" width="220" height="64" rx="32" fill="#ffffff"/>
+      <text x="1050" y="102" text-anchor="middle" font-size="28"
+            font-family="Noto Sans JP, system-ui, -apple-system, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif"
+            font-weight="700" fill="#1e3a8a">今すぐ登録</text>
+    </g>
+  </svg>
+</a>
+<!-- ▲ここまで青い“画像バナー” -->
+
+
 
 
 
@@ -608,6 +633,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 </body>
 </html>
+
 
 
 
