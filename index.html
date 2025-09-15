@@ -855,39 +855,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 </style>
 
-<!-- ===== ヒーロー文言（想いを前面に） ※既存の#hero内capを書き換えたい場合、下のh1/pを採用してください ===== -->
-<script>
-  document.addEventListener('DOMContentLoaded',()=>{
-    const cap = document.querySelector('#rescue #hero .cap');
-    if(!cap) return;
-    cap.innerHTML = `
-      <h1>仲介手数料無料のその先へ</h1>
-      <p>「安さ」だけで終わらせない。相性・透明性・購入後の安心まで、宅建士があなたの伴走者になります。</p>
-      <a class="cta-hero" href="https://camp-fire.jp/projects/xxxxxx">10/26 CAMPFIREで開始</a>
-      <div class="countdown" aria-label="10/26までのカウントダウン">
-        <div class="count-item"><b id="cd-days">--</b><small>日</small></div>
-        <div class="count-item"><b id="cd-hours">--</b><small>時間</small></div>
-        <div class="count-item"><b id="cd-mins">--</b><small>分</small></div>
-      </div>
-    `;
-  });
-</script>
-<script>
-  // 最小実装のカウントダウン（10/26 00:00 JST）
-  (function(){
-    const target = new Date('2025-10-26T00:00:00+09:00').getTime();
-    function tick(){
-      const now = Date.now();
-      let diff = Math.max(0, target - now);
-      const d = Math.floor(diff/86400000); diff -= d*86400000;
-      const h = Math.floor(diff/3600000); diff -= h*3600000;
-      const m = Math.floor(diff/60000);
-      const el = (id,v)=>{ const e=document.getElementById(id); if(e) e.textContent=v; };
-      el('cd-days', d); el('cd-hours', ('0'+h).slice(-2)); el('cd-mins', ('0'+m).slice(-2));
-    }
-    setInterval(tick, 30000); tick();
-  })();
-</script>
 
 
 
@@ -919,6 +886,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 </body>
 </html>
+
 
 
 
