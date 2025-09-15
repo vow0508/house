@@ -514,9 +514,55 @@ document.addEventListener('DOMContentLoaded', () => {
 </style>
 
 
+
+
+
+
+
+
+  
+<style id="search-mobile-center-fix">
+/* スマホで入力とボタンを中央&同じ幅に */
+@media (max-width: 640px){
+  #searchCenter{ text-align:center !important; }
+
+  /* コンテナをブロック化して中央へ */
+  #searchCenter .search{
+    display:block !important;           /* ← これでflex指定を打ち消す */
+    max-width:480px !important;
+    margin:0 auto !important;           /* 中央寄せ */
+    float:none !important;              /* 念のため */
+    clear:both !important;
+  }
+
+  /* 入力欄とボタンを100%幅で縦積み */
+  #searchCenter input,
+  #searchCenter button{
+    display:block !important;
+    width:100% !important;
+    box-sizing:border-box !important;
+    margin:0 auto 10px !important;      /* 中央＋下に余白 */
+    float:none !important;              /* 念のため */
+  }
+
+  /* 最後のボタンだけ余白を調整 */
+  #searchCenter .search button{ margin-bottom:0 !important; }
+}
+</style>
+
+
+
+
+
+
+
+
+
+  
   
 </body>
 </html>
+
 
 
 
