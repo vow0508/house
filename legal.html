@@ -5,7 +5,7 @@
   <meta name="robots" content="noindex, nofollow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>法令順守ポリシー｜お家.com</title>
-  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style2.css?v=20250915c">
 </head>
 <body>
 
@@ -26,84 +26,14 @@
 
 <main class="page-content">
   <h1>法令順守ポリシー</h1>
-  <p>
-    お家.comは、宅地建物取引業法をはじめとする関連法令を遵守し、  
-    公正かつ透明な運営を徹底します。
-  </p>
-  <p>
-    現在は情報公開フェーズであり、仲介行為は行っておりません。  
-    宅建業免許を取得後に、正式に仲介業務を開始いたします。
-  </p>
-  <p>
-    また、利用者の信頼を第一に、虚偽や誤解を招く表現を避け、  
-    明確で誠実な情報発信を行うことをお約束します。
-  </p>
+  <p>お家.comは、宅地建物取引業法をはじめとする関連法令を遵守し、公正かつ透明な運営を徹底します。</p>
+  <p>現在は情報公開フェーズであり、仲介行為は行っておりません。宅建業免許を取得後に、正式に仲介業務を開始いたします。</p>
+  <p>また、利用者の信頼を第一に、虚偽や誤解を招く表現を避け、明確で誠実な情報発信を行うことをお約束します。</p>
 </main>
 
 <footer class="site-footer">
   <p>&copy; 2025 お家.com</p>
 </footer>
-/* ===== Subpages Card Style (Vision/Legal) - 追記だけでOK ===== */
-
-/* ★本文を“カード”化（中央配置＋オレンジ系ドロップシャドウ） */
-.page-content{
-  max-width: 960px;
-  margin: 32px auto;
-  padding: 24px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow:
-    0 12px 30px var(--o25),
-    0 3px 10px var(--o35),
-    0 10px 24px rgba(17,24,39,.12),
-    0 2px 6px rgba(17,24,39,.08);
-}
-@media (min-width: 960px){
-  .page-content{ padding: 36px 40px; margin: 48px auto; }
-}
-
-/* 見出しにオレンジの下線バー（トップと統一） */
-.page-content h1{
-  margin: 0 0 14px;
-  text-align: center;
-  line-height: 1.25;
-}
-.page-content h1::after{
-  content:"";
-  display:block;
-  width:64px; height:4px;
-  margin:12px auto 0;
-  background:var(--orange);
-  border-radius:9999px;
-}
-
-/* 文字の行間・余白（読みやすさ） */
-.page-content p{
-  margin: 0 0 1em;
-  line-height: 1.9;
-  color: #1f2937;
-}
-
-/* 画像が入るときの影（本文内のみ） */
-.page-content img{
-  display:block;
-  max-width:100%;
-  height:auto;
-  border-radius:12px;
-  filter: drop-shadow(0 6px 12px var(--o35));
-}
-
-/* ロゴ（テキスト／画像）に影は付けない */
-.site-header .logo img,
-.site-header .logo a{
-  filter:none !important;
-  box-shadow:none !important;
-}
-
-
-<style>
-.site-footer ~ * { display:none !important; } /* フッターの後ろにある要素は全部隠す */
-</style>
 
 </body>
 </html>
