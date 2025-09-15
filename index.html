@@ -182,9 +182,45 @@
   display: block !important;      /* 行間の隙間防止 */
 }
 </style>
+<style id="points-orange-shadow-hotfix">
+/* ポイント3：カードを“注目の宅建士”と同系のオレンジ影にする（最優先） */
+.section .inner .points-3 > .point{
+  position: relative !important;
+  background: #fff !important;            /* 影が見えるよう白ベース */
+  border-radius: 12px !important;
+  padding: 16px !important;
+  overflow: visible !important;            /* 影のにじみを隠さない */
+  /* オレンジ系ドロップシャドウ（二重影） */
+  box-shadow:
+    0 14px 36px rgba(255, 153, 0, 0.24) !important,
+    0 6px 14px rgba(255, 153, 0, 0.14) !important;
+  transition: box-shadow .2s ease, transform .2s ease !important;
+  will-change: transform, box-shadow !important;
+}
+.section .inner .points-3 > .point:hover{
+  transform: translateY(-2px) !important;
+  box-shadow:
+    0 22px 56px rgba(255, 153, 0, 0.30) !important,
+    0 10px 20px rgba(255, 153, 0, 0.16) !important;
+}
+/* 念のため：コンテナ側で影を切らない */
+.section .inner .points-3{ overflow: visible !important; }
+
+/* 見出しの文言（カード上に載るテキスト）の最小整形—任意 */
+.section .inner .points-3 > .point h3{
+  margin: 0 0 8px !important;
+  font-size: 1.1rem !important;
+}
+.section .inner .points-3 > .point p{
+  margin: 0 !important;
+  color: #4b5563 !important;
+  font-size: .95rem !important;
+}
+</style>
 
 </body>
 </html>
+
 
 
 
