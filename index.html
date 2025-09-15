@@ -408,8 +408,96 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
+
+  <!-- ===== 一発コピペ用：注目の宅建士 修正ホットフィックス ===== -->
+<style id="agents-onepaste-hotfix">
+  /* スマホ2列／PC4列を強制 */
+  .section .inner .cards,
+  .cards.cards-12{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:16px !important;
+  }
+  @media (min-width:960px){
+    .section .inner .cards,
+    .cards.cards-12{
+      grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+    }
+  }
+
+  /* アバターを必ず“真円”に */
+  .cards .avatar-wrap{
+    width:120px !important; height:120px !important;
+    aspect-ratio:1/1 !important;
+    border-radius:50% !important; overflow:hidden !important;
+    margin:0 auto 10px !important; display:block !important;
+    box-shadow:0 2px 6px rgba(0,0,0,.12) !important;
+  }
+  @media (min-width:960px){
+    .cards .avatar-wrap{ width:140px !important; height:140px !important; }
+  }
+  .cards .avatar-wrap > img.avatar{
+    width:100% !important; height:100% !important; display:block !important;
+    object-fit:cover !important; border-radius:0 !important;
+  }
+
+  /* ポイント3のカードにもオレンジ影（“注目の宅建士”と統一） */
+  .points-3 .point{
+    background:#fff !important; border-radius:12px !important;
+    box-shadow:
+      0 14px 36px rgba(255,153,0,.24) !important,
+      0  6px 14px rgba(255,153,0,.14) !important;
+    overflow:visible !important;
+  }
+  .section .inner{ overflow:visible !important; }
+</style>
+
+<script id="agents-onepaste-cleanup">
+  // 重複している「注目の宅建士」を自動で整理：PR/おすすめ/掲載枠を含む方だけ残す
+  document.addEventListener('DOMContentLoaded', () => {
+    const textEq = s => s.replace(/\s/g,'').trim();
+    const isAgentsH2 = el => el.tagName === 'H2' && textEq(el.textContent) === '注目の宅建士';
+
+    const h2s = Array.from(document.querySelectorAll('h2')).filter(isAgentsH2);
+    if (!h2s.length) return;
+
+    const getContainer = (h2) => {
+      let n = h2;
+      while (n && n !== document.body && n.tagName && n.tagName.toLowerCase() !== 'section') {
+        n = n.parentElement;
+      }
+      return n || h2.parentElement;
+    };
+
+    // 残すのは tierGold/Silver/Bronze を含むブロック（無ければ最後のh2ブロック）
+    let keepIndex = h2s.findIndex(h => {
+      const c = getContainer(h);
+      return c && (c.querySelector('#tierGold') || c.querySelector('#tierSilver') || c.querySelector('#tierBronze'));
+    });
+    if (keepIndex === -1) keepIndex = h2s.length - 1;
+
+    const keepContainer = getContainer(h2s[keepIndex]);
+    h2s.forEach((h, i) => {
+      if (i === keepIndex) return;
+      const cont = getContainer(h);
+      if (cont && cont !== keepContainer) cont.remove();
+    });
+
+    // 画像が見つからない時はダミーに自動切替（安全策）
+    document.querySelectorAll('.avatar').forEach(img => {
+      img.addEventListener('error', function(){
+        this.onerror = null;
+        this.src = 'images/no_image2.gif';
+      }, { once:true });
+    });
+  });
+</script>
+<!-- ===== /一発コピペ用 ===== -->
+
 </body>
 </html>
+
 
 
 
