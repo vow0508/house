@@ -416,6 +416,28 @@ body {
 }
 
 
+/* ===== ポイント3のカード：オレンジ色のドロップシャドウを付与 ===== */
+.points-3 .point{
+  position: relative;
+  background: #fff;                 /* グレー面だと影が目立ちにくいので白に */
+  border-radius: 12px;
+  padding: 16px;
+  overflow: visible;                /* 影のにじみを見せるために可視化 */
+  box-shadow:
+    /* メインのオレンジ影 */
+    0 12px 28px rgba(255, 153, 0, 0.22),
+    /* 補助の淡い影（立体感） */
+    0 4px 10px rgba(255, 153, 0, 0.12);
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+
+/* 触ったときに少し持ち上がる演出（任意） */
+.points-3 .point:hover{
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 44px rgba(255, 153, 0, 0.28),
+    0 6px 14px rgba(255, 153, 0, 0.14);
+}
 
 
 
@@ -424,6 +446,7 @@ body {
 
 
                       
+
 
 
 
