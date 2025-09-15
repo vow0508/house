@@ -708,12 +708,23 @@ document.addEventListener('DOMContentLoaded', () => {
            object-fit:cover !important; display:block !important; }
 </style>
 
+<!-- </body> の直前に追加（どちらも見た目の余白だけ調整） -->
+<style>
+  /* 各段のタイトルまわりの余白をそろえる */
+  .tier-title{ margin: 28px 0 14px !important; }
 
+  /* 段と段の間の縦の間隔を少し広げる */
+  #tierGold, #tierSilver, #tierBronze{ margin-bottom: 8px !important; gap: 20px !important; }
+</style>
+
+
+  
 
   
   
 </body>
 </html>
+
 
 
 
