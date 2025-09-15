@@ -182,44 +182,58 @@
   display: block !important;      /* 行間の隙間防止 */
 }
 </style>
+
 <style id="points-orange-shadow-hotfix">
-/* ポイント3：カードを“注目の宅建士”と同系のオレンジ影にする（最優先） */
-.section .inner .points-3 > .point{
+/* ===== ポイント3：オレンジ系のドロップシャドウを“必ず”適用 ===== */
+:root body .section .inner .points-3{ overflow: visible !important; }
+:root body .section .inner{ overflow: visible !important; }
+:root body .section{ overflow: visible !important; }
+
+/* カード本体（仲介手数料は最大無料 / コスト最適化 / 変更OK） */
+:root body .section .inner .points-3 > .point{
   position: relative !important;
-  background: #fff !important;            /* 影が見えるよう白ベース */
+  background: #fff !important;          /* 影を見せるため白土台に */
   border-radius: 12px !important;
   padding: 16px !important;
-  overflow: visible !important;            /* 影のにじみを隠さない */
-  /* オレンジ系ドロップシャドウ（二重影） */
+  overflow: visible !important;
+  transform: translateZ(0) !important;  /* レイヤー化で影を安定表示 */
+  /* オレンジの二重影（“注目の宅建士”と同系統の陰影） */
   box-shadow:
-    0 14px 36px rgba(255, 153, 0, 0.24) !important,
-    0 6px 14px rgba(255, 153, 0, 0.14) !important;
+    0 14px 36px rgba(255,153,0,.24) !important,
+    0  6px 14px rgba(255,153,0,.14) !important;
   transition: box-shadow .2s ease, transform .2s ease !important;
-  will-change: transform, box-shadow !important;
 }
-.section .inner .points-3 > .point:hover{
-  transform: translateY(-2px) !important;
+:root body .section .inner .points-3 > .point:hover{
+  transform: translateY(-2px) translateZ(0) !important;
   box-shadow:
-    0 22px 56px rgba(255, 153, 0, 0.30) !important,
-    0 10px 20px rgba(255, 153, 0, 0.16) !important;
+    0 22px 56px rgba(255,153,0,.30) !important,
+    0 10px 20px rgba(255,153,0,.16) !important;
 }
-/* 念のため：コンテナ側で影を切らない */
-.section .inner .points-3{ overflow: visible !important; }
 
-/* 見出しの文言（カード上に載るテキスト）の最小整形—任意 */
-.section .inner .points-3 > .point h3{
-  margin: 0 0 8px !important;
-  font-size: 1.1rem !important;
+/* 見出し・本文の体裁（任意・邪魔しない程度） */
+:root body .section .inner .points-3 > .point h3{
+  margin: 0 0 8px !important; font-size: 1.1rem !important;
 }
-.section .inner .points-3 > .point p{
-  margin: 0 !important;
-  color: #4b5563 !important;
-  font-size: .95rem !important;
+:root body .section .inner .points-3 > .point p{
+  margin: 0 !important; color: #4b5563 !important; font-size: .95rem !important;
 }
 </style>
 
+<script>
+/* ===== 最終手段：JSで“インライン style”も与えて完全固定 ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.points-3 .point').forEach(el => {
+    el.style.background   = '#fff';
+    el.style.borderRadius = '12px';
+    el.style.overflow     = 'visible';
+    el.style.transform    = 'translateZ(0)';
+    el.style.boxShadow    = '0 14px 36px rgba(255,153,0,.24), 0 6px 14px rgba(255,153,0,.14)';
+  });
+});
+</script>
 </body>
 </html>
+
 
 
 
