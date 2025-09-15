@@ -588,12 +588,16 @@ document.addEventListener('DOMContentLoaded', () => {
 .slider .cap{
   filter: drop-shadow(0 6px 12px var(--orange25)) !important;
 }
-.slider .cap h1,
-.slider .cap p{
-  text-shadow:
-    0 2px 6px rgba(0,0,0,.35),
-    0 0 12px var(--orange35) !important;
+
+  #mission-title > h2 {
+    margin-top: 100; /* 上のマージンを0に */
+    margin-bottom: 0; /* 下のマージンを0に */
+    position: absolute;
+    top: 0;
+
 }
+  
+  
 </style>
 
 
@@ -652,6 +656,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 </body>
 </html>
+
 
 
 
