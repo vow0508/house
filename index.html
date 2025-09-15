@@ -634,6 +634,21 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 </style>
 
+/* === Agent cards layout fix: SP=2列, PC=4列 === */
+.section .inner{ max-width:1200px; margin:0 auto; padding:0 16px; } /* 念のため器を広げる */
+
+#tierGold, #tierSilver, #tierBronze, .cards{
+  display:grid !important;
+  grid-template-columns:repeat(2, minmax(0,1fr)) !important; /* スマホ=2列 */
+  gap:16px !important;
+}
+@media (min-width: 1024px){
+  #tierGold, #tierSilver, #tierBronze, .cards{
+    grid-template-columns:repeat(4, minmax(0,1fr)) !important; /* PC=4列 */
+  }
+}
+/* 古い幅指定/floatの無効化 */
+.cards > .card{ width:auto !important; float:none !important; margin:0 !important; }
 
 
 
@@ -642,6 +657,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 </body>
 </html>
+
 
 
 
