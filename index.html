@@ -718,12 +718,56 @@ document.addEventListener('DOMContentLoaded', () => {
 </style>
 
 
+
+
+<style id="tiers-columns-hotfix">
+  /* コンテナ幅を確保（器が狭いと4列にできない） */
+  .section .inner{ max-width:1200px !important; margin:0 auto !important; padding:0 16px !important; }
+
+  /* タイトルの float を無効化して段を区切る */
+  .tier-title{
+    float:none !important; clear:both !important;
+    display:block !important; width:100% !important;
+    margin:28px 0 14px !important;
+  }
+
+  /* 旧レイアウトの float/幅指定を無効化 */
+  .cards, .cards-12, #tierGold, #tierSilver, #tierBronze{
+    float:none !important; width:100% !important;
+    display:grid !important; grid-auto-flow:row dense !important; gap:20px !important;
+  }
+  .cards > .card, #tierGold > .card, #tierSilver > .card, #tierBronze > .card{
+    width:auto !important; max-width:none !important; float:none !important;
+    margin:0 !important;
+  }
+
+  /* 列数：SP=2列 / PC=4列（最小幅を持たせてつぶれ防止） */
+  @media (max-width: 899.98px){
+    .cards, .cards-12, #tierGold, #tierSilver, #tierBronze{
+      grid-template-columns:repeat(2, minmax(160px, 1fr)) !important;
+    }
+  }
+  @media (min-width: 900px){
+    .cards, .cards-12, #tierGold, #tierSilver, #tierBronze{
+      grid-template-columns:repeat(4, minmax(240px, 1fr)) !important;
+    }
+  }
+
+  /* アバターは中央の丸 */
+  .avatar-wrap{ width:140px !important; height:140px !important; margin:0 auto !important; }
+  .avatar{ width:100% !important; height:100% !important; border-radius:50% !important; object-fit:cover !important; display:block !important; }
+</style>
+
+
+
+
   
 
   
   
 </body>
 </html>
+
 
 
 
