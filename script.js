@@ -56,6 +56,66 @@ nav.addEventListener('click', (e) => {
 });
 
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // --- 検索セクション（あなたに、ピッタリの宅建士…）を中央寄せ ---
+  const sb = document.querySelector('.search-box');
+  if (sb) {
+    sb.style.textAlign = 'center';
+    sb.style.padding = '28px 16px';
+
+    const s = sb.querySelector('.search');
+    if (s) {
+      Object.assign(s.style, {
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '10px',
+        flexWrap: 'wrap'
+      });
+    }
+    const input = sb.querySelector('input');
+    if (input) {
+      Object.assign(input.style, {
+        width: 'min(92vw, 480px)',
+        maxWidth: '100%',
+        padding: '12px 14px',
+        border: '1px solid #d1d5db',
+        borderRadius: '10px',
+        outline: '0'
+      });
+    }
+    const button = sb.querySelector('button');
+    if (button) {
+      Object.assign(button.style, {
+        padding: '12px 16px',
+        border: '0',
+        borderRadius: '10px',
+        background: '#007acc',
+        color: '#fff',
+        fontWeight: '700',
+        cursor: 'pointer'
+      });
+    }
+  }
+
+  // --- 「運営からのお知らせ」を中央寄せ ---
+  const greetInner = document.querySelector('.greeting .greeting-inner');
+  if (greetInner) {
+    greetInner.style.textAlign = 'center';
+  }
+  const greetActions = document.querySelector('.greeting .greeting-actions');
+  if (greetActions) {
+    Object.assign(greetActions.style, {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: '10px',
+      flexWrap: 'wrap'
+    });
+  }
+});
+</script>
 
 
 
