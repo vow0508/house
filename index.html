@@ -801,6 +801,242 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+<!-- 最小装飾で“12人の顔”を前面に出すキャンペーン用パッチ（貼り増しOK） -->
+<!-- 使い方：index.html の </body> 直前にこのブロックを丸ごと貼り付け。既存CSSより後勝ちで効きます。 -->
+
+<style id="campaign-min">
+  /* ===== キャンペーン最小テーマ（文字と人の顔が主役） ===== */
+  :root{ --ink:#111827; --brand:#ff9900; }
+  #rescue{ color:var(--ink); }
+  /* ヒーローはスライダーを隠し、文字だけの黒背景に */
+  #rescue #hero.slider{ height:auto !important; padding:56px 16px !important; background:#111827 !important; }
+  #rescue #hero .slide{ display:none !important; }
+  #rescue #hero::after{ content:none !important; }
+  #rescue #hero .cap{ position:static !important; transform:none !important; width:auto !important; max-width:860px !important; margin:0 auto !important; text-align:center !important; color:#fff !important; text-shadow:none !important; }
+  #rescue #hero .cap h1{ font-size:clamp(22px,6vw,44px) !important; margin:0 0 .6em !important; }
+  #rescue #hero .cap p{ font-size:clamp(14px,2.6vw,18px) !important; opacity:.9; }
+  #rescue #hero .cap .cta-hero{ background:var(--brand) !important; color:#111827 !important; }
+
+  /* セクションの横幅と余白をシンプルに */
+  #rescue .section, #rescue .greeting, #rescue .search-box{ padding:36px 16px !important; }
+  #rescue .inner.narrow{ max-width:860px !important; margin:0 auto !important; }
+
+  /* 見出しスタイル（下線バーのみ・中央） */
+  #rescue .h2-center{ text-align:center; margin:0 auto 14px; }
+  #rescue .h2-center span{ position:relative; display:inline-block; }
+  #rescue .h2-center span::after{ content:""; display:block; width:64px; height:4px; margin:10px auto 0; background:var(--brand); border-radius:9999px; }
+
+  /* 12人グリッド：写真を大きく、文字は短く */
+  #rescue .agents-grid{ list-style:none; margin:16px 0 0; padding:0; display:grid; gap:16px; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  @media(min-width:900px){ #rescue .agents-grid{ grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; } }
+  #rescue .agent-card{ text-align:center; padding:14px; border:1px solid #eee; border-radius:14px; background:#fff; }
+  #rescue .agent-avatar{ width:100%; max-width:160px; aspect-ratio:1/1; border-radius:50%; object-fit:cover; margin:0 auto 10px; display:block; }
+  #rescue .agent-name{ font-weight:700; margin:4px 0 2px; }
+  #rescue .agent-meta{ font-size:.9rem; color:#6b7280; margin:0 0 6px; }
+  #rescue .agent-one{ font-size:.95rem; line-height:1.5; margin:0; }
+  #rescue .agent-card .btn{ display:inline-block; margin-top:10px; padding:8px 12px; border-radius:9999px; background:#111827; color:#fff; font-weight:700; }
+
+  /* カウントダウン（数字3つだけ・装飾最小） */
+  #rescue .countdown{ display:flex; gap:12px; justify-content:center; margin:14px 0 0; }
+  #rescue .countdown b{ font-size:20px; }
+  #rescue .count-item{ background:#fff; border:1px solid #eee; border-radius:12px; padding:10px 12px; text-align:center; min-width:84px; }
+  #rescue .count-item small{ display:block; color:#6b7280; }
+
+  /* CAMPFIRE CTA：赤ボタンを1つだけ */
+  #rescue .btn-camp{ display:inline-block; padding:12px 16px; border-radius:12px; background:#ef4444; color:#fff; font-weight:800; }
+
+  /* 既存の強い影を抑える（人の顔を主役に） */
+  #rescue .card, #rescue .point, #rescue .greeting, #rescue .search-box{ box-shadow:none !important; }
+
+  /* スマホ2列の中央寄せはすでに実装済み想定だが、再保険 */
+  @media (max-width:480px){
+    #rescue #featured-agents .cards{ grid-template-columns:repeat(2,minmax(0,1fr)) !important; justify-content:center !important; }
+  }
+</style>
+
+<!-- ===== ヒーロー文言（想いを前面に） ※既存の#hero内capを書き換えたい場合、下のh1/pを採用してください ===== -->
+<script>
+  document.addEventListener('DOMContentLoaded',()=>{
+    const cap = document.querySelector('#rescue #hero .cap');
+    if(!cap) return;
+    cap.innerHTML = `
+      <h1>仲介手数料無料のその先へ</h1>
+      <p>「安さ」だけで終わらせない。相性・透明性・購入後の安心まで、宅建士があなたの伴走者になります。</p>
+      <a class="cta-hero" href="https://camp-fire.jp/projects/xxxxxx">10/26 CAMPFIREで開始</a>
+      <div class="countdown" aria-label="10/26までのカウントダウン">
+        <div class="count-item"><b id="cd-days">--</b><small>日</small></div>
+        <div class="count-item"><b id="cd-hours">--</b><small>時間</small></div>
+        <div class="count-item"><b id="cd-mins">--</b><small>分</small></div>
+      </div>
+    `;
+  });
+</script>
+<script>
+  // 最小実装のカウントダウン（10/26 00:00 JST）
+  (function(){
+    const target = new Date('2025-10-26T00:00:00+09:00').getTime();
+    function tick(){
+      const now = Date.now();
+      let diff = Math.max(0, target - now);
+      const d = Math.floor(diff/86400000); diff -= d*86400000;
+      const h = Math.floor(diff/3600000); diff -= h*3600000;
+      const m = Math.floor(diff/60000);
+      const el = (id,v)=>{ const e=document.getElementById(id); if(e) e.textContent=v; };
+      el('cd-days', d); el('cd-hours', ('0'+h).slice(-2)); el('cd-mins', ('0'+m).slice(-2));
+    }
+    setInterval(tick, 30000); tick();
+  })();
+</script>
+
+<!-- ===== “想い” セクション（文章だけ・装飾最小） ===== -->
+<section id="mission" class="section">
+  <div class="inner narrow">
+    <h2 class="h2-center"><span>わたしの想い</span></h2>
+    <p style="font-size:1.05rem; line-height:1.9; margin:0 auto; color:#374151;">
+      仲介手数料無料は、いまや珍しくありません。価格を下げることは大切ですが、住まい探しで本当に大事なのは、<b>誰と進むか</b>と、<b>最後に納得できるか</b>だと考えています。だから私たちは、相性重視の担当選び、プロセスの透明化、購入後の伴走まで徹底します。<br>
+      「無料」のその先へ。あなたが「この人に相談してよかった」と胸を張れる体験を、12人の宅建士とともに届けます。
+    </p>
+  </div>
+</section>
+
+<!-- ===== 12人の宅建士（顔と一言だけ） ===== -->
+<section id="agents12" class="section">
+  <div class="inner">
+    <h2 class="h2-center"><span>12人の宅建士</span></h2>
+    <ul class="agents-grid">
+      <!-- 例：既存の画像・名前に合わせて差し替えてください。ひとことは 30〜40字目安。 -->
+      <li class="agent-card">
+        <img class="agent-avatar" src="images/agent_1.jpg" alt="井上 広樹">
+        <div class="agent-name">井上 広樹</div>
+        <div class="agent-meta">東京23区 / 宅建士・建築士</div>
+        <p class="agent-one">構造と法規から逆算して、無理のない住まい選びに。</p>
+        <a class="btn" href="profile_inoue.html">プロフィール</a>
+      </li>
+      <li class="agent-card">
+        <img class="agent-avatar" src="images/6822.jpg" alt="山田 太郎">
+        <div class="agent-name">山田 太郎</div>
+        <div class="agent-meta">神奈川全域 / 宅建士</div>
+        <p class="agent-one">通勤動線・学区・予算の三点で最適解を出します。</p>
+        <a class="btn" href="profile_yamada.html">プロフィール</a>
+      </li>
+      <li class="agent-card">
+        <img class="agent-avatar" src="images/ph_6.jpg" alt="佐藤 花子">
+        <div class="agent-name">佐藤 花子</div>
+        <div class="agent-meta">東京全域 / 宅建士</div>
+        <p class="agent-one">マンション管理の“リアル”を可視化して判断を支援。</p>
+        <a class="btn" href="profile_sato.html">プロフィール</a>
+      </li>
+      <li class="agent-card">
+        <img class="agent-avatar" src="images/kondo_ryoko.jpg" alt="近藤 良子">
+        <div class="agent-name">近藤 良子</div>
+        <div class="agent-meta">東京23区 / 宅建士・投資</div>
+        <p class="agent-one">投資目線×実需で、暮らしと資産の両立を提案。</p>
+        <a class="btn" href="https://forms.gle/jhAnvxqweLpzrKHD9" target="_blank" rel="noopener">匿名で相談</a>
+      </li>
+      <!-- 以降、計12人になるように同型で8枠追加 -->
+      <li class="agent-card">
+        <img class="agent-avatar" src="images/33346308_s.jpg" alt="田中 美咲">
+        <div class="agent-name">田中 美咲</div>
+        <div class="agent-meta">多摩 / 宅建士</div>
+        <p class="agent-one">子育てと生活導線、未来の変化まで見据えて。</p>
+        <a class="btn" href="#">プロフィール</a>
+      </li>
+      <li class="agent-card">
+        <img class="agent-avatar" src="images/3373.jpg" alt="高橋 健">
+        <div class="agent-name">高橋 健</div>
+        <div class="agent-meta">東京西部 / 宅建士</div>
+        <p class="agent-one">戸建の地盤・ハザードを先回りチェック。</p>
+        <a class="btn" href="#">プロフィール</a>
+      </li>
+      <li class="agent-card">
+        <img class="agent-avatar" src="images/ph_2.jpg" alt="中村 彩">
+        <div class="agent-name">中村 彩</div>
+        <div class="agent-meta">神奈川 / 宅建士</div>
+        <p class="agent-one">リノベ前提の“目利き”で予算最適化。</p>
+        <a class="btn" href="#">プロフィール</a>
+      </li>
+      <li class="agent-card">
+        <img class="agent-avatar" src="images/17116.jpg" alt="小林 智">
+        <div class="agent-name">小林 智</div>
+        <div class="agent-meta">千葉 / 宅建士</div>
+        <p class="agent-one">ローン比較と諸費用の削りどころ、全部開示。</p>
+        <a class="btn" href="#">プロフィール</a>
+      </li>
+      <li class="agent-card">
+        <img class="agent-avatar" src="images/0508.jpg" alt="加藤 花">
+        <div class="agent-name">加藤 花</div>
+        <div class="agent-meta">埼玉 / 宅建士</div>
+        <p class="agent-one">駅近・築年・広さ、何を優先するかを一緒に整理。</p>
+        <a class="btn" href="#">プロフィール</a>
+      </li>
+      <li class="agent-card">
+        <img class="agent-avatar" src="images/8905.jpg" alt="斎藤 陸">
+        <div class="agent-name">斎藤 陸</div>
+        <div class="agent-meta">東京23区 / 宅建士</div>
+        <p class="agent-one">管理組合の健全性を“数字”でチェックします。</p>
+        <a class="btn" href="#">プロフィール</a>
+      </li>
+      <li class="agent-card">
+        <img class="agent-avatar" src="images/33448526.jpg" alt="森田 舞">
+        <div class="agent-name">森田 舞</div>
+        <div class="agent-meta">東京東部 / 宅建士</div>
+        <p class="agent-one">初回面談は雑談から。あなたの“好き”を掘ります。</p>
+        <a class="btn" href="#">プロフィール</a>
+      </li>
+      <li class="agent-card">
+        <img class="agent-avatar" src="images/6691.jpg" alt="石井 圭">
+        <div class="agent-name">石井 圭</div>
+        <div class="agent-meta">神奈川北部 / 宅建士</div>
+        <p class="agent-one">価格交渉と条件整理で“総コスト最適化”。</p>
+        <a class="btn" href="#">プロフィール</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== “その先へ”を一言で（4つの柱） ===== -->
+<section id="beyond-free" class="section">
+  <div class="inner narrow">
+    <h2 class="h2-center"><span>仲介手数料無料のその先へ</span></h2>
+    <ul style="list-style:none; padding:0; margin:10px 0 0; display:grid; gap:10px;">
+      <li>① <b>相性保証：</b>担当はいつでも無料で変更</li>
+      <li>② <b>透明性：</b>諸費用・管理状況・不確実性を可視化</li>
+      <li>③ <b>総コスト最適化：</b>指値・条件調整・ローン比較を徹底</li>
+      <li>④ <b>購入後の伴走：</b>引渡し後も相談窓口を継続</li>
+    </ul>
+    <div style="text-align:center; margin-top:14px;">
+      <a class="btn-camp" href="https://camp-fire.jp/projects/xxxxxx" target="_blank" rel="noopener">10/26 CAMPFIREで応援する</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フッター前の簡易注記（法令・表現の安全運転） ===== -->
+<section class="section" style="padding-top:20px; padding-bottom:20px;">
+  <div class="inner narrow" style="font-size:.85rem; color:#6b7280;">
+    <p style="margin:0;">※「最大無料」は条件により異なります。実際の手数料・諸費用は個別の見積りをご確認ください。インスペクション等は外部専門家をご案内します。</p>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   
   
 
@@ -808,6 +1044,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 </body>
 </html>
+
 
 
 
