@@ -769,6 +769,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  <!-- ここまでが既存のスタイルやスクリプト -->
+
+  <!-- ▼ここに追加：スマホ2列を中央に揃える最終パッチ -->
+  <style id="cards-center-on-mobile">
+  /* 注目の宅建士：スマホで2列を“ちょうど中央”に */
+  @media (max-width: 480px){
+    #rescue #featured-agents .inner{
+      padding-left:12px !important;
+      padding-right:12px !important;
+    }
+    #rescue #featured-agents .cards{
+      width:100% !important;
+      display:grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap:12px !important;
+      justify-content: center !important;
+    }
+    #rescue #featured-agents .card{
+      min-width:0 !important;
+    }
+    #rescue #featured-agents .avatar-wrap{
+      width:108px !important; height:108px !important;
+    }
+  }
+
+  /* 念のため：横スクロール抑止（他要素の影響でズレる場合の保険） */
+  html, body, #rescue { overflow-x: hidden; }
+  </style>
+  <!-- ▲ここまで追加 -->
+
+</body>
+</html>
 
 
 
@@ -805,6 +837,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 </body>
 </html>
+
 
 
 
