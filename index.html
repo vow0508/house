@@ -264,142 +264,57 @@ document.addEventListener('DOMContentLoaded', () => {
     const html = `
 <section class="section" id="agents-restored">
   <div class="inner">
-    <h2>注目の宅建士</h2>
+<!-- === 一発パッチ：順序修正＋オレンジ影（注目の宅建士） === -->
+<style id="agents-order-and-shadow-hotfix">
+  /* 注目の宅建士カードにオレンジ系のドロップシャドウを適用 */
+  #tierGold .card,
+  #tierSilver .card,
+  #tierBronze .card{
+    background:#fff !important;
+    border-radius:14px !important;
+    box-shadow:
+      0 14px 36px rgba(255,153,0,.24) !important,
+      0  6px 14px rgba(255,153,0,.14) !important;
+    transition: box-shadow .2s ease, transform .2s ease !important;
+  }
+  #tierGold .card:hover,
+  #tierSilver .card:hover,
+  #tierBronze .card:hover{
+    transform: translateY(-2px) !important;
+    box-shadow:
+      0 22px 56px rgba(255,153,0,.30) !important,
+      0 10px 20px rgba(255,153,0,.16) !important;
+  }
+</style>
 
-    <h3 class="tier-title gold">PR枠（3万円 / 月）</h3>
-    <div class="cards cards-12" id="tierGold">
-      <div class="card card--pro">
-        <div class="avatar-wrap"><img class="avatar" src="images/agent_1.jpg" alt="井上 広樹" loading="lazy" decoding="async"
-          onerror="this.onerror=null;this.src='images/no_image2.gif'"></div>
-        <div class="badge">PR</div>
-        <h3>井上 広樹</h3>
-        <p>東京都23区 / 宅建士・建築士</p>
-        <a class="btn" href="profile_inoue.html">プロフィールを見る</a>
-      </div>
-      <div class="card card--pro">
-        <div class="avatar-wrap"><img class="avatar" src="images/6822.jpg" alt="山田 太郎" loading="lazy" decoding="async"
-          onerror="this.onerror=null;this.src='images/no_image2.gif'"></div>
-        <div class="badge">PR</div>
-        <h3>山田 太郎</h3>
-        <p>神奈川県全域 / 宅建士</p>
-        <a class="btn" href="profile_yamada.html">プロフィールを見る</a>
-      </div>
-      <div class="card card--pro">
-        <div class="avatar-wrap"><img class="avatar" src="images/ph_6.jpg" alt="佐藤 花子" loading="lazy" decoding="async"
-          onerror="this.onerror=null;this.src='images/no_image2.gif'"></div>
-        <div class="badge">PR</div>
-        <h3>佐藤 花子</h3>
-        <p>東京都全域 / 宅建士</p>
-        <a class="btn" href="profile_sato.html">プロフィールを見る</a>
-      </div>
-      <div class="card card--pro">
-        <div class="avatar-wrap"><img class="avatar" src="images/no_image2.gif" alt="募集中" loading="lazy" decoding="async"></div>
-        <div class="badge">PR</div>
-        <h3>募集中</h3>
-        <p>ただいま準備中です</p>
-        <a class="btn" href="#">プロフィールを見る</a>
-      </div>
-    </div>
+<script id="agents-move-after-search">
+  // 検索ボックスの“直後”に「注目の宅建士」セクションを移動
+  document.addEventListener('DOMContentLoaded', () => {
+    const search = document.querySelector('.search-box');
+    if (!search) return;
 
-    <h3 class="tier-title silver">おすすめ枠（2万円 / 月）</h3>
-    <div class="cards cards-12" id="tierSilver">
-      <div class="card card--silver">
-        <div class="avatar-wrap"><img class="avatar" src="images/33346308_s.jpg" alt="田中 美咲" loading="lazy" decoding="async"
-          onerror="this.onerror=null;this.src='images/no_image2.gif'"></div>
-        <div class="badge">おすすめ</div>
-        <h3>田中 美咲</h3>
-        <p>東京都多摩 / 宅建士</p>
-        <a href="#" class="btn">プロフィール</a>
-      </div>
-      <div class="card card--silver">
-        <div class="avatar-wrap"><img class="avatar" src="images/3373.jpg" alt="高橋 健" loading="lazy" decoding="async"
-          onerror="this.onerror=null;this.src='images/no_image2.gif'"></div>
-        <div class="badge">おすすめ</div>
-        <h3>高橋 健</h3>
-        <p>東京西部 / 宅建士</p>
-        <a href="#" class="btn">プロフィール</a>
-      </div>
-      <div class="card card--silver">
-        <div class="avatar-wrap"><img class="avatar" src="images/ph_2.jpg" alt="中村 彩" loading="lazy" decoding="async"
-          onerror="this.onerror=null;this.src='images/no_image2.gif'"></div>
-        <div class="badge">おすすめ</div>
-        <h3>中村 彩</h3>
-        <p>神奈川 / 宅建士</p>
-        <a href="#" class="btn">プロフィール</a>
-      </div>
-      <div class="card card--silver">
-        <div class="avatar-wrap"><img class="avatar" src="images/17116.jpg" alt="小林 智" loading="lazy" decoding="async"
-          onerror="this.onerror=null;this.src='images/no_image2.gif'"></div>
-        <div class="badge">おすすめ</div>
-        <h3>小林 智</h3>
-        <p>千葉 / 宅建士</p>
-        <a href="#" class="btn">プロフィール</a>
-      </div>
-    </div>
+    // 「注目の宅建士」セクションを推定（復元版 or 既存版のどちらでも拾う）
+    const byId = document.getElementById('agents-restored');
+    const byTier = document.querySelector('#tierGold')?.closest('section')
+               ||  document.querySelector('#tierSilver')?.closest('section')
+               ||  document.querySelector('#tierBronze')?.closest('section');
+    const agentsSection = byId || byTier;
+    if (!agentsSection) return;
 
-    <h3 class="tier-title bronze">掲載枠（1万円 / 月）</h3>
-    <div class="cards cards-12" id="tierBronze">
-      <div class="card card--bronze">
-        <div class="avatar-wrap"><img class="avatar" src="images/0508.jpg" alt="加藤 花" loading="lazy" decoding="async"
-          onerror="this.onerror=null;this.src='images/no_image2.gif'"></div>
-        <div class="badge">掲載枠</div>
-        <h3>加藤 花</h3>
-        <p>埼玉 / 宅建士</p>
-        <a href="#" class="btn">プロフィール</a>
-      </div>
-      <div class="card card--bronze">
-        <div class="avatar-wrap"><img class="avatar" src="images/8905.jpg" alt="斎藤 陸" loading="lazy" decoding="async"
-          onerror="this.onerror=null;this.src='images/no_image2.gif'"></div>
-        <div class="badge">掲載枠</div>
-        <h3>斎藤 陸</h3>
-        <p>東京23区 / 宅建士</p>
-        <a href="#" class="btn">プロフィール</a>
-      </div>
-      <div class="card card--bronze">
-        <div class="avatar-wrap"><img class="avatar" src="images/33448526.jpg" alt="森田 舞" loading="lazy" decoding="async"
-          onerror="this.onerror=null;this.src='images/no_image2.gif'"></div>
-        <div class="badge">掲載枠</div>
-        <h3>森田 舞</h3>
-        <p>東京東部 / 宅建士</p>
-        <a href="#" class="btn">プロフィール</a>
-      </div>
-      <div class="card card--bronze">
-        <div class="avatar-wrap"><img class="avatar" src="images/6691.jpg" alt="石井 圭" loading="lazy" decoding="async"
-          onerror="this.onerror=null;this.src='images/no_image2.gif'"></div>
-        <div class="badge">掲載枠</div>
-        <h3>石井 圭</h3>
-        <p>神奈川北 / 宅建士</p>
-        <a href="#" class="btn">プロフィール</a>
-      </div>
-    </div>
-  </div>
-</section>`;
+    // すでに直後にあれば何もしない
+    if (search.nextElementSibling === agentsSection) return;
 
-    // 挿入位置：検索ボックスの“手前”。なければフッターの手前
-    const before = document.querySelector('.search-box') || document.querySelector('footer') || document.body.lastElementChild;
-    const wrap = document.createElement('div');
-    wrap.innerHTML = html.trim();
-    const section = wrap.firstElementChild;
-
-    if (before && before.parentNode) {
-      before.parentNode.insertBefore(section, before);
-    } else {
-      document.body.appendChild(section);
-    }
-
-    // 画像が見つからない場合はダミー画像へ（安全策）
-    document.querySelectorAll('#agents-restored .avatar').forEach(img=>{
-      img.addEventListener('error', function(){
-        this.onerror=null; this.src='images/no_image2.gif';
-      }, {once:true});
-    });
+    // 直後へ移動
+    search.parentNode.insertBefore(agentsSection, search.nextSibling);
   });
 </script>
-<!-- ==== /一発復活 ==== -->
+<!-- === /一発パッチ === -->
+
 
 
 </body>
 </html>
+
 
 
 
