@@ -174,16 +174,19 @@
 
   <!-- 検索 -->
   <section class="search-box">
+    <div id="searchCenter">
     <h2>あなたに、ピッタリの宅建士をみつけよう！</h2>
     <p>相性重視のマッチング。もし合わなくても、変更はいつでも無料。</p>
     <div class="search">
       <input placeholder="『港区』『相続に強い』で検索">
       <button>宅建士を探す</button>
     </div>
+      </div>
   </section>
 
   <!-- お知らせ -->
   <section class="greeting" aria-labelledby="greet-title">
+     <div id="greetingCenter">
     <div class="greeting-inner">
       <h2 id="greet-title">運営からのお知らせ</h2>
       <p class="note" style="margin:0 0 12px;color:#6b7280">※現在は体制構築中です。提供開始に向け、クラウドファンディングでのご支援を募っています。</p>
@@ -191,6 +194,7 @@
         <a href="https://camp-fire.jp/projects/xxxxxx" target="_blank" class="btn btn-cf" style="padding:10px 14px;border-radius:10px;background:#ef4444;color:#fff">クラファンをみる</a>
         <a href="フォーム.html" class="btn btn-outline" style="padding:10px 14px;border-radius:10px;border:1px solid #d1d5db">お問い合わせ</a>
       </div>
+       </div>
     </div>
   </section>
 
@@ -375,8 +379,78 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(()=>{ current = (current + 1) % slides.length; show(current); ensure(); }, 5000);
 });
 </script>
+
+  <style id="center-and-accent">
+/* ■ 中央寄せ（ラッパーDIVで確実に） */
+#searchCenter, #greetingCenter{
+  text-align:center !important;
+  margin:0 auto !important;
+  max-width: 1000px;
+}
+
+/* ■ 見出しのオレンジ装飾（下線バー） */
+#searchCenter h2, #greetingCenter h2{
+  display:inline-block; /* 下線バーを中央に */
+  position:relative;
+  margin:0 0 10px;
+}
+#searchCenter h2::after,
+#greetingCenter h2::after{
+  content:"";
+  display:block;
+  width:64px; height:4px;
+  margin:10px auto 0;
+  background:#ff9900;       /* オレンジ */
+  border-radius:9999px;
+}
+
+/* ■ 検索行：中央に横並び（小画面は縦） */
+#searchCenter .search{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+#searchCenter input{
+  width:min(92vw, 480px);
+  max-width:100%;
+  padding:12px 14px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  outline:0;
+}
+#searchCenter button{
+  padding:12px 16px;
+  border:0;
+  border-radius:10px;
+  background:#ff9900;       /* ボタンもオレンジへ */
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  white-space:nowrap;
+}
+@media (max-width:480px){
+  #searchCenter .search{ flex-direction:column; gap:8px; }
+  #searchCenter button{ width:100%; }
+}
+
+/* ■ お知らせボタンを中央寄せ */
+#greetingCenter .greeting-actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* 念のため：以前の左寄せ指定を打ち消し */
+.search-box, .greeting .greeting-inner{ text-align:inherit !important; }
+</style>
+
 </body>
 </html>
+
 
 
 
