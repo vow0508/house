@@ -219,101 +219,71 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<!-- ==== 一発復活：注目の宅建士（SP2列/PC4列・丸画像・影） ==== -->
-<style id="agents-restore-css">
-  .section{padding:40px 16px}
-  .inner{max-width:1200px;margin:0 auto}
-  .tier-title{margin:24px 0 12px;font-size:1.1rem}
-  .tier-title.gold{color:#b8860b}
-  .tier-title.silver{color:#6b7280}
-  .tier-title.bronze{color:#b45309}
-
-  .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-  @media (min-width:960px){ .cards{grid-template-columns:repeat(4,minmax(0,1fr))} }
-
-  .card{position:relative;background:#fff;border-radius:14px;padding:16px;text-align:center;overflow:hidden;
-        box-shadow:0 10px 24px rgba(17,24,39,.12),0 2px 6px rgba(17,24,39,.06)}
-  .badge{position:absolute;top:10px;left:10px;background:#111827;color:#fff;padding:4px 10px;border-radius:9999px;font-size:.75rem;
-         box-shadow:0 2px 6px rgba(0,0,0,.18)}
-  .card .btn{display:inline-block;margin-top:8px;padding:8px 12px;border-radius:9999px;background:#f3f4f6;color:#111827;text-decoration:none}
-  .card--pro .btn{background:#ffedd5}
-  .card--silver .btn{background:#e5e7eb}
-  .card--bronze .btn{background:#fef3c7}
-
-  /* アバターは必ず真円に */
-  .avatar-wrap{width:120px;height:120px;aspect-ratio:1/1;border-radius:50%;overflow:hidden;margin:0 auto 10px;display:block;
-               box-shadow:0 2px 6px rgba(0,0,0,.12)}
-  @media (min-width:960px){ .avatar-wrap{width:140px;height:140px} }
-  .avatar-wrap > img.avatar{width:100%;height:100%;object-fit:cover;display:block;border-radius:0}
+<!-- === 一発パッチ：検索→注目の宅建士の順に直し、カードにオレンジ影を付ける === -->
+<style id="agents-safe-style">
+  /* 注目の宅建士カード：オレンジ系ドロップシャドウ */
+  #tierGold .card, #tierSilver .card, #tierBronze .card{
+    background:#fff !important; border-radius:14px !important;
+    box-shadow:0 14px 36px rgba(255,153,0,.24), 0 6px 14px rgba(255,153,0,.14) !important;
+    transition:box-shadow .2s ease, transform .2s ease !important;
+  }
+  #tierGold .card:hover, #tierSilver .card:hover, #tierBronze .card:hover{
+    transform:translateY(-2px) !important;
+    box-shadow:0 22px 56px rgba(255,153,0,.30), 0 10px 20px rgba(255,153,0,.16) !important;
+  }
+  /* 念のため：スマホ2列／PC4列（既存が違っても上書き） */
+  .cards, .cards.cards-12{ display:grid !important; gap:16px !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  @media (min-width:960px){
+    .cards, .cards.cards-12{ grid-template-columns:repeat(4,minmax(0,1fr)) !important; }
+  }
+  /* 丸いアバターの堅牢化 */
+  .avatar-wrap{ width:120px;height:120px;aspect-ratio:1/1;border-radius:50%;overflow:hidden;
+    margin:0 auto 10px;box-shadow:0 2px 6px rgba(0,0,0,.12) }
+  @media (min-width:960px){ .avatar-wrap{ width:140px;height:140px } }
+  .avatar-wrap>.avatar{ width:100%;height:100%;object-fit:cover;display:block;border-radius:0 }
 </style>
 
-<script id="agents-restore-js">
-  // 旧ホットフィックスがあれば無効化（あってもなくてもOK）
-  document.getElementById('agents-onepaste-cleanup')?.remove();
-  document.getElementById('agents-onepaste-hotfix')?.remove();
-
+<script id="agents-safe-move">
   document.addEventListener('DOMContentLoaded', () => {
-    // 既存の「古い 注目の宅建士」ブロックを念のため全削除（重複防止）
-    Array.from(document.querySelectorAll('h2')).forEach(h=>{
-      if((h.textContent||'').replace(/\s/g,'')==='注目の宅建士'){
-        const sec = h.closest('section'); if(sec) sec.remove();
-      }
-    });
+    // 1) 既存の“注目の宅建士（ティア付き）”セクションを取得
+    const tierSection = (()=>{
+      const t = document.querySelector('#tierGold') || document.querySelector('#tierSilver') || document.querySelector('#tierBronze');
+      return t ? t.closest('section') : null;
+    })();
 
-    // 復元するセクション本体（画像パスは実ファイル名に一致）
-    const html = `
-<section class="section" id="agents-restored">
-  <div class="inner">
-<!-- === 一発パッチ：順序修正＋オレンジ影（注目の宅建士） === -->
-<style id="agents-order-and-shadow-hotfix">
-  /* 注目の宅建士カードにオレンジ系のドロップシャドウを適用 */
-  #tierGold .card,
-  #tierSilver .card,
-  #tierBronze .card{
-    background:#fff !important;
-    border-radius:14px !important;
-    box-shadow:
-      0 14px 36px rgba(255,153,0,.24) !important,
-      0  6px 14px rgba(255,153,0,.14) !important;
-    transition: box-shadow .2s ease, transform .2s ease !important;
-  }
-  #tierGold .card:hover,
-  #tierSilver .card:hover,
-  #tierBronze .card:hover{
-    transform: translateY(-2px) !important;
-    box-shadow:
-      0 22px 56px rgba(255,153,0,.30) !important,
-      0 10px 20px rgba(255,153,0,.16) !important;
-  }
-</style>
-
-<script id="agents-move-after-search">
-  // 検索ボックスの“直後”に「注目の宅建士」セクションを移動
-  document.addEventListener('DOMContentLoaded', () => {
+    // 2) 検索ボックスの直後に並べ替え（無ければ何もしない）
     const search = document.querySelector('.search-box');
-    if (!search) return;
+    if (search && tierSection && search.nextElementSibling !== tierSection) {
+      search.parentNode.insertBefore(tierSection, search.nextSibling);
+    }
 
-    // 「注目の宅建士」セクションを推定（復元版 or 既存版のどちらでも拾う）
-    const byId = document.getElementById('agents-restored');
-    const byTier = document.querySelector('#tierGold')?.closest('section')
-               ||  document.querySelector('#tierSilver')?.closest('section')
-               ||  document.querySelector('#tierBronze')?.closest('section');
-    const agentsSection = byId || byTier;
-    if (!agentsSection) return;
-
-    // すでに直後にあれば何もしない
-    if (search.nextElementSibling === agentsSection) return;
-
-    // 直後へ移動
-    search.parentNode.insertBefore(agentsSection, search.nextSibling);
+    // 3) 旧式の「注目の宅建士」（画像名が合わない方）を“非表示”にするだけ（削除しない）
+    //    h2=注目の宅建士 のうち、ティア付きのsection以外を隠す
+    const norm = (s)=>s.replace(/\s/g,'').trim();
+    const h2s = Array.from(document.querySelectorAll('h2')).filter(h => norm(h.textContent)==='注目の宅建士');
+    h2s.forEach(h=>{
+      const sec = h.closest('section');
+      if (!sec) return;
+      const hasTier = sec.querySelector('#tierGold, #tierSilver, #tierBronze');
+      if (!hasTier) sec.style.display = 'none'; // ← 非表示（必要になれば戻せる）
+    });
   });
 </script>
 <!-- === /一発パッチ === -->
 
 
 
+
+
+
+  
+
+
+
 </body>
 </html>
+
 
 
 
