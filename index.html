@@ -679,6 +679,34 @@ document.addEventListener('DOMContentLoaded', () => {
 </style>
 
 
+<style id="cards-hotfix-restore">
+  /* コンテナを必ずグリッド化 */
+  #tierGold, #tierSilver, #tierBronze, .cards{
+    display: grid !important;
+    gap: 18px !important;
+    grid-auto-flow: row dense !important;
+  }
+  /* スマホ：2列／PC：4列（最小幅を持たせてつぶれ防止） */
+  @media (max-width: 899.98px){
+    #tierGold, #tierSilver, #tierBronze, .cards{
+      grid-template-columns: repeat(2, minmax(160px, 1fr)) !important;
+    }
+  }
+  @media (min-width: 900px){
+    #tierGold, #tierSilver, #tierBronze, .cards{
+      grid-template-columns: repeat(4, minmax(240px, 1fr)) !important;
+    }
+  }
+  /* 子カード：過去の幅/float指定を打ち消す */
+  #tierGold > .card, #tierSilver > .card, #tierBronze > .card, .cards > .card{
+    width:auto !important; max-width:none !important;
+    float:none !important; flex:none !important; margin:0 !important;
+  }
+  /* アバターは必ず丸く中央に */
+  .avatar-wrap{ width:140px !important; height:140px !important; margin:0 auto !important; }
+  .avatar{ width:100% !important; height:100% !important; border-radius:50% !important;
+           object-fit:cover !important; display:block !important; }
+</style>
 
 
 
@@ -686,6 +714,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 </body>
 </html>
+
 
 
 
