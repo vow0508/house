@@ -441,11 +441,92 @@ body {
 
 
 
+/* ===== 注目の宅建士：レイアウトを元に戻す ===== */
+
+/* 行間・コンテナ */
+.section { padding: 40px 16px; }
+.inner { max-width: 1200px; margin: 0 auto; }
+
+/* タイトル色（ゴールド／シルバー／ブロンズ） */
+.tier-title { margin: 24px 0 12px; font-size: 1.1rem; }
+.tier-title.gold { color: #b8860b; }
+.tier-title.silver { color: #6b7280; }
+.tier-title.bronze { color: #b45309; }
+
+/* ★ 列数指定：スマホ2列、PC4列（各tierとも同じレイアウト） */
+.cards,
+.cards.cards-12 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2列（SP） */
+  gap: 16px;
+}
+@media (min-width: 960px) {
+  .cards,
+  .cards.cards-12 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4列（PC） */
+  }
+}
+
+/* カード（ドロップシャドウを元の雰囲気に） */
+.card {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  overflow: hidden;
+  /* シャドウ強めに（上品めの二重影） */
+  box-shadow:
+    0 10px 24px rgba(17, 24, 39, 0.12),
+    0 2px 6px rgba(17, 24, 39, 0.06);
+}
+
+/* アバターの見た目（円形＆影） */
+.avatar-wrap { display: flex; justify-content: center; }
+.card .avatar {
+  width: 120px; height: 120px; object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
+  margin: 0 auto 10px;
+}
+
+/* ラベル（PR／おすすめ／掲載枠）を画像の上に重ねる */
+.badge {
+  position: absolute; top: 10px; left: 10px;
+  background: #111827; color: #fff;
+  padding: 4px 10px; border-radius: 9999px; font-size: .75rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+
+/* ボタン（元の淡い色味をキープ） */
+.card .btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  background: #f3f4f6;      /* ベース */
+  color: #111827;
+  text-decoration: none;
+}
+.card--pro .btn    { background: #ffedd5; } /* ゴールド */
+.card--silver .btn { background: #e5e7eb; } /* シルバー */
+.card--bronze .btn { background: #fef3c7; } /* ブロンズ */
+
+/* ポイント3（元の淡いカード調） */
+.points-3 {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px; margin:16px 0;
+}
+.point {
+  background:#f9fafb; border-radius:12px; padding:16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
 
 
 
 
                       
+
 
 
 
