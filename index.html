@@ -167,7 +167,8 @@ img{max-width:100%;height:auto;display:block}
 <div id="backdrop" class="backdrop" hidden></div>
 
 <!-- ===== スライダー ===== -->
-<section class="slider" aria-label="注目スライド">
+<!-- ===== スライダー（置き換え） ===== -->
+<section id="hero" class="slider" aria-label="注目スライド">
   <div class="slide active" style="background-image:url('slide1.jpg');"></div>
   <div class="slide" style="background-image:url('slide2.jpg');"></div>
   <div class="slide" style="background-image:url('slide3.jpg');"></div>
@@ -177,7 +178,10 @@ img{max-width:100%;height:auto;display:block}
     <p>新しい時代の不動産エージェント</p>
     <a class="cta-hero" href="https://forms.gle/JFEfwf4pY9JbTSKDA">無料見積りを依頼する</a>
   </div>
-</section>
+</section><!-- /#hero -->
+
+<!-- ※この下に検索ボックス（「あなたに、ピッタリの宅建士…」）が来る -->
+
 
 <!-- ===== 注目の宅建士 ===== -->
 <section class="section" id="featured-agents">
@@ -349,3 +353,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
