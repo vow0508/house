@@ -42,7 +42,85 @@
 <footer class="site-footer">
   <p>&copy; 2025 お家.com</p>
 </footer>
+/* ===== Subpages Card Style (Vision/Legal) - 追記だけでOK ===== */
+:root{
+  --orange:#ff9900;
+  --o25:rgba(255,153,0,.25);
+  --o35:rgba(255,153,0,.35);
+  --ink:#111827;
+  --muted:#6b7280;
+}
+
+/* ベース（軽く整えるだけ。既存があれば後勝ちします） */
+*{ box-sizing:border-box; }
+body{ margin:0; color:var(--ink); background:#f9fafb; }
+.site-header{ background:#fff; border-bottom:1px solid #eee; box-shadow:0 6px 18px var(--o25); }
+.header-inner{ max-width:1200px; margin:0 auto; padding:10px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.main-nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:16px; }
+.main-nav a{ text-decoration:none; color:inherit; }
+.site-footer{ padding:24px 16px; color:var(--muted); border-top:1px solid #eee; background:#fff; }
+
+/* ★本文を“カード”化（中央配置＋オレンジ系ドロップシャドウ） */
+.page-content{
+  max-width: 960px;
+  margin: 32px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow:
+    0 12px 30px var(--o25),
+    0 3px 10px var(--o35),
+    0 10px 24px rgba(17,24,39,.12),
+    0 2px 6px rgba(17,24,39,.08);
+}
+@media (min-width: 960px){
+  .page-content{ padding: 36px 40px; margin: 48px auto; }
+}
+
+/* 見出しにオレンジの下線バー（トップと統一） */
+.page-content h1{
+  margin: 0 0 14px;
+  text-align: center;
+  line-height: 1.25;
+}
+.page-content h1::after{
+  content:"";
+  display:block;
+  width:64px; height:4px;
+  margin:12px auto 0;
+  background:var(--orange);
+  border-radius:9999px;
+}
+
+/* 文字の行間・余白（読みやすさ） */
+.page-content p{
+  margin: 0 0 1em;
+  line-height: 1.9;
+  color: #1f2937;
+}
+
+/* 画像が入るときの影（本文内のみ） */
+.page-content img{
+  display:block;
+  max-width:100%;
+  height:auto;
+  border-radius:12px;
+  filter: drop-shadow(0 6px 12px var(--o35));
+}
+
+/* ロゴ（テキスト／画像）に影は付けない */
+.site-header .logo img,
+.site-header .logo a{
+  filter:none !important;
+  box-shadow:none !important;
+}
+
+/* スマホ余白最適化 */
+@media (max-width: 640px){
+  .page-content{ margin: 20px 12px; padding: 18px; }
+}
 
 </body>
 </html>
+
 
