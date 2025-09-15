@@ -791,9 +791,17 @@ document.addEventListener('DOMContentLoaded', () => {
   </style>
   <!-- ▲ここまで追加 -->
 
-</body>
-</html>
+<!-- ヒーローだけ優先読込 -->
+<link rel="preload" as="image" href="slide1.jpg" imagesrcset="slide1.avif 1x, slide1.jpg 1x">
+<!-- Webフォント最適化 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<!-- カードの画像は遅延読み込み -->
+<img class="avatar" src="images/agent_1.jpg" alt="井上 広樹" loading="lazy" decoding="async">
+
+
+#rescue .btn, #rescue .card .btn{ min-height:44px; }
 
 
 
@@ -804,6 +812,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 </body>
 </html>
+
 
 
 
