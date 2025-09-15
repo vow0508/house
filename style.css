@@ -523,9 +523,65 @@ body {
 }
 
 
+<style id="center-fix">
+/* === 検索セクションを中央寄せ === */
+.search-box{
+  position:relative !important;
+  z-index:0 !important;
+  padding:28px 16px !important;
+  text-align:center !important;
+}
+.search-box h2{ margin:0 0 8px !important; }
+.search-box p{ margin:0 0 16px !important; color:#4b5563 !important; }
+
+/* 入力＋ボタンを中央で横並び（小画面は縦積み） */
+.search-box .search{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:10px !important;
+  flex-wrap:wrap !important;
+}
+.search-box input{
+  width:min(92vw, 480px) !important;
+  max-width:100% !important;
+  padding:12px 14px !important;
+  border:1px solid #d1d5db !important;
+  border-radius:10px !important;
+  outline:0 !important;
+}
+.search-box button{
+  padding:12px 16px !important;
+  border:0 !important;
+  border-radius:10px !important;
+  background:#007acc !important;
+  color:#fff !important;
+  font-weight:700 !important;
+  cursor:pointer !important;
+}
+@media (max-width: 480px){
+  .search-box .search{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:8px !important;
+  }
+  .search-box button{ width:100% !important; }
+}
+
+/* === お知らせ（ボタン含む）を中央寄せ === */
+.greeting .greeting-inner{ text-align:center !important; }
+.greeting .greeting-actions{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:10px !important;
+  flex-wrap:wrap !important;
+}
+</style>
 
 
                       
+
 
 
 
