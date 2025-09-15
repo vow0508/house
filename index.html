@@ -634,21 +634,38 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 </style>
 
-/* === Agent cards layout fix: SP=2列, PC=4列 === */
-.section .inner{ max-width:1200px; margin:0 auto; padding:0 16px; } /* 念のため器を広げる */
+<style id="cards-layout-hotfix-final">
+  /* 器が狭くされていても広がるように */
+  .section .inner{ max-width:1200px !important; margin:0 auto !important; padding:0 16px !important; }
 
-#tierGold, #tierSilver, #tierBronze, .cards{
-  display:grid !important;
-  grid-template-columns:repeat(2, minmax(0,1fr)) !important; /* スマホ=2列 */
-  gap:16px !important;
-}
-@media (min-width: 1024px){
+  /* カード親を必ずグリッド化（SP=2列） */
   #tierGold, #tierSilver, #tierBronze, .cards{
-    grid-template-columns:repeat(4, minmax(0,1fr)) !important; /* PC=4列 */
+    display:grid !important;
+    grid-auto-flow: row dense !important;
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    gap:16px !important;
   }
-}
-/* 古い幅指定/floatの無効化 */
-.cards > .card{ width:auto !important; float:none !important; margin:0 !important; }
+
+  /* PCは強制4列 */
+  @media (min-width: 900px){
+    #tierGold, #tierSilver, #tierBronze, .cards{
+      grid-template-columns: repeat(4, minmax(0,1fr)) !important;
+    }
+  }
+
+  /* 子カードに残っている幅/float/フレックス指定を無効化 */
+  #tierGold > .card, #tierSilver > .card, #tierBronze > .card, .cards > .card{
+    width:auto !important;
+    max-width:none !important;
+    flex:none !important;
+    float:none !important;
+    margin:0 !important;
+  }
+
+  /* ul/liレイアウトの名残がある場合のクリア */
+  .cards::before, .cards::after{ content:none !important; display:none !important; }
+</style>
+
 
 
 
@@ -657,6 +674,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 </body>
 </html>
+
 
 
 
