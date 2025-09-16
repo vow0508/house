@@ -692,6 +692,16 @@ body {
 }
 
 
+/* ページ全体に左右余白をつける */
+.page-container {
+  max-width: 1200px;  /* 最大幅 */
+  margin: 0 auto;     /* 中央寄せ */
+  padding: 0 16px;    /* 左右余白 */
+}
+
+
+
+
 
 
 
