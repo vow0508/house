@@ -684,6 +684,13 @@ body {
 .cards > .card{ width:auto !important; float:none !important; margin:0 !important; }
 
 
+/* 棒グラフの色部分をブロック化して幅%が効くようにする */
+.fin-bar .fill{
+  display:block;      /* ← これが肝心！ */
+  height:100%;
+  background:var(--pri);
+}
+
 
 
 
