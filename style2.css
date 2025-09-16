@@ -285,6 +285,24 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 }
 
 
+.compare-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.compare-cards .card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 165, 0, 0.4); /* オレンジ色のドロップシャドウ */
+}
+
+.compare-cards .highlight {
+  border: 2px solid #f90;
+  box-shadow: 0 6px 14px rgba(255, 165, 0, 0.6);
+}
+
 
 
 
