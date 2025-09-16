@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>資金計画 | お家.com</title>
+<link rel="stylesheet" href="style2.css"><!-- あれば -->
+<style>
+:root{
+  --ink:#111827; --sub:#6b7280; --bg:#f8fafc; --line:#e5e7eb; --pri:#0d6efd; --ok:#10b981; --warn:#f59e0b;
+}
+body{font-family:'Noto Sans JP',system-ui; color:var(--ink); margin:0;}
+.fin-wrap{max-width:960px;margin:0 auto;padding:24px 16px;}
+.fin-title{font-size:1.6rem;font-weight:800;margin:8px 0 16px;}
+.fin-lead{color:var(--sub);margin:0 0 16px;line-height:1.8}
+.fin-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 14px;margin:12px 0;}
+.fin-card h3{margin:0 0 8px;font-size:1.05rem}
+.fin-grid{display:grid;gap:12px;}
+@media(min-width:768px){.fin-grid{grid-template-columns:1fr 1fr}}
+.fin-note{font-size:.92rem;color:var(--sub)}
+.fin-badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#eef2ff;color:#2947d6;font-weight:700;font-size:.82rem}
+.fin-box{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;margin:8px 0}
+.fin-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.fin-table th,.fin-table td{padding:10px 12px;border-bottom:1px solid #eef2f7;text-align:right}
+.fin-table th:first-child,.fin-table td:first-child{text-align:left}
+.fin-table tr:last-child td{border-bottom:none}
+.fin-bar{display:flex;align-items:center;gap:8px;margin:8px 0}
+.fin-bar .label{min-width:8em}
+.fin-bar .bar{flex:1;height:12px;background:#eef2f7;border-radius:999px;overflow:hidden}
+.fin-bar .fill{height:100%;background:var(--pri)}
+.fin-legend{font-size:.92rem;color:var(--sub)}
+.fin-ok{color:var(--ok);font-weight:700}
+.fin-warn{color:var(--warn);font-weight:700}
+.fin-cta{margin:18px 0 6px;text-align:center}
+.fin-btn{display:inline-block;padding:12px 16px;border-radius:10px;background:var(--pri);color:#fff;text-decoration:none;font-weight:800}
+.fin-btn:hover{opacity:.95}
+.small{font-size:.9rem;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="fin-wrap">
+
+  <h1 class="fin-title">資金計画とクラウドファンディングの目的</h1>
+  <p class="fin-lead">
+    600/480（調達600→手取り480）では<strong>生活費・広告費が不足</strong>し、初月から赤字転落のリスク。<br>
+    <strong>700/560</strong>（調達700→手取り560）を<strong>必達ライン</strong>として、最低3か月を走り切る資金設計です。
+  </p>
+
+  <!-- 調達サマリー -->
+  <div class="fin-card">
+    <h3>調達サマリー <span class="fin-badge">700 / 560（必達）</span></h3>
+    <div class="fin-grid">
+      <div class="fin-box">
+        <strong>使途内訳（万円）</strong>
+        <table class="fin-table" aria-label="資金内訳">
+          <tr><th>項目</th><th>金額</th></tr>
+          <tr><td>事務所</td><td>70</td></tr>
+          <tr><td>会社設立</td><td>30</td></tr>
+          <tr><td>免許</td><td>130</td></tr>
+          <tr><td>什器備品</td><td>60</td></tr>
+          <tr><td>HP制作</td><td>50</td></tr>
+          <tr><td>税理士</td><td>10</td></tr>
+          <tr><td>複合機</td><td>20</td></tr>
+          <tr><td><strong>固定費小計</strong></td><td><strong>370</strong></td></tr>
+          <tr><td>広告費</td><td>100</td></tr>
+          <tr><td>生活費（3か月）</td><td>90</td></tr>
+          <tr><td>予備費</td><td>（数十）</td></tr>
+        </table>
+        <p class="fin-note">※生活費は最低限（倒産回避の生命線）。借入は非常時のバックアップであり前提にしません。</p>
+      </div>
+
+      <div class="fin-box" aria-label="可視化">
+        <strong>可視化（棒グラフ / 目安スケール）</strong>
+        <div class="fin-bar"><span class="label">固定費370</span><span class="bar"><span class="fill" style="width:66%"></span></span></div>
+        <div class="fin-bar"><span class="label">広告費100</span><span class="bar"><span class="fill" style="width:18%"></span></span></div>
+        <div class="fin-bar"><span class="label">生活費90</span><span class="bar"><span class="fill" style="width:16%"></span></span></div>
+        <p class="fin-legend">※幅は 560 を100%としたイメージ比率です。</p>
+        <p class="small">→ 600/480では<strong class="fin-warn">広告・生活費が不足</strong>。<br>
+          → 700/560なら<strong class="fin-ok">最低3か月の猶予</strong>を確保し、初月からの案件獲得に集中できます。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 産業構造・勝ち筋 -->
+  <div class="fin-card">
+    <h3>業界の三つ巴と勝ち筋</h3>
+    <ul class="small">
+      <li><strong>大手：</strong>売り専任・両手重視</li>
+      <li><strong>中小：</strong>地元名士・賃貸管理で安定</li>
+      <li><strong>エージェント：</strong>買い手支援（仲介手数料無料／価格交渉／住宅ローン整備）で勝機</li>
+    </ul>
+    <p class="fin-note">一般の方の恩恵：売買は1億円物件で通常約<strong>336万円</strong>が<strong>0円</strong>。賃貸も仲介手数料<strong>0円</strong>。</p>
+  </div>
+
+  <!-- 行動宣言 -->
+  <div class="fin-card">
+    <h3>行動宣言</h3>
+    <p class="fin-lead">
+      「営業しない不動産会社」。私は<strong>社員に営業をさせません</strong>。<br>
+      <strong>売買も賃貸も仲介手数料は無料。</strong>集客は本部、接客は宅建士。これを地上波CMで“選択肢”にします。
+    </p>
+  </div>
+
+  <div class="fin-cta">
+    <a class="fin-btn" href="https://vow0508.github.io/house/" target="_blank" rel="noopener">トップへ戻る</a>
+  </div>
+
+</div>
+</body>
+</html>
