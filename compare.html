@@ -18,20 +18,24 @@
     }
     .compare-container {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap; /* 横並び＋折り返し */
       gap: 20px;
-      max-width: 900px;
+      justify-content: center;
+      max-width: 1200px;
       margin: 0 auto;
     }
     .compare-card {
+      flex: 1 1 300px; /* 幅300pxを基準に調整 */
+      max-width: 350px;
       background: #fff;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4); /* オレンジ色の影 */
+      box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4); /* オレンジ影 */
     }
     .compare-card h2 {
       margin-top: 0;
       color: #ff6600;
+      text-align: center;
     }
     .compare-list {
       list-style: none;
@@ -80,11 +84,6 @@
   </div>
 </body>
 </html>
-
-
-
-
-
 
 
 
