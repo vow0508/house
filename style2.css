@@ -385,29 +385,6 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 
 
 
-.cta-box {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* PCでは中央に */
-  gap: 1rem;
-  flex-wrap: wrap; /* スマホでは下に折り返す */
-  margin-top: 1.5rem;
-}
-
-.cta-box .btn {
-  background: #ff6600;
-  color: #fff;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.cta-box .note {
-  font-size: 0.8rem;
-  color: #666;
-  margin-left: 1rem; /* ボタン群の右横に配置 */
-}
 
 /* 注釈のスタイル（PCでは右寄せのまま） */
 .note {
@@ -426,6 +403,7 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
     white-space: normal; /* 折り返し可能にする */
   }
 }
+
 
 
 
