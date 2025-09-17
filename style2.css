@@ -385,15 +385,12 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 
 
 
-
-
-
 .cta-box {
   display: flex;
   align-items: center;
-  justify-content: center; /* 真ん中に揃える */
-  gap: 1rem; /* ボタンと注釈の間隔 */
-  flex-wrap: wrap; /* スマホでは折り返し */
+  justify-content: center; /* PCでは中央に */
+  gap: 1rem;
+  flex-wrap: wrap; /* スマホでは下に折り返す */
   margin-top: 1.5rem;
 }
 
@@ -407,9 +404,11 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 }
 
 .cta-box .note {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #666;
+  margin-left: 1rem; /* ボタン群の右横に配置 */
 }
+
 
 
 
