@@ -382,27 +382,26 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 
 
 
-
-
-
-
-/* 注釈のスタイル（PCでは右寄せのまま） */
+/* PCでは横に並ぶ（今のまま美しいレイアウト） */
 .note {
   margin-left: 1rem;
-  color: #666;  /* グレーで控えめに */
+  color: #666;
   font-size: 0.9rem;
   white-space: nowrap;
 }
 
-/* スマホ表示のときは中央寄せに変更 */
+/* スマホではボタンの下に移動して中央寄せ */
 @media (max-width: 768px) {
   .note {
     display: block;
     text-align: center;
-    margin: 0.5rem auto 0;
-    white-space: normal; /* 折り返し可能にする */
+    margin: 0.75rem auto 0; /* ボタン下に余白つける */
+    white-space: normal; /* スマホで折り返し可能に */
   }
 }
+
+
+
 
 
 
