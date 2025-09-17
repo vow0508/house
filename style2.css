@@ -382,7 +382,18 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 
 
 
-/* PCでは横に並ぶ（今のまま美しいレイアウト） */
+.cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap; /* ← 横幅足りない時は折り返す */
+}
+
+.cta-buttons .btn {
+  margin: 0 0.5rem;
+}
+
 .note {
   margin-left: 1rem;
   color: #666;
@@ -390,15 +401,21 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
   white-space: nowrap;
 }
 
-/* スマホではボタンの下に移動して中央寄せ */
+/* スマホ時は縦並びに切り替え */
 @media (max-width: 768px) {
-  .notes {
-    display: block;
+  .cta-buttons {
+    flex-direction: column; /* ボタンと注釈を縦に並べる */
+  }
+  .cta-buttons .btn {
+    margin: 0.25rem 0;
+  }
+  .note {
+    margin: 0.5rem 0 0;
     text-align: center;
-    margin: 0.75rem auto 0; /* ボタン下に余白つける */
-    white-space: normal; /* スマホで折り返し可能に */
+    white-space: normal; /* スマホで折り返し可 */
   }
 }
+
 
 
 
