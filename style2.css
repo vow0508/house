@@ -369,6 +369,34 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 
 
 
+.cta-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;           /* ボタンと注釈の間隔 */
+  flex-wrap: wrap;     /* スマホでは折り返して下に回る */
+  margin-top: 1.5rem;
+}
+
+
+
+
+
+
+
+.cta-box .btn {
+  background: #ff6600;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-box .note {
+  font-size: 0.85rem;
+  color: #666;
+}
+
 
 
 
