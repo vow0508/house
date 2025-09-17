@@ -409,6 +409,24 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
   margin-left: 1rem; /* ボタン群の右横に配置 */
 }
 
+/* 注釈のスタイル（PCでは右寄せのまま） */
+.note {
+  margin-left: 1rem;
+  color: #666;  /* グレーで控えめに */
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* スマホ表示のときは中央寄せに変更 */
+@media (max-width: 768px) {
+  .note {
+    display: block;
+    text-align: center;
+    margin: 0.5rem auto 0;
+    white-space: normal; /* 折り返し可能にする */
+  }
+}
+
 
 
 
