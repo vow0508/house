@@ -392,13 +392,14 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 
 /* スマホではボタンの下に移動して中央寄せ */
 @media (max-width: 768px) {
-  .note {
+  .notes {
     display: block;
     text-align: center;
     margin: 0.75rem auto 0; /* ボタン下に余白つける */
     white-space: normal; /* スマホで折り返し可能に */
   }
 }
+
 
 
 
