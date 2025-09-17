@@ -2,71 +2,85 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex, nofollow" />
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>他社比較 | お家.com</title>
 <link rel="stylesheet" href="style2.css">
+<style>
+  body {
+    font-family: "Meiryo", sans-serif;
+    background: #fafafa;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+
+  .compare-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 6px 12px rgba(255, 140, 0, 0.4); /* オレンジ色のドロップシャドウ */
+  }
+
+  .card h2 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: #ff6600;
+  }
+
+  .info {
+    margin: 10px 0;
+    font-size: 1em;
+  }
+
+  .label {
+    font-weight: bold;
+    display: inline-block;
+    min-width: 120px; /* ラベル列を揃える */
+    color: #333;
+  }
+</style>
 </head>
 <body>
+  <div class="compare-container">
+    <h1>他社との比較</h1>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="index.html" class="logo"><img src="images/logo.png" alt="お家.com"></a>
-    <a href="form.html" class="btn-estimate">無料見積り</a>
+    <div class="card">
+      <h2>A社</h2>
+      <div class="info"><span class="label">社員資格:</span> 宅建無資格者可</div>
+      <div class="info"><span class="label">歩合率:</span> 90%</div>
+      <div class="info"><span class="label">月額費用:</span> 22,000円</div>
+      <div class="info"><span class="label">集客サポート:</span> 無し</div>
+    </div>
+
+    <div class="card">
+      <h2>B社</h2>
+      <div class="info"><span class="label">社員資格:</span> 宅建無資格者可</div>
+      <div class="info"><span class="label">歩合率:</span> 75%～90%</div>
+      <div class="info"><span class="label">月額費用:</span> 無し</div>
+      <div class="info"><span class="label">集客サポート:</span> 有</div>
+    </div>
+
+    <div class="card">
+      <h2>お家.com</h2>
+      <div class="info"><span class="label">社員資格:</span> 宅建士に限る</div>
+      <div class="info"><span class="label">歩合率:</span> 90%</div>
+      <div class="info"><span class="label">月額費用:</span> 22,000円</div>
+      <div class="info"><span class="label">集客サポート:</span> 有（お家.com）</div>
+    </div>
   </div>
-</header>
-
-<main>
-  <section class="section">
-
-
-<body>
-  <!-- 全体ラッパー -->
-  <div class="page-container">
-
-    <section class="compare">
-      <h2>他社との比較</h2>
-      <div class="compare-cards">
-        
-        <!-- W社 -->
-        <div class="card">
-          <h3>A社</h3>
-          <p><strong>社員の資格：</strong>宅建無資格者可</p>
-          <p><strong>歩合率：</strong>90%</p>
-          <p><strong>月額費用：</strong>22,000円</p>
-          <p><strong>集客サポートサイト：</strong>無し</p>
-        </div>
-
-        <!-- T社 -->
-        <div class="card">
-          <h3>B社</h3>
-          <p><strong>社員の資格：</strong>宅建無資格者可</p>
-          <p><strong>歩合率：</strong>75%～90%</p>
-          <p><strong>月額費用：</strong>無し</p>
-          <p><strong>集客サポートサイト：</strong>有</p>
-        </div>
-
-        <!-- お家.com -->
-        <div class="card highlight">
-          <h3>お家.com</h3>
-          <p><strong>社員の資格：</strong>宅建士に限る</p>
-          <p><strong>歩合率：</strong>90%</p>
-          <p><strong>月額費用：</strong>22,000円</p>
-          <p><strong>集客サポートサイト：</strong>有（お家.com）</p>
-        </div>
-
-      </div>
-    </section>
-
-  </div><!-- /.page-container -->
-</body>
-
-<footer class="site-foot"><small>© お家.com | デモサイト</small></footer>
 </body>
 </html>
-
-
-
 
 
 
