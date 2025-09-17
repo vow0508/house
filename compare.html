@@ -1,83 +1,81 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="robots" content="noindex, nofollow" />
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>他社比較 | お家.com</title>
-<link rel="stylesheet" href="style2.css">
-<style>
-  body {
-    font-family: "Meiryo", sans-serif;
-    background: #fafafa;
-    margin: 0;
-    padding: 20px;
-  }
-
-  h1 {
-    text-align: center;
-    font-size: 1.8em;
-    margin-bottom: 30px;
-  }
-
-  .compare-container {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0 6px 12px rgba(255, 140, 0, 0.4); /* オレンジ色のドロップシャドウ */
-  }
-
-  .card h2 {
-    margin-top: 0;
-    font-size: 1.4em;
-    color: #ff6600;
-  }
-
-  .info {
-    margin: 10px 0;
-    font-size: 1em;
-  }
-
-  .label {
-    font-weight: bold;
-    display: inline-block;
-    min-width: 120px; /* ラベル列を揃える */
-    color: #333;
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>他社との比較 | お家.com</title>
+  <style>
+    body {
+      font-family: "Meiryo", sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #fafafa;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .compare-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .compare-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4); /* オレンジ色の影 */
+    }
+    .compare-card h2 {
+      margin-top: 0;
+      color: #ff6600;
+    }
+    .compare-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .compare-list li {
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .compare-list li:last-child {
+      border-bottom: none;
+    }
+  </style>
 </head>
 <body>
+  <h1>他社との比較</h1>
   <div class="compare-container">
-    <h1>他社との比較</h1>
-
-    <div class="card">
+    <div class="compare-card">
       <h2>A社</h2>
-      <div class="info"><span class="label">社員資格:</span> 宅建無資格者可</div>
-      <div class="info"><span class="label">歩合率:</span> 90%</div>
-      <div class="info"><span class="label">月額費用:</span> 22,000円</div>
-      <div class="info"><span class="label">集客サポート:</span> 無し</div>
+      <ul class="compare-list">
+        <li>社員の資格: 宅建無資格者可</li>
+        <li>歩合率: 90%</li>
+        <li>月額費用: 22,000円</li>
+        <li>集客サポートサイト: 無し</li>
+      </ul>
     </div>
-
-    <div class="card">
+    <div class="compare-card">
       <h2>B社</h2>
-      <div class="info"><span class="label">社員資格:</span> 宅建無資格者可</div>
-      <div class="info"><span class="label">歩合率:</span> 75%～90%</div>
-      <div class="info"><span class="label">月額費用:</span> 無し</div>
-      <div class="info"><span class="label">集客サポート:</span> 有</div>
+      <ul class="compare-list">
+        <li>社員の資格: 宅建無資格者可</li>
+        <li>歩合率: 75%～90%</li>
+        <li>月額費用: 無し</li>
+        <li>集客サポートサイト: 有</li>
+      </ul>
     </div>
-
-    <div class="card">
+    <div class="compare-card">
       <h2>お家.com</h2>
-      <div class="info"><span class="label">社員資格:</span> 宅建士に限る</div>
-      <div class="info"><span class="label">歩合率:</span> 90%</div>
-      <div class="info"><span class="label">月額費用:</span> 22,000円</div>
-      <div class="info"><span class="label">集客サポート:</span> 有（お家.com）</div>
+      <ul class="compare-list">
+        <li>社員の資格: 宅建士に限る</li>
+        <li>歩合率: 90%</li>
+        <li>月額費用: 22,000円</li>
+        <li>集客サポートサイト: 有（お家.com）</li>
+      </ul>
     </div>
   </div>
 </body>
