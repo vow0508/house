@@ -56,32 +56,29 @@
       </p>
       <div class="cta-row">
         <!-- 応募フォーム：以前いただいたGoogleフォーム -->
-   
-<div class="recruit-cta" id="recruitCta">
-  <a
-    href="https://forms.gle/xxxxxxxx"
-    role="button"
-    style="display:inline-block;padding:12px 22px;border-radius:12px;
-           background:#ff6600;color:#fff;text-decoration:none;font-weight:700;
-           border:2px solid #ff6600;box-shadow:0 6px 14px rgba(255,102,0,.35),
-           0 2px 6px rgba(255,102,0,.45)">
+   <!-- 募集CTA：このブロックをそのまま設置 -->
+<div id="recruitCta"
+     style="display:flex;justify-content:center;align-items:center;gap:16px;
+            flex-wrap:wrap;margin:18px auto 8px;text-align:center;max-width:840px;">
+  <!-- オレンジの主ボタン -->
+  <a href="https://forms.gle/JFEfwf4pY9JbTSKDA" role="button"
+     style="display:inline-block;padding:12px 22px;border-radius:12px;
+            background:#ff6600;color:#fff;text-decoration:none;font-weight:700;
+            border:2px solid #ff6600;box-shadow:0 6px 14px rgba(255,102,0,.35),
+            0 2px 6px rgba(255,102,0,.45)">
     宅建士募集にエントリー
   </a>
 
-  <a
-    href="service.html"
-    role="button"
-    style="display:inline-block;padding:12px 22px;border-radius:12px;
-           background:#fff;color:#ff6600;text-decoration:none;font-weight:700;
-           border:2px solid #ff6600;box-shadow:0 3px 10px rgba(255,102,0,.20)">
+  <!-- 枠線のサブボタン -->
+  <a href="service.html" role="button"
+     style="display:inline-block;padding:12px 22px;border-radius:12px;
+            background:#fff;color:#ff6600;text-decoration:none;font-weight:700;
+            border:2px solid #ff6600;box-shadow:0 3px 10px rgba(255,102,0,.20)">
     サービスの考え方を見る
   </a>
 </div>
 
 
-
-
-      </div>
       <p class="note">※ 宅建士資格があれば、実務未経験でも可。本部が伴走します。</p>
     </div>
   </header>
@@ -182,8 +179,39 @@
   </main>
 
   <footer class="site-foot"><small>c お家.com | デモサイト</small></footer>
+
+
+
+
+<style id="recruitCtaFix">
+  /* 親を中央寄せに固定（既存float/leftを無効化） */
+  #recruitCta{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:16px !important;
+    flex-wrap:wrap !important;
+    margin:18px auto 8px !important;
+    text-align:center !important;
+    float:none !important;
+    max-width:840px !important;
+  }
+  /* 念のため、ボタンはインラインブロック固定 */
+  #recruitCta a{
+    display:inline-block !important;
+  }
+  /* スマホは縦積み＆横幅100%でタップしやすく */
+  @media (max-width:480px){
+    #recruitCta{ flex-direction:column !important; }
+    #recruitCta a{ width:100% !important; max-width:380px !important; }
+  }
+</style>
+
+
+  
 </body>
 </html>
+
 
 
 
