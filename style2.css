@@ -411,55 +411,46 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 
 
 
-
-
-/* === 募集ページ専用ボタン === */
-.btn-entry {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 12px;
-  background: #ff6600;
-  color: #fff !important;
-  font-weight: 700;
-  text-decoration: none !important;
-  border: none;
-  box-shadow: 0 6px 14px rgba(255,102,0,.35),
-              0 2px 6px rgba(255,102,0,.45);
-  transition: transform .06s ease, opacity .2s ease;
-}
-.btn-entry:hover { opacity: .92; }
-.btn-entry:active { transform: translateY(1px); }
-
-.btn-ghost {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 12px;
-  background: #fff;
-  color: #ff6600 !important;
-  font-weight: 700;
-  text-decoration: none !important;
-  border: 2px solid #ff6600;
-  box-shadow: 0 3px 10px rgba(255,102,0,.20);
-}
-.btn-ghost:hover { background:#fff7ec; }
-
-.recruit-cta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin: 18px auto 8px;
-  text-align: center;
+/* ========== recruit buttons (強制上書き) ========== */
+#rescue #recruitCta .btn-entry,
+#rescue #recruitCta .btn-ghost{
+  display:inline-block !important;
+  padding:12px 22px !important;
+  border-radius:12px !important;
+  font-weight:700 !important;
+  text-decoration:none !important;
+  line-height:1 !important;
 }
 
-/* スマホ対応 */
-@media (max-width: 480px){
-  .recruit-cta .btn-entry,
-  .recruit-cta .btn-ghost { width: 100%; }
+#rescue #recruitCta .btn-entry{
+  background:#ff6600 !important;
+  color:#fff !important;
+  border:2px solid #ff6600 !important;
+  box-shadow:0 6px 14px rgba(255,102,0,.35), 0 2px 6px rgba(255,102,0,.45) !important;
 }
 
+#rescue #recruitCta .btn-ghost{
+  background:#fff !important;
+  color:#ff6600 !important;
+  border:2px solid #ff6600 !important;
+  box-shadow:0 3px 10px rgba(255,102,0,.20) !important;
+}
 
+#rescue .recruit-cta{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:16px !important;
+  flex-wrap:wrap !important;
+  margin:18px auto 8px !important;
+  text-align:center !important;
+}
+
+/* スマホは幅100%で縦積み */
+@media (max-width:480px){
+  #rescue #recruitCta .btn-entry,
+  #rescue #recruitCta .btn-ghost{ width:100% !important; }
+}
 
 
 
