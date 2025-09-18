@@ -413,32 +413,51 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 
 
 
-/* ▼募集ページ：2ボタンを中央に揃える（強制） */
+
+
+
+/* === 募集ページ専用ボタン（競合しないユニーク名） === */
+.btn-entry {
+  display: inline-block !important;
+  padding: 12px 22px !important;
+  border-radius: 12px !important;
+  background: #ff9900 !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  border: 0 !important;
+  box-shadow: 0 6px 14px rgba(255,153,0,.35),
+              0 2px 6px rgba(255,153,0,.45) !important;
+  transition: transform .06s ease, opacity .2s ease !important;
+}
+.btn-entry:hover { opacity:.92; }
+.btn-entry:active { transform: translateY(1px); }
+
+.btn-ghost {
+  display: inline-block !important;
+  padding: 12px 22px !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  color: #ff9900 !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  border: 2px solid #ff9900 !important;
+  box-shadow: 0 3px 10px rgba(255,153,0,.20) !important;
+}
+.btn-ghost:hover { background:#fff7ec; }
+
+/* 2ボタンの並びを中央に */
 .recruit-cta{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:16px;
-  flex-wrap:wrap;
-  margin:18px auto 8px;
-  text-align:center;
+  display:flex; justify-content:center; align-items:center;
+  gap:16px; flex-wrap:wrap; margin:18px auto 8px; text-align:center;
 }
 
-.recruit-cta .btn,
-.recruit-cta .btn-outline{
-  display:inline-block !important;
-  float:none !important;
-  margin:0 !important;
-}
-
-/* スマホは1列に */
+/* スマホは縦並び＆幅100% */
 @media (max-width: 480px){
-  .recruit-cta{ gap:10px; }
-  .recruit-cta .btn,
-  .recruit-cta .btn-outline{
-    width:100%;
-  }
+  .recruit-cta .btn-entry,
+  .recruit-cta .btn-ghost{ width:100%; }
 }
+
 
 
 
