@@ -411,48 +411,6 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 
 
 
-/* ========== recruit buttons (強制上書き) ========== */
-#rescue #recruitCta .btn-entry,
-#rescue #recruitCta .btn-ghost{
-  display:inline-block !important;
-  padding:12px 22px !important;
-  border-radius:12px !important;
-  font-weight:700 !important;
-  text-decoration:none !important;
-  line-height:1 !important;
-}
-
-#rescue #recruitCta .btn-entry{
-  background:#ff6600 !important;
-  color:#fff !important;
-  border:2px solid #ff6600 !important;
-  box-shadow:0 6px 14px rgba(255,102,0,.35), 0 2px 6px rgba(255,102,0,.45) !important;
-}
-
-#rescue #recruitCta .btn-ghost{
-  background:#fff !important;
-  color:#ff6600 !important;
-  border:2px solid #ff6600 !important;
-  box-shadow:0 3px 10px rgba(255,102,0,.20) !important;
-}
-
-#rescue .recruit-cta{
-  display:flex !important;
-  justify-content:center !important;
-  align-items:center !important;
-  gap:16px !important;
-  flex-wrap:wrap !important;
-  margin:18px auto 8px !important;
-  text-align:center !important;
-}
-
-/* スマホは幅100%で縦積み */
-@media (max-width:480px){
-  #rescue #recruitCta .btn-entry,
-  #rescue #recruitCta .btn-ghost{ width:100% !important; }
-}
-
-
 
 
 
