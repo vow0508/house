@@ -413,18 +413,32 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 
 
 
-/* 募集ボタンを中央揃え */
-a.btn,
-a.btn-outline {
-  display: inline-block;
-  margin: 8px;
+/* ▼募集ページ：2ボタンを中央に揃える（強制） */
+.recruit-cta{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+  margin:18px auto 8px;
+  text-align:center;
 }
 
-.buttons-center {
-  text-align: center;
-  margin-top: 14px;
+.recruit-cta .btn,
+.recruit-cta .btn-outline{
+  display:inline-block !important;
+  float:none !important;
+  margin:0 !important;
 }
 
+/* スマホは1列に */
+@media (max-width: 480px){
+  .recruit-cta{ gap:10px; }
+  .recruit-cta .btn,
+  .recruit-cta .btn-outline{
+    width:100%;
+  }
+}
 
 
 
