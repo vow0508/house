@@ -407,20 +407,23 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 
 　　　
 
-.cta-row {
-  display: flex;
-  justify-content: center;   /* 中央に配置 */
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: 14px;
-  text-align: center;
+
+
+
+
+
+
+/* 募集ボタンを中央揃え */
+a.btn,
+a.btn-outline {
+  display: inline-block;
+  margin: 8px;
 }
 
-
-
-
-
+.buttons-center {
+  text-align: center;
+  margin-top: 14px;
+}
 
 
 
