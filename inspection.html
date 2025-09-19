@@ -56,6 +56,47 @@
       .card h2{font-size:22px}
       .card p{font-size:16px}
     }
+
+
+
+
+
+
+
+
+
+/* 注意バナー */
+.notice-bar{
+  position:sticky; top:0; z-index:1000;
+  background:#fff4e5;           /* 薄いオレンジ */
+  color:#7a3e00;
+  border:1px solid #ffd7a8;
+  border-left:6px solid #ff9900; /* ブランド色で強調 */
+  padding:10px 14px;
+  text-align:center;
+  font-weight:700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
   </style>
 </head>
 <body>
@@ -106,57 +147,42 @@
     </p>
 
     <!-- スマホでは1列、タブレット以上で2列に変わる -->
-    <section class="grid">
+  <section class="section">
+  <div class="inner">
+    <h2>点検ギャラリー</h2>
+    <div class="gallery-grid">
+      <!-- 1: 含水率 -->
+      <figure class="figure-card">
+        <img src="IMG_0210.JPG" alt="木材含水率の測定の様子">
+        <figcaption>木材の含水率チェック：高い数値は腐朽・シロアリリスク</figcaption>
+      </figure>
 
-      <!-- 含水率 -->
-      <article class="card">
-        <h2>木材の含水率チェック</h2>
-        <p>
-          木材水分計で構造材の含水率を測定。高い数値は
-          腐朽やシロアリ被害のリスク増を意味します。
-        </p>
-        <img src="IMG_0210.JPG"
-             alt="木材含水率を測定している様子（表示は99.9%）"
-             loading="lazy" width="1280" height="960">
-        <p class="meta">計測例：床下大引き／点検口より確認</p>
-      </article>
+      <!-- 2: 雨漏りバケツ -->
+      <figure class="figure-card">
+        <img src="屋根裏にバケツ.JPG" alt="屋根裏に吊り下げられたバケツ（雨漏りの痕跡）">
+        <figcaption>雨漏りの痕跡：屋根裏の水受けはサイン</figcaption>
+      </figure>
 
-      <!-- 雨漏り -->
-      <article class="card">
-        <h2>雨漏りの痕跡確認</h2>
-        <p>
-          屋根裏の水受け（バケツ等）は雨漏りのサインです。
-          放置すると断熱材や構造材の劣化につながります。
-        </p>
-        <img src="屋根裏にバケツ.JPG"
-             alt="屋根裏に吊り下げられたバケツ（雨漏りの応急処置）"
-             loading="lazy" width="1280" height="960">
-        <p class="meta">痕跡の有無／周辺の含水・カビも併せて確認</p>
-      </article>
+      <!-- 3: 鳥の巣 -->
+      <figure class="figure-card">
+        <img src="屋根裏に鳥の巣.JPG" alt="屋根裏の梁に作られた鳥の巣">
+        <figcaption>害獣の痕跡：鳥の巣や糞は衛生・配線に影響</figcaption>
+      </figure>
 
-      <!-- 害獣 -->
-      <article class="card">
-        <h2>害獣・鳥の巣の痕跡</h2>
-        <p>
-          巣や糞はダニ・悪臭・配線損傷の原因に。侵入経路の封鎖と
-          清掃・消毒の必要性を助言します。
-        </p>
-        <img src="屋根裏に鳥の巣.JPG"
-             alt="屋根裏の梁に作られた鳥の巣"
-             loading="lazy" width="1280" height="960">
-        <p class="meta">写真・位置を記録し、再発防止策をご提案</p>
-      </article>
+      <!-- 4: 新規追加：羽子板ボルト未施工 -->
+      <figure class="figure-card">
+        <img src="羽子板ボルトの未施工２.jpg" alt="梁と柱の取り合いで羽子板ボルトが未施工の例">
+        <figcaption>構造金物の不備：羽子板ボルト未施工</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
-      <!-- 料金・流れ（テキスト中心カード） -->
-      <article class="card">
-      
-      
-        <p class="meta">現在住宅診断は行っていません</p>
-      </article>
-
-    </section>
+ <p class="meta">現在住宅診断は行っていません</p>
+    
   </div>
 </body>
 </html>
+
 
 
