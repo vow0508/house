@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>プロチェック（簡易住宅診断）</title>
+
+  <!-- 既存の style.css がある場合は先に読み込み（色やベースを継承） -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ===== モバイルを基準に最小限で見やすく ===== */
+    :root{
+      --accent:#ff7a00;           /* 既存サイトのオレンジに近い */
+      --shadow:0 10px 20px rgba(255,122,0,.35); /* オレンジ系ドロップシャドウ */
+      --radius:14px;
+      --fg:#222; --muted:#666; --bg:#fff; --page:#fafafa;
+    }
+    html,body{margin:0;background:var(--page);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium","Yu Gothic",Meiryo,sans-serif;}
+    img{max-width:100%;height:auto;display:block;}
+    a{color:var(--accent);text-decoration:none}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+    .wrap{max-width:980px;margin:auto;padding:20px 16px;}
+    .hdr{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:10px}
+    .back{font-size:14px}
+    .title{font-size:clamp(20px,5vw,28px);line-height:1.2;margin:10px 0 4px}
+    .lead{color:var(--muted);font-size:14px;line-height:1.7;margin:0 0 16px}
+
+    /* ---- カード（オレンジのドロップシャドウ） ---- */
+    .card{
+      background:var(--bg);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+      margin:18px 0;
+    }
+    .card h2{font-size:18px;margin:0 0 8px;color:var(--accent)}
+    .card p{margin:0 0 12px;line-height:1.8}
+    .meta{font-size:12px;color:var(--muted);margin-top:6px}
+
+    /* 画像の余白と角丸 */
+    .card img{border-radius:10px;margin-top:8px}
+
+    /* ==== 768px 以上で“だけ”広げる・並べる（モバイル優先） ==== */
+    @media (min-width:768px){
+      .wrap{padding:32px 20px}
+      .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+      .card{padding:22px;margin:0}
+      .card h2{font-size:20px}
+    }
+
+    /* ==== 1024px+ は少しだけ余白・文字サイズアップ ==== */
+    @media (min-width:1024px){
+      .title{font-size:32px}
+      .card h2{font-size:22px}
+      .card p{font-size:16px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- プロチェック概要セクション -->
+<section class="card">
+  <h2>建物プロチェックについて</h2>
+  <img src="house.png" alt="建物プロチェックの調査項目図" loading="lazy">
+  <p>
+    かつて三井のリハウスで提供されていた「建物プロチェック」。
+    実際にこのサービスを行っていたのは私たち一級建築士事務所です。
+    多い時には1日2〜3件の調査を担当してきました。
+  </p>
+
+  <h3>調査項目</h3>
+  <p>
+    調査は上図の通り、屋根・外壁・基礎など外から確認できる部分が中心です。<br>
+    屋根裏や床下、浴室などの水まわりは対象外です。<br>
+    室内では傾斜測定のみを行います。
+  </p>
+
+  <h3>詳しく調査をご希望の方へ</h3>
+  <p>
+    「すべての箇所をしっかり見てほしい」という場合は、
+    信頼できる一級建築士をご紹介いたします（※有料）。
+  </p>
+
+  <p>
+    建物プロチェック（住宅診断）は「ご購入を本気で検討される1物件」に限って実施します。<br>
+    複数物件の同時診断はできませんので、
+    まずは内見で候補を絞り込み、最後の判断材料としてご利用ください。
+  </p>
+</section>
+
+
+
+
+
+  <div class="wrap">
+    <div class="hdr">
+      <a class="back" href="./">← トップへ戻る</a>
+    </div>
+
+    <h1 class="title">プロチェック（簡易住宅診断）</h1>
+    <p class="lead">
+      点検口から確認できる範囲で、雨漏り・劣化・害虫/害獣の痕跡などを簡易チェックします。<br>
+      スマホで見やすい縦長カードに要点を整理しました。
+    </p>
+
+    <!-- スマホでは1列、タブレット以上で2列に変わる -->
+    <section class="grid">
+
+      <!-- 含水率 -->
+      <article class="card">
+        <h2>木材の含水率チェック</h2>
+        <p>
+          木材水分計で構造材の含水率を測定。高い数値は
+          腐朽やシロアリ被害のリスク増を意味します。
+        </p>
+        <img src="IMG_0210.JPG"
+             alt="木材含水率を測定している様子（表示は99.9%）"
+             loading="lazy" width="1280" height="960">
+        <p class="meta">計測例：床下大引き／点検口より確認</p>
+      </article>
+
+      <!-- 雨漏り -->
+      <article class="card">
+        <h2>雨漏りの痕跡確認</h2>
+        <p>
+          屋根裏の水受け（バケツ等）は雨漏りのサインです。
+          放置すると断熱材や構造材の劣化につながります。
+        </p>
+        <img src="屋根裏にバケツ.JPG"
+             alt="屋根裏に吊り下げられたバケツ（雨漏りの応急処置）"
+             loading="lazy" width="1280" height="960">
+        <p class="meta">痕跡の有無／周辺の含水・カビも併せて確認</p>
+      </article>
+
+      <!-- 害獣 -->
+      <article class="card">
+        <h2>害獣・鳥の巣の痕跡</h2>
+        <p>
+          巣や糞はダニ・悪臭・配線損傷の原因に。侵入経路の封鎖と
+          清掃・消毒の必要性を助言します。
+        </p>
+        <img src="屋根裏に鳥の巣.JPG"
+             alt="屋根裏の梁に作られた鳥の巣"
+             loading="lazy" width="1280" height="960">
+        <p class="meta">写真・位置を記録し、再発防止策をご提案</p>
+      </article>
+
+      <!-- 料金・流れ（テキスト中心カード） -->
+      <article class="card">
+        <h2>料金と流れ（例）</h2>
+        <p>
+          ① 事前ヒアリング（オンライン可）<br>
+          ② 現地30〜60分の目視点検<br>
+          ③ 写真付き簡易レポートを翌営業日までに共有
+        </p>
+        <p>
+          料金：<strong>○○,○○○円（税込）</strong>／戸　※エリア・条件で変動
+        </p>
+        <p class="meta">詳細はお問い合わせください</p>
+      </article>
+
+    </section>
+  </div>
+</body>
+</html>
