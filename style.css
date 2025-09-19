@@ -710,33 +710,56 @@ body {
 
 
 
+/* ===== 強制パッチ：ナビの不要な広がりを全部リセット ===== */
+:root{ --nav-gap: 18px; }
 
-/* 1) ヘッダー内の2つ目のナビを強制的に消す */
-header nav + nav,
-.header nav + nav,
-header .nav + .nav {
-  display: none !important;
+/* ヘッダーの行レイアウトを固定 */
+header, .header, .site-header, .topbar {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap: var(--nav-gap) !important;
 }
 
-/* 2) 残したナビを左寄せ＆均一間隔に */
-header nav,
-.header nav {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  gap: 20px !important;          /* メニューの間隔はお好みで */
-  flex-wrap: nowrap !important;
+/* ナビは“1つ目だけ”残し、横並び・左寄せ・均一間隔 */
+header nav, .header nav, nav[role="navigation"] {
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap: var(--nav-gap) !important;
+  flex-wrap:nowrap !important;
+  white-space:nowrap !important;
 }
 
-/* 3) 各項目が勝手に広がらないよう固定 */
-header nav > * {
-  flex: 0 0 auto !important;
-  margin: 0 !important;
+/* 二重ナビ対策：2つ目以降の nav/ul は消す */
+header nav ~ nav,
+header nav ul ~ ul,
+.header nav ~ nav {
+  display:none !important;
 }
 
-/* 4) 右端の「無料見積り」だけ右に寄せたい場合（任意） */
-header .cta, .header .cta, a.cta {
-  margin-left: auto !important;
+/* li/a が勝手に広がるのを禁止（flex:1 や autoマージンの無効化） */
+header nav > *, header nav li, header nav a,
+.header nav > *, .header nav li, .header nav a {
+  flex:0 0 auto !important;
+  margin:0 !important;
+}
+
+/* “最後の項目が右へ飛ぶ”系のルールを殺す */
+header nav > *:last-child,
+.header nav > *:last-child {
+  margin-left:0 !important;
+}
+
+/* プロチェックをピン留め（万一個別に auto が当たっている場合） */
+a[href*="inspection"], a[href*="プロチェック"] {
+  margin-left:0 !important;
+  flex:0 0 auto !important;
+}
+
+/* 右端の「無料見積り」(CTA) だけ右へ寄せたい時だけ使用 */
+a.cta, .cta, .header .cta {
+  margin-left:auto !important;
 }
 
 
