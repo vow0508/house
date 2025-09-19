@@ -227,6 +227,66 @@ img[src="kpi_funnel.png"] {
 
 
 
+
+/* 行動宣言カード（オレンジ系） */
+.finance-block.action .card.orange{
+  background:#fff7ed; /* 薄いオレンジ */
+  box-shadow:0 10px 24px rgba(255,153,0,.22);
+  border:1px solid rgba(255,153,0,.18);
+}
+
+/* ストーリー本文の読みやすさ */
+.action-story p{
+  margin:0 0 .9em;
+  line-height:1.9;
+  color:#374151;
+}
+.action-story .vision{
+  margin-top:.6em;
+  font-weight:700;
+  color:#7a3e00;
+}
+
+/* 誓いリスト（箇条書き） */
+.pledge-list{
+  margin:18px 0 0 0;
+  padding-left:1.1em;
+  display:grid;
+  gap:.5em;
+}
+.pledge-list li{
+  line-height:1.8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
   
 
 
@@ -438,14 +498,47 @@ img[src="kpi_funnel.png"] {
   </div>
 
   <!-- 行動宣言 -->
-  <div class="fin-card">
-    <h3>行動宣言</h3>
-    <p class="fin-lead">
-      「営業しない不動産会社」。私は<strong>社員に営業をさせません</strong>。但し、宅建士登録100名の場合<br>
-      <strong>売買も賃貸も仲介手数料は最大無料。</strong>集客は本部中心、接客は宅建士。宅建士自身の集客方法も指導。これを地上波CMで“選択肢”にします。
-    </p>
-  </div>
+<section class="finance-block action">
+  <div class="card orange">
+    <h2>行動宣言</h2>
 
+    <!-- ストーリー調（文脈） -->
+    <div class="action-story">
+      <p>
+        私は「営業しない本部」を理想としています。しかし、最初の2〜3人の宅建士が揃うまでは、
+        私自身も現役で営業の前線に立ちます。それでも、この形を標準にするための基盤を必ず築きます。
+      </p>
+      <p>
+        ご支援金は浪費や遊興に使うことなく、すべて基盤づくりと運営に充てます。
+        失敗があれば責任は私が取ります。常にお客様に誠実であることをお約束します。
+      </p>
+      <p class="vision">
+        そして私は、この挑戦を<strong>10年間</strong>やり抜き、<strong>10年後の上場</strong>を目指します。
+      </p>
+    </div>
+
+    <!-- 誓い（箇条書き） -->
+    <ul class="pledge-list">
+      <li>最初は私も営業に立ちますが、将来は<strong>「営業しない本部」</strong>を必ず実現する</li>
+      <li>ご支援金は<strong>基盤づくり・運営</strong>にのみ使用（浪費・遊興には一切使わない）</li>
+      <li><strong>宅建士を主役</strong>に据え、本部は裏方に徹する</li>
+      <li><strong>部下の失敗は私が責任</strong>を取る</li>
+      <li>常に<strong>お客様に誠実</strong>である</li>
+      <li><strong>10年</strong>頑張り、<strong>上場</strong>を目指す</li>
+    </ul>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+  
   <div class="fin-cta">
     <a class="fin-btn" href="https://vow0508.github.io/house/" target="_blank" rel="noopener">トップへ戻る</a>
   </div>
@@ -453,6 +546,7 @@ img[src="kpi_funnel.png"] {
 </div>
 </body>
 </html>
+
 
 
 
