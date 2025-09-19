@@ -435,3 +435,52 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#rescue .figure-card {
+  background:#fff;
+  border-radius:14px;
+  padding:12px;
+  box-shadow:0 12px 28px rgba(255,153,0,.22);
+  margin:20px auto;
+  text-align:center;           /* 中央寄せ */
+}
+
+#rescue .figure-card img {
+  display:inline-block;
+  max-width:90%;               /* スマホではほぼ全幅 */
+  width:500px;                 /* PCでは幅500pxに固定 */
+  height:auto;
+  border-radius:10px;
+}
+
+
