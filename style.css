@@ -706,30 +706,57 @@ body {
 
 
 
-
-/* ヘッダーの大枠 */
-.header {            /* 既存のクラス名に合わせて適宜変更 */
+/* ====== ヘッダーの並びを左寄せに統一 ====== */
+header, .header {
   display: flex;
   align-items: center;
-  /* justify-content: space-between; ← これをやめる */
+  gap: 20px;                  /* ロゴとメニューの間隔 */
+  justify-content: flex-start !important;   /* ← space-betweenを無効化 */
 }
 
-/* 左側のメニュー（ホーム〜プロチェックまで） */
-.header nav {
+
+
+
+
+
+
+
+
+
+/* メニュー（ulでもa直列でもOK）をフレックスで左寄せ */
+header nav, .header nav, nav.primary {
   display: flex;
   align-items: center;
-  gap: clamp(10px, 2.2vw, 28px);  /* 項目間の間隔をここで調整 */
-  justify-content: flex-start;
-  margin-left: 16px;               /* ロゴとの距離はお好みで */
+  flex-wrap: nowrap;
+  column-gap: clamp(10px, 2vw, 28px);       /* 各項目の間隔を均一に */
+  justify-content: flex-start !important;
 }
 
-/* 右端のCTAボタンを右に寄せる */
-.header .cta {       /* 無料見積りボタンのラッパーやa要素に付与 */
-  margin-left: auto;
+/* li / a に勝手に広がる指定や自動余白があればリセット */
+header nav li,
+header nav a {
+  margin: 0 !important;
+  flex: 0 0 auto !important;  /* flex:1 などで均等配置されるのを防ぐ */
 }
 
-/* 余計な左右マージンを消したい場合 */
-.header nav a { margin: 0; }       /* 既存で li + li { margin-left:… } があれば上書き */
+/* 「最後の項目を右に飛ばす」系のルールを無効化（よくあるパターン） */
+header nav li:last-child,
+header nav a:last-child {
+  margin-left: 0 !important;
+}
+
+/* 「プロチェック」をピンポイントで左寄せ（保険） */
+header nav a[href*="inspection"],
+header nav a[href*="プロチェック"] {
+  margin-left: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+/* 右端の“無料見積り”だけを右に寄せたい場合はこれを付与 */
+.header .cta, header .cta, a.cta {
+  margin-left: auto !important;
+}
+
 
 
 
