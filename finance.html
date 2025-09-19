@@ -124,6 +124,58 @@ img[src="kpi_funnel.png"] {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+/* --- PC横並びを必ず効かせる（#rescue無しで上書き） --- */
+.figure-grid { display: grid; gap: 20px; }        /* SPは自動で縦並び */
+
+@media (min-width:960px){
+  .figure-grid.two-cols{
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important;
+    gap: 20px !important;
+    align-items: start;
+  }
+  .figure-grid.two-cols .figure-card{ margin: 0; }
+}
+
+/* カード＆画像（#rescue無しで上書き） */
+.figure-card{
+  background:#fff; border-radius:14px; padding:12px;
+  box-shadow:0 12px 28px rgba(255,153,0,.22); text-align:center;
+}
+.figure-card img{
+  display:block; margin:0 auto;
+  width:100% !important; max-width:600px !important; height:auto !important;
+  border-radius:10px;
+}
+.figure-card .caption{ margin-top:10px; font-size:.95rem; color:#6b7280; }
+
+
+
+<section class="section compare">…</section>
+
+
+
+
+
+
+
+
+
+
+  
+
+
   
 </style>
 </head>
@@ -405,6 +457,7 @@ img[src="kpi_funnel.png"] {
 </div>
 </body>
 </html>
+
 
 
 
