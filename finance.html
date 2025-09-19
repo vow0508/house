@@ -87,6 +87,40 @@ img[src="kpi_funnel.png"] {
   color:#6b7280;
 }
 
+/* 基本：縦並び（SP） */
+#rescue .figure-grid { display:block; }
+#rescue .figure-grid .figure-card { margin:0 0 20px; }
+
+/* PC >=960px で横2列（Gridを最優先） */
+@media (min-width:960px){
+  #rescue .figure-grid.two-cols{
+    display:grid !important;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important;
+    gap:20px !important;
+    align-items:start;
+  }
+  #rescue .figure-grid.two-cols .figure-card{ margin:0; }
+}
+
+/* 万一Gridが他CSSに潰されても横並びにする“保険”（Flex fallback） */
+@media (min-width:960px){
+  #rescue .figure-grid.two-cols{
+    display:flex !important;           /* ← フォールバックとして上書き */
+    gap:20px !important;
+  }
+  #rescue .figure-grid.two-cols .figure-card{
+    width:50% !important;              /* 2分割を強制 */
+    max-width:none !important;
+  }
+}
+
+/* 画像サイズ（読みやすさ優先） */
+#rescue .figure-card img{
+  display:block; margin:0 auto;
+  width:100% !important;               /* カラム幅にフィット */
+  max-width:600px !important;          /* PC時の上限幅（見やすいサイズ） */
+  height:auto !important; border-radius:10px;
+}
 
 
 
@@ -243,7 +277,7 @@ img[src="kpi_funnel.png"] {
     <h2>資金使途とKPI</h2>
     <p>ご支援金の使い道と、初期3か月の目標（KPI）を並べてご覧いただけます。</p>
 
-    <div class="figure-grid">
+ <div class="figure-grid two-cols">
       <!-- 資金使途 -->
       <figure class="figure-card">
         <img src="fund_usage.png" alt="資金使途の図解">
@@ -371,6 +405,7 @@ img[src="kpi_funnel.png"] {
 </div>
 </body>
 </html>
+
 
 
 
