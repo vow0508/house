@@ -723,44 +723,38 @@ header, .header {
 
 
 
-/* メニュー（ulでもa直列でもOK）をフレックスで左寄せ */
-header nav, .header nav, nav.primary {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  column-gap: clamp(10px, 2vw, 28px);       /* 各項目の間隔を均一に */
-  justify-content: flex-start !important;
+/* ======= ヘッダーメニューを左寄せ・均等間隔に“強制修正” ======= */
+header nav, .header nav, nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;     /* ← space-between を無効化 */
+  flex-wrap: nowrap !important;
+  gap: 20px !important;                        /* 項目間の間隔はここで調整 */
 }
 
-/* li / a に勝手に広がる指定や自動余白があればリセット */
-header nav li,
-header nav a {
-  margin: 0 !important;
-  flex: 0 0 auto !important;  /* flex:1 などで均等配置されるのを防ぐ */
+/* 各メニュー項目が勝手に広がらないよう固定 */
+header nav > * , .header nav > * , nav > * {
+  flex: 0 0 auto !important;
+  margin: 0 !important;                        /* 既存の margin をリセット */
 }
 
-/* 「最後の項目を右に飛ばす」系のルールを無効化（よくあるパターン） */
-header nav li:last-child,
-header nav a:last-child {
+/* 「最後の項目を右へ飛ばす」系のルールを無効化（よくある原因） */
+header nav > *:last-child,
+.header nav > *:last-child,
+nav > *:last-child {
   margin-left: 0 !important;
 }
 
-/* 「プロチェック」をピンポイントで左寄せ（保険） */
-header nav a[href*="inspection"],
-header nav a[href*="プロチェック"] {
+/* “プロチェック”をピンポイントで左寄せ（保険） */
+a[href*="inspection"], a[href*="プロチェック"] {
   margin-left: 0 !important;
   flex: 0 0 auto !important;
 }
 
-/* 右端の“無料見積り”だけを右に寄せたい場合はこれを付与 */
+/* 右端の「無料見積り」ボタンだけを右へ寄せたい場合（任意） */
 .header .cta, header .cta, a.cta {
   margin-left: auto !important;
 }
-
-
-
-
-
 
 
 
