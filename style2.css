@@ -452,35 +452,25 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#rescue .figure-card {
-  background:#fff;
-  border-radius:14px;
-  padding:12px;
-  box-shadow:0 12px 28px rgba(255,153,0,.22);
-  margin:20px auto;
-  text-align:center;           /* 中央寄せ */
-}
-
 #rescue .figure-card img {
-  display:inline-block;
-  max-width:90%;               /* スマホではほぼ全幅 */
-  width:500px;                 /* PCでは幅500pxに固定 */
-  height:auto;
+  display:block;
+  margin:0 auto;
+  max-width:500px !important;   /* ← 強制 */
+  width:100% !important;        /* ← 幅いっぱいをやめる */
+  height:auto !important;
   border-radius:10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
