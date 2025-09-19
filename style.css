@@ -706,55 +706,44 @@ body {
 
 
 
-/* ====== ヘッダーの並びを左寄せに統一 ====== */
-header, .header {
-  display: flex;
-  align-items: center;
-  gap: 20px;                  /* ロゴとメニューの間隔 */
-  justify-content: flex-start !important;   /* ← space-betweenを無効化 */
+
+
+
+
+
+/* 1) ヘッダー内の2つ目のナビを強制的に消す */
+header nav + nav,
+.header nav + nav,
+header .nav + .nav {
+  display: none !important;
 }
 
-
-
-
-
-
-
-
-
-
-/* ======= ヘッダーメニューを左寄せ・均等間隔に“強制修正” ======= */
-header nav, .header nav, nav {
+/* 2) 残したナビを左寄せ＆均一間隔に */
+header nav,
+.header nav {
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-start !important;     /* ← space-between を無効化 */
+  justify-content: flex-start !important;
+  gap: 20px !important;          /* メニューの間隔はお好みで */
   flex-wrap: nowrap !important;
-  gap: 20px !important;                        /* 項目間の間隔はここで調整 */
 }
 
-/* 各メニュー項目が勝手に広がらないよう固定 */
-header nav > * , .header nav > * , nav > * {
+/* 3) 各項目が勝手に広がらないよう固定 */
+header nav > * {
   flex: 0 0 auto !important;
-  margin: 0 !important;                        /* 既存の margin をリセット */
+  margin: 0 !important;
 }
 
-/* 「最後の項目を右へ飛ばす」系のルールを無効化（よくある原因） */
-header nav > *:last-child,
-.header nav > *:last-child,
-nav > *:last-child {
-  margin-left: 0 !important;
-}
-
-/* “プロチェック”をピンポイントで左寄せ（保険） */
-a[href*="inspection"], a[href*="プロチェック"] {
-  margin-left: 0 !important;
-  flex: 0 0 auto !important;
-}
-
-/* 右端の「無料見積り」ボタンだけを右へ寄せたい場合（任意） */
-.header .cta, header .cta, a.cta {
+/* 4) 右端の「無料見積り」だけ右に寄せたい場合（任意） */
+header .cta, .header .cta, a.cta {
   margin-left: auto !important;
 }
+
+
+
+
+
+
 
 
 
