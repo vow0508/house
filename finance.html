@@ -173,6 +173,45 @@ img[src="kpi_funnel.png"] {
 
 
 
+/* === 強制2カラム化（compare セクションだけ狙い撃ち）=== */
+@media (min-width:960px){
+  .section.compare .inner > .figure-grid{
+    display:flex !important;
+    gap:20px !important;
+    align-items:flex-start !important;
+    flex-wrap:nowrap !important;
+  }
+  .section.compare .inner > .figure-grid > .figure-card{
+    width:50% !important;          /* 2分割を強制 */
+    max-width:none !important;
+    margin:0 !important;
+  }
+}
+
+/* 画像サイズは見やすさ優先で拡大可 */
+.section.compare .figure-card img{
+  display:block; margin:0 auto;
+  width:100% !important;
+  max-width:650px !important;      /* もっと大きく→ 700px などに */
+  height:auto !important; border-radius:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
   
 
 
@@ -457,6 +496,7 @@ img[src="kpi_funnel.png"] {
 </div>
 </body>
 </html>
+
 
 
 
