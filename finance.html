@@ -52,6 +52,40 @@ img[src="kpi_funnel.png"] {
   height:auto !important;
 }
 
+#rescue .figure-grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width:960px) {
+  #rescue .figure-grid {
+    grid-template-columns: 1fr 1fr;  /* PCでは横2分割 */
+    align-items: start;
+  }
+}
+
+#rescue .figure-card {
+  background:#fff;
+  border-radius:14px;
+  padding:12px;
+  box-shadow:0 12px 28px rgba(255,153,0,.22);
+  text-align:center;
+}
+
+#rescue .figure-card img {
+  display:block;
+  margin:0 auto;
+  max-width:600px !important; /* PC時の上限幅 */
+  width:100% !important;      /* スマホは画面幅にフィット */
+  height:auto !important;
+  border-radius:10px;
+}
+
+#rescue .figure-card .caption {
+  margin-top:10px;
+  font-size:.95rem;
+  color:#6b7280;
+}
 
 
 
@@ -337,6 +371,7 @@ img[src="kpi_funnel.png"] {
 </div>
 </body>
 </html>
+
 
 
 
