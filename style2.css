@@ -414,4 +414,24 @@ body{ margin:0; color:var(--ink); background:#f9fafb; }
 
 
 
+/* 資金使途セクション */
+#rescue .section.fund {
+  background:#f9fafb;   /* 薄いグレー */
+  padding:40px 16px;
+}
+
+/* KPIセクション */
+#rescue .section.kpi {
+  background:#fff7ed;   /* 薄いオレンジ */
+  padding:40px 16px;
+}
+
+/* 見出し */
+#rescue h2 {
+  border-left: 6px solid var(--brand);
+  padding-left: 10px;
+  margin: 24px 0 16px;
+  font-size: 1.3rem;
+}
+
 
