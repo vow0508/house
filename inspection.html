@@ -81,6 +81,15 @@
 
 
 
+.gallery-grid{
+  display:grid;
+  gap:20px;
+  grid-template-columns:repeat(2, 1fr); /* PCもスマホもまず2列指定 */
+}
+
+@media(max-width:767px){   /* スマホは1列に落とす */
+  .gallery-grid{ grid-template-columns:1fr; }
+}
 
 
 
@@ -183,6 +192,7 @@
   </div>
 </body>
 </html>
+
 
 
 
