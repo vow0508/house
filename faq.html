@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>よくある質問（FAQ） | お家.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#ff9900; --ink:#111827; --sub:#6b7280; --line:#e5e7eb;
+}
+*{box-sizing:border-box}
+body{margin:0; color:var(--ink); font-family:"Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;}
+
+/* ===== ヘッダー（必要に応じて削除 or 既存に合わせて変更） ===== */
+.site-header{position:sticky; top:0; z-index:100; background:#fff; border-bottom:1px solid #eee}
+.header-inner{max-width:1100px; margin:0 auto; padding:10px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px}
+.logo{display:inline-flex; align-items:center; gap:10px; font-weight:800; font-size:18px}
+.btn-top{display:inline-block; padding:8px 12px; border-radius:999px; background:var(--brand); color:#fff; font-weight:700; text-decoration:none}
+
+/* ===== ページ ===== */
+.wrap{max-width:980px; margin:0 auto; padding:28px 16px}
+.page-title{font-size:clamp(22px,4.8vw,34px); font-weight:800; margin:6px 0 8px}
+.lead{color:var(--sub); line-height:1.9; margin:0 0 18px}
+
+/* ===== 注意バー（任意：診断休止） ===== */
+.notice{
+  margin:10px 0 18px; padding:10px 14px;
+  background:#fff4e5; color:#7a3e00; border:1px solid #ffd7a8; border-left:6px solid var(--brand);
+  border-radius:10px; font-weight:700;
+}
+
+/* ===== FAQ：アコーディオン ===== */
+.faq{display:grid; gap:14px; margin:20px 0 40px}
+.faq details{
+  background:#fff; border-radius:14px; border:1px solid rgba(255,153,0,.14);
+  box-shadow:0 12px 28px rgba(255,153,0,.18); /* オレンジ影 */
+  overflow:hidden;
+}
+.faq summary{
+  cursor:pointer; list-style:none; position:relative;
+  padding:16px 54px 16px 16px; font-weight:700; line-height:1.6;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{
+  content:"＋"; position:absolute; right:14px; top:50%; transform:translateY(-50%);
+  font-weight:800; color:#c2410c;
+}
+.faq details[open] summary:after{content:"－"}
+.faq .answer{padding:0 16px 16px 16px; color:#374151; line-height:1.9}
+.faq .note{color:var(--sub); font-size:.95rem}
+
+/* セクション見出し */
+.block-title{margin:34px 0 8px; font-size:1.2rem; font-weight:800; color:#111827}
+
+/* フッター簡易 */
+.site-foot{padding:24px 16px; border-top:1px solid #eee; color:#6b7280; text-align:center}
+
+/* レスポンシブ微調整 */
+@media(min-width:960px){
+  .faq{gap:16px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">お家.com</div>
+    <nav><a class="btn-top" href="index.html">トップへ戻る</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1 class="page-title">よくある質問（FAQ）</h1>
+  <p class="lead">お問い合わせの多い内容をまとめました。ページ下部のフォームから個別のご相談も受け付けています。</p>
+
+  <!-- 任意：診断休止中の注意 -->
+  <div class="notice">現在、住宅診断（インスペクション）は実施していません。</div>
+
+  <h2 class="block-title">サービス全般</h2>
+  <section class="faq">
+
+    <details>
+      <summary>今、宅建士を紹介してくれるのですか？</summary>
+      <div class="answer">
+        当サイトは、私が目指す不動産会社像を体現したプレビューデモです。まだ免許取得前のため、実際の活動は行っていません。現在は大手不動産エージェント会社のエージェントとして稼働しており、実務はそちらの枠組みで対応します。
+      </div>
+    </details>
+
+    <details>
+      <summary>いつ頃開業予定ですか？</summary>
+      <div class="answer">
+        クラウドファンディングの結果を踏まえて判断します。順調に進んだ場合でも、来春頃の見込みです。
+      </div>
+    </details>
+
+    <details>
+      <summary>対応エリアはどこですか？</summary>
+      <div class="answer">
+        現在は首都圏（東京・神奈川・埼玉・千葉）を中心に対応しています。将来的には全国の宅建士と連携し、エリア拡大を目指します。
+      </div>
+    </details>
+
+    <details>
+      <summary>オンライン相談は可能ですか？</summary>
+      <div class="answer">
+        はい、可能です。メールやオンライン会議（Zoomなど）でのご相談に対応します。遠方の方もご利用ください。
+      </div>
+    </details>
+
+    <details>
+      <summary>匿名で相談できますか？</summary>
+      <div class="answer">
+        はい、匿名での初回相談も可能です。メールアドレスのみでも対応します。
+      </div>
+    </details>
+
+  </section>
+
+  <h2 class="block-title">仲介手数料・物件紹介</h2>
+  <section class="faq">
+
+    <details>
+      <summary>本当に仲介手数料は無料ですか？</summary>
+      <div class="answer">
+        すべての物件が無料になるわけではありません。売主様から仲介手数料をいただける物件（例：新築戸建・リノベマンション等）のみ無料対象です。対象外の場合は事前にご案内します。
+      </div>
+    </details>
+
+    <details>
+      <summary>他社の物件も紹介・取り扱いできますか？</summary>
+      <div class="answer">
+        はい、インターネットや広告に掲載の多くの物件をご紹介可能です。URLやチラシをご共有ください。
+      </div>
+    </details>
+
+    <details>
+      <summary>他社で紹介を受けた物件でも相談できますか？</summary>
+      <div class="answer">
+        はい、可能です。当方を通じて仲介できる場合がありますので、資料をご提示ください。
+      </div>
+    </details>
+
+  </section>
+
+  <h2 class="block-title">内見・交渉・ローン</h2>
+  <section class="faq">
+
+    <details>
+      <summary>何件でも内見に立ち会ってもらえますか？</summary>
+      <div class="answer">
+        原則として立ち会いは3件程度を想定しています。これを超える場合は、お客様ご自身で周辺環境等をご確認のうえ、候補の絞り込みをお願いいたします。
+      </div>
+    </details>
+
+    <details>
+      <summary>価格交渉はしてもらえますか？</summary>
+      <div class="answer">
+        はい、行います。ただし、<strong>購入申込書の提出</strong>（「いくらなら買う」という意思表示）が前提です。口頭の試行的な交渉は行っていません。
+      </div>
+    </details>
+
+    <details>
+      <summary>住宅ローンが通らなかったらどうなりますか？</summary>
+      <div class="answer">
+        住宅ローン特約により契約は白紙となり、手付金は返還されますのでご安心ください。なお、<strong>契約前の事前審査は必須</strong>です。事前審査がないと交渉・契約に応じない売主業者もあります。
+      </div>
+    </details>
+
+    <details>
+      <summary>買い替え・住み替えも対応可能ですか？</summary>
+      <div class="answer">
+        はい、可能です。売却・購入の両面でサポートいたします。
+      </div>
+    </details>
+
+  </section>
+
+  <h2 class="block-title">住宅診断（インスペクション）</h2>
+  <section class="faq">
+
+    <details>
+      <summary>住宅診断は対応してもらえますか？</summary>
+      <div class="answer">
+        私は60歳となり、床下・屋根裏などの調査は体力面から困難になりました。現在（〜12/31）は簡易住宅診断「建物プロチェック」のみ無料で実施中です（外部：基礎・外壁・屋根の目視／内部：室内傾斜測定のみ）。本格診断をご希望の場合は、信頼できる一級建築士をご紹介します（有料）。
+      </div>
+    </details>
+
+  </section>
+
+  <h2 class="block-title">その他</h2>
+  <section class="faq">
+
+    <details>
+      <summary>リフォーム・リノベの相談はできますか？</summary>
+      <div class="answer">
+        はい、可能です。提携の設計士・施工会社をご紹介します。購入後のアフターも伴走します。
+      </div>
+    </details>
+
+    <details>
+      <summary>売却の相談も可能ですか？</summary>
+      <div class="answer">
+        はい、可能です。売却戦略の策定、相場感の提示、必要に応じた買取のご案内まで対応します。
+      </div>
+    </details>
+
+  </section>
+
+  <h2 class="block-title">お問い合わせ</h2>
+  <section class="faq">
+    <details open>
+      <summary>相談フォーム／連絡方法</summary>
+      <div class="answer">
+        メール：<a href="mailto:info@example.com">info@example.com</a><br>
+        お急ぎの方はお電話：090-9315-3373（清水）まで。<br>
+        ※お名前・ご希望エリア・ご予算・時期目安を添えていただけるとスムーズです。
+        <p class="note">個人情報はお問い合わせ対応の目的以外には使用しません。</p>
+      </div>
+    </details>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  © お家.com
+</footer>
+
+</body>
+</html>
