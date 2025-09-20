@@ -118,6 +118,38 @@
 
 
 
+
+#rescue .gallery {
+  display: grid;
+  grid-template-columns: 1fr; /* ←デフォルトは1列（スマホ用） */
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  #rescue .gallery {
+    grid-template-columns: repeat(2, 1fr); /* PCでは2列 */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     
 
 
@@ -213,6 +245,7 @@
   </div>
 </body>
 </html>
+
 
 
 
