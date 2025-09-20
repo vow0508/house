@@ -61,6 +61,114 @@ body{margin:0; color:var(--ink); font-family:"Noto Sans JP",system-ui,-apple-sys
 @media(min-width:960px){
   .faq{gap:16px}
 }
+
+
+/* ==== 開閉アニメーション ==== */
+.faq details .answer{
+  opacity:0;
+  transform: translateY(4px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.faq details[open] .answer{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* サマリーのタップ感（アイコン回転＆押下） */
+.faq summary{
+  transition: background-color .2s ease;
+}
+.faq details[open] summary{ background:#fffaf4; }
+.faq summary:active{ transform: translateY(1px); }
+.faq summary:after{
+  transition: transform .25s ease;
+}
+.faq details[open] summary:after{ transform: translateY(-50%) rotate(180deg); }
+
+/* ==== Q番号を自動付番（Q1, Q2...） ==== */
+.faq{ counter-reset: qno; }
+.faq details{
+  counter-increment: qno;
+  position: relative;
+}
+.faq details > summary::before{
+  content: "Q" counter(qno);
+  position:absolute; left:14px; top:12px;
+  background:#fff3e6; color:#c2410c;
+  font-weight:800; font-size:.85rem;
+  padding:4px 8px; border-radius:999px;
+}
+.faq summary{ padding-left:72px; } /* 番号ぶん余白を確保 */
+
+/* ==== ページ末尾CTA ==== */
+.faq-cta{
+  text-align:center; margin:36px 0 10px;
+}
+.faq-cta .btn{
+  display:inline-block; padding:14px 18px; border-radius:12px;
+  background:#ff9900; color:#fff; font-weight:800; text-decoration:none;
+  box-shadow:0 12px 24px rgba(255,153,0,.25);
+}
+.faq-cta .btn:active{ transform: translateY(1px); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 </style>
 </head>
 <body>
@@ -229,5 +337,6 @@ body{margin:0; color:var(--ink); font-family:"Noto Sans JP",system-ui,-apple-sys
 
 </body>
 </html>
+
 
 
