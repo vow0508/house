@@ -119,19 +119,38 @@
 
 
 
+
+
 #rescue .gallery {
   display: grid;
-  grid-template-columns: 1fr; /* ←デフォルトは1列（スマホ用） */
+  grid-template-columns: 1fr;  /* デフォルトは1列 */
   gap: 20px;
 }
 
 @media (min-width: 768px) {
   #rescue .gallery {
-    grid-template-columns: repeat(2, 1fr); /* PCでは2列 */
+    grid-template-columns: repeat(2, 1fr); /* PCは2列 */
   }
 }
 
+#rescue .card {
+  background: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.5); /* オレンジのドロップシャドウ */
+}
 
+#rescue .card img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+#rescue .card p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}
 
 
 
@@ -242,6 +261,7 @@
   </div>
 </body>
 </html>
+
 
 
 
