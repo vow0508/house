@@ -141,29 +141,31 @@
   
 </style>
 
+
+
+  
 <style>
 .floating-card {
   position: fixed;
   bottom: 20px;
   left: 20px;
   background: rgba(0,0,0,0.6);
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 16px; /* ←角をもっと丸めてカード感 */
-  font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; /* ゴシック体 */
-  font-size: 16px;
+  color: #ffffff; /* 白文字に修正 */
+  padding: 8px 14px; /* ←少し小さめ */
+  border-radius: 14px; /* 丸みは残すが少し控えめ */
+  font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+  font-size: 14px; /* ←小さめに調整 */
   text-align: center;
   z-index: 9999;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .floating-card:hover {
-  transform: scale(1.05); /* ←ふわっと拡大 */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* 影を強める */
+  transform: scale(1.03); /* 拡大幅を控えめに */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
 </style>
-
 
 
 
@@ -916,6 +918,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
   
+
 
 
 
