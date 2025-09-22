@@ -142,28 +142,26 @@
 </style>
 
 <style>
-  .floating-banner {
-    position: fixed;
-    bottom: 10px;   /* 下からの距離 */
-    left: 10px;     /* 左からの距離 */
-    background: rgba(0,0,0,0.7); /* 半透明の黒 */
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    line-height: 1.4;
-    text-align: center;
-    z-index: 9999;  /* 最前面に表示 */
-  }
+.floating-card {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 16px; /* ←角をもっと丸めてカード感 */
+  font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; /* ゴシック体 */
+  font-size: 16px;
+  text-align: center;
+  z-index: 9999;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-  .floating-banner a {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .floating-banner a:hover {
-    text-decoration: underline;
-  }
+.floating-card:hover {
+  transform: scale(1.05); /* ←ふわっと拡大 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* 影を強める */
+}
 </style>
 
 
@@ -867,8 +865,8 @@ document.addEventListener('DOMContentLoaded', () => {
   </style>
   <!-- ▲ここまで追加 -->
 
-<div class="floating-banner">
-  <a href="https://forms.gle/your-form-url" target="_blank">
+<div class="floating-card">
+  <a href="https://vow0508.github.io/house/" target="_blank">
     <p>宅建士募集</p>
     <p>歩合90%</p>
   </a>
@@ -918,6 +916,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
   
+
 
 
 
