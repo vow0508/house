@@ -165,6 +165,22 @@
   transform: scale(1.03); /* 拡大幅を控えめに */
   box-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
+
+  .floating-card a {
+  color: #ffffff !important;   /* 常に白 */
+  text-decoration: none;       /* 下線消す */
+  font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  display: block;
+}
+
+.floating-card a:visited,
+.floating-card a:hover,
+.floating-card a:active {
+  color: #ffffff !important;   /* 訪問済み・ホバー・クリック時も白 */
+}
+
 </style>
 
 
@@ -869,11 +885,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <div class="floating-card">
   <a href="https://vow0508.github.io/house/" target="_blank">
-    <p>宅建士募集</p>
-    <p>歩合90%</p>
+    宅建士募集<br>歩合90%
   </a>
 </div>
-
 
 
 
@@ -918,6 +932,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
   
+
 
 
 
