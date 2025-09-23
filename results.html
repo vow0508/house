@@ -73,6 +73,28 @@
       margin: 5px 0;
       color: #555;
     }
+
+    /* 📱 デフォルト＝スマホ想定：2列 */
+.cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 📞 すごく小さい端末（～480px）は1列 */
+@media (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 🖥 PC相当（900px～）は3列 */
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
   </style>
 
 
