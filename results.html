@@ -1,76 +1,77 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>検索結果｜宅建士一覧</title>
 
-  <title>宅建士検索結果 | お家.com</title>
+  <style>
+    /* ゴシック体系に固定（!important で上書き） */
+    :root { --gap: 20px; }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP",
+                   "Yu Gothic", "Meiryo", sans-serif !important;
+      color: #333; line-height: 1.6; background: #fafafa;
+    }
 
- <style>
-.cards {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr; /* ← デフォルトは1列 */
-}
+    .results {
+      max-width: 1200px; margin: 0 auto; padding: 40px 20px; text-align: center;
+    }
+    .results h2 { margin: 0 0 10px; font-size: 26px; color: #222; }
+    .results p.lead { margin: 0 0 24px; color: #555; }
 
-/* 📱 スマホ〜小さめタブレット（481px以上）で2列 */
-@media (min-width: 481px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    /* ▼ グリッド（デフォルト1列） */
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;   /* 480px以下：1列 */
+      gap: var(--gap);
+    }
+    /* 481px〜：2列 */
+    @media (min-width: 481px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    /* 900px〜：3列 */
+    @media (min-width: 900px) {
+      .cards { grid-template-columns: repeat(3, 1fr); }
+    }
 
-/* 🖥 PC（900px以上）で3列 */
-@media (min-width: 900px) {
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-</style>
-
-  
-
-
-
-  
+    .card {
+      background: #fff; border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.1);
+      padding: 18px; text-align: left;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,.15); }
+    .card h3 { margin: 0 0 8px; font-size: 18px; color: #333; }
+    .card p { margin: 6px 0; font-size: 14px; color: #444; }
+  </style>
 </head>
+
 <body>
   <section class="results">
     <h2>検索結果：宅建士一覧</h2>
-    <p>あなたに合う宅建士をお選びください。</p>
+    <p class="lead">あなたに合う宅建士をお選びください。</p>
+
     <div class="cards">
-      
-      <!-- ママ宅建士 -->
       <div class="card">
-        <img src="img/mama.jpg" alt="ママ宅建士">
         <h3>佐藤 真理</h3>
         <p>子育て経験を活かし、ファミリー向けの住まい探しを得意としています。学校区や生活環境に配慮したご提案を心がけています。</p>
       </div>
-      
-      <!-- 副業宅建士 -->
       <div class="card">
-        <img src="img/fukugyo.jpg" alt="副業宅建士">
         <h3>田中 翔</h3>
         <p>IT企業勤務の傍ら宅建士として活動。デジタルに強く、リモート相談も柔軟に対応できます。効率的に情報提供いたします。</p>
       </div>
-      
-      <!-- 未経験宅建士 -->
       <div class="card">
-        <img src="img/mikeiken.jpg" alt="未経験宅建士">
         <h3>山口 彩</h3>
         <p>宅建士として駆け出しですが、お客様に寄り添い丁寧な対応を大切にしています。小さな疑問も一緒に解決します。</p>
       </div>
-      
-      <!-- ベテラン宅建士 -->
       <div class="card">
-        <img src="img/veteran.jpg" alt="ベテラン宅建士">
         <h3>高橋 一郎</h3>
         <p>不動産業界20年以上。新築から中古、投資用まで幅広く対応。豊富な経験からリスクも含めた安心のアドバイスをいたします。</p>
       </div>
-
+      <!-- 以降、必要ならカードを増やしてください -->
     </div>
   </section>
-
-  
 </body>
 </html>
