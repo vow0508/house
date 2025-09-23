@@ -2,63 +2,44 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>検索結果 - 宅建士一覧</title>
-  <style>
-    body {
-      font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
-      background-color: #f9f9f9;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 30px;
-    }
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .card {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .card h2 {
-      margin: 0 0 10px;
-    }
-    .card p {
-      margin: 5px 0;
-      color: #555;
-    }
-  </style>
+  <title>宅建士検索結果 | お家.com</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>検索結果：宅建士一覧</h1>
-  <div class="card-container">
-    <div class="card">
-      <h2>佐藤 真由美</h2>
-      <p>🏡 ママ宅建士</p>
-      <p>在宅・子育て両立を応援します</p>
+  <section class="results">
+    <h2>検索結果：宅建士一覧</h2>
+    <p>あなたに合う宅建士をお選びください。</p>
+    <div class="cards">
+      
+      <!-- ママ宅建士 -->
+      <div class="card">
+        <img src="img/mama.jpg" alt="ママ宅建士">
+        <h3>佐藤 真理</h3>
+        <p>子育て経験を活かし、ファミリー向けの住まい探しを得意としています。学校区や生活環境に配慮したご提案を心がけています。</p>
+      </div>
+      
+      <!-- 副業宅建士 -->
+      <div class="card">
+        <img src="img/fukugyo.jpg" alt="副業宅建士">
+        <h3>田中 翔</h3>
+        <p>IT企業勤務の傍ら宅建士として活動。デジタルに強く、リモート相談も柔軟に対応できます。効率的に情報提供いたします。</p>
+      </div>
+      
+      <!-- 未経験宅建士 -->
+      <div class="card">
+        <img src="img/mikeiken.jpg" alt="未経験宅建士">
+        <h3>山口 彩</h3>
+        <p>宅建士として駆け出しですが、お客様に寄り添い丁寧な対応を大切にしています。小さな疑問も一緒に解決します。</p>
+      </div>
+      
+      <!-- ベテラン宅建士 -->
+      <div class="card">
+        <img src="img/veteran.jpg" alt="ベテラン宅建士">
+        <h3>高橋 一郎</h3>
+        <p>不動産業界20年以上。新築から中古、投資用まで幅広く対応。豊富な経験からリスクも含めた安心のアドバイスをいたします。</p>
+      </div>
+
     </div>
-    <div class="card">
-      <h2>田中 一郎</h2>
-      <p>💼 副業OK</p>
-      <p>会社員を続けながら不動産活動</p>
-    </div>
-    <div class="card">
-      <h2>鈴木 花子</h2>
-      <p>✨ 未経験チャレンジ</p>
-      <p>これから一緒に成長します</p>
-    </div>
-    <div class="card">
-      <h2>高橋 健</h2>
-      <p>📈 ベテラン宅建士</p>
-      <p>経験20年、安心のサポート</p>
-    </div>
-  </div>
+  </section>
 </body>
 </html>
