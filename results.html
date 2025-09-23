@@ -6,96 +6,27 @@
 
   <title>宅建士検索結果 | お家.com</title>
 
-  <style>
-    body {
-      font-family: "Hiragino Sans", "Meiryo", sans-serif;
-      background-color: #fafafa;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    .results {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .results h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
- 
-
-    /* タブレット・スマホ幅 → 2列 */
-    @media screen and (max-width: 900px) {
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* 小さいスマホ幅 → 1列 */
-    @media screen and (max-width: 400px) {
-      .cards {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 20px;
-      text-align: left;
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      font-size: 18px;
-      color: #333;
-    }
-
-    .card p {
-      font-size: 14px;
-      margin: 5px 0;
-      color: #555;
-    }
-
-    /* 📱 デフォルト＝スマホ想定：2列 */
+ <style>
 .cards {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr; /* ← デフォルトは1列 */
 }
 
-/* 📞 すごく小さい端末（～480px）は1列 */
-@media (max-width: 480px) {
+/* 📱 スマホ〜小さめタブレット（481px以上）で2列 */
+@media (min-width: 481px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
-  }
-  
+}
 
-
-/* 🖥 PC相当（900px～）は3列 */
+/* 🖥 PC（900px以上）で3列 */
 @media (min-width: 900px) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
   }
-  }
-
-
-  </style>
-
-
+}
+</style>
 
   
 
