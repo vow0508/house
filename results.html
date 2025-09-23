@@ -21,6 +21,11 @@
     text-align: center;
   }
 
+  .results h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
   .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* デフォルトは3列 */
@@ -35,11 +40,36 @@
     }
   }
 
-  /* 超小さい画面は1列 */
+  /* 📱 超小さい画面は1列 */
   @media (max-width: 480px) {
     .cards {
       grid-template-columns: 1fr;
     }
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .card p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #555;
   }
 </style>
 
