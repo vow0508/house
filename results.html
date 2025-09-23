@@ -2,7 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>検索結果｜宅建士一覧</title>
 
   <style>
@@ -45,6 +46,40 @@
     .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,.15); }
     .card h3 { margin: 0 0 8px; font-size: 18px; color: #333; }
     .card p { margin: 6px 0; font-size: 14px; color: #444; }
+
+
+/* グリッド：デフォルトを“2列”に固定（スマホでも2列） */
+.cards {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+/* 超小さい端末（幅360px以下）だけ1列に落とす */
+@media (max-width: 360px) {
+  .cards { grid-template-columns: 1fr !important; }
+}
+
+/* PC相当（900px以上）は3列 */
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+
+/* 画像（カード先頭） */
+.card .avatar {
+  width: 100%;
+  aspect-ratio: 4 / 3;        /* 画像が未統一でも整う */
+  object-fit: cover;          /* トリミングして綺麗に収める */
+  border-radius: 8px;
+  display: block;
+  background: #eee;           /* 画像未設置時のプレースホルダ色 */
+  margin-bottom: 12px;
+}
+
+
+
+
+    
   </style>
 </head>
 
@@ -54,19 +89,23 @@
     <p class="lead">あなたに合う宅建士をお選びください。</p>
 
     <div class="cards">
+      <img class="avatar" src="img/mama.jpg" alt="佐藤 真理">
       <div class="card">
         <h3>佐藤 真理</h3>
         <p>子育て経験を活かし、ファミリー向けの住まい探しを得意としています。学校区や生活環境に配慮したご提案を心がけています。</p>
       </div>
       <div class="card">
+        <img class="avatar" src="img/mama.jpg" alt="佐藤 真理">
         <h3>田中 翔</h3>
         <p>IT企業勤務の傍ら宅建士として活動。デジタルに強く、リモート相談も柔軟に対応できます。効率的に情報提供いたします。</p>
       </div>
       <div class="card">
+        <img class="avatar" src="img/mama.jpg" alt="佐藤 真理">
         <h3>山口 彩</h3>
         <p>宅建士として駆け出しですが、お客様に寄り添い丁寧な対応を大切にしています。小さな疑問も一緒に解決します。</p>
       </div>
       <div class="card">
+        <img class="avatar" src="img/mama.jpg" alt="佐藤 真理">
         <h3>高橋 一郎</h3>
         <p>不動産業界20年以上。新築から中古、投資用まで幅広く対応。豊富な経験からリスクも含めた安心のアドバイスをいたします。</p>
       </div>
