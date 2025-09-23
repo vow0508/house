@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>宅建士検索結果 | お家.com</title>
 
-  <style>
+ <style>
     body {
       font-family: "Hiragino Sans", "Meiryo", sans-serif;
       background: #f9f9f9;
@@ -66,8 +66,27 @@
       line-height: 1.6;
       color: #444;
     }
+
+    /* 📱 スマホ用レスポンシブ */
+    @media (max-width: 768px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr); /* 2列表示 */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cards {
+        grid-template-columns: 1fr; /* ごく小さい画面では1列 */
+      }
+    }
   </style>
 
+
+
+
+
+
+  
 
 
 
